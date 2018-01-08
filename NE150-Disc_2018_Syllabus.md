@@ -13,10 +13,9 @@ Discussion:
 
 Contact: negus@berkeley.edu
 
-Office Hours: TBD
+Office Hours: Wednesday 1:00-2:00pm, 3115A Etcheverry Hall (The Neutronics Office)
 
 * discussion section github
-* reader's contact
 
 ### Topics
 
@@ -26,11 +25,18 @@ The majority of course material will be covered in lecture. Discussion sections 
 - Nuclear structure
 - Nuclear reactions
 - Cross sections
+- The 2/4/6 factor formulae
+- Neutron diffusion Theory
 - Review of differential equations and their solutions
+- Solving the diffusion equation to model nuclear systems
+- The multigroup diffusion equation
+- Point Reactor Kinetics Equations
+- Reactivity variations
 - Using command line interfaces to perform scientific computing
 
 Please let me know if there are any specific topics you'd like me to cover in more detail. I will do my best to hit topics that I found tricky when I took this course, but discussion section will be most effective if you let me know where you are having difficulty. 
 
+A tip from my own experience with this course: **read the assigned chapters before lecture**. The lectures can be fast paced, especially if you are trying to absorb the material for the first time. I found that the textbook(s) are accessible enough for students who have taken the course prerequisites without having attended lecture. This does represent a time commitment on your part, but you _will_ get significantly more from this course if you come to lecture having read through the material. 
 
 
 ## Discussion policies
@@ -75,14 +81,6 @@ To copy text or ideas from another source without appropriate reference is plagi
 #### Academic Integrity and Ethics
 
 Cheating on exams and plagiarism are two common examples of dishonest, unethical behavior. Honesty and integrity are of great importance in all facets of life. They help to build a sense of self-confidence and are key to building trust within relationships, whether personal or professional. There is no tolerance for dishonesty in the academic world, for it undermines what we are dedicated to doing–furthering knowledge for the benefit of humanity. Your experience as a student at UC Berkeley is hopefully fueled by passion for learning and replete with fulfilling activities. I appreciate that being a student can be stressful. There may be times when there is temptation to engage in some kind of cheating in order to improve a grade or otherwise advance your career. This could be as blatant as having someone else sit for you in an exam, or submitting a written assignment that has been copied from another source. It could also be as subtle as glancing at a fellow student’s exam when you are unsure of an answer to a question and are looking for some confirmation. One might do any of these things and potentially not get caught. However, if you cheat, no matter how much you may have learned in this class, you have failed to learn perhaps the most important lesson of all.
-
-
-
-## Advice
-
-### My Tips
-
-### Coding Help
 
 
 
@@ -149,4 +147,5 @@ Good luck, and have fun!
 - Find k_eff number
 - Check all links
 - Review concepts
+- Check that office hours Wed 1-2 are sufficient (add M, 1-2?)
 
