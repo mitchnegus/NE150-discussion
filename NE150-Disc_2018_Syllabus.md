@@ -18,12 +18,16 @@ Office Hours: TBD
 
 ### Topics
 
-The majority of course material will be covered in lecture. Discussion sections will be used to review the material again, ideally in a way that complements what has already been presented. Some points that I specifically hope to address in lecture are: 
+The majority of course material will be covered in lecture. Discussion sections will be used to review the material again, ideally in a way that complements what has already been presented. Some points that I specifically hope to address in discussion sections are: 
 
+- Atom and weight percent enrichments
+- Nuclear structure
+- Nuclear reactions
+- Cross sections
 - Review of differential equations and their solutions
-- 
 - Using command line interfaces to perform scientific computing
 
+Please let me know if there are any specific topics you'd like me to cover in more detail. I will do my best to hit topics that I found tricky when I took this course, but discussion section will be most effective if you let me know where you are having difficulty. 
 
 ## Computing Accounts
 
@@ -64,3 +68,9 @@ After the first midterm, we will be using the DECF computers for running MCNP si
 		- enrichment calculator
 
 - Review concepts	
+
+## Final Note
+
+This is nuclear science–if you don't understand a concept on the first go, please don't be afraid to ask a question or reach out to me. I understand that there are students taking this course with a strong background in nuclear engineering, while there are others who are in their first year learning about nuclear science. Especially when dealing with nuclear reactors, it is often assumed that the audience is familiar with terminology and language of the field. Whether you don't recognize an acronym or can't figure out how to have your simulated reactor reach a $k_{eff}$ greater than _____, I can't help you if I don't know about the problem.
+
+Good luck, and have fun!
