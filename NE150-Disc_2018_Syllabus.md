@@ -51,9 +51,7 @@ The best way to reach me is via email. If I do not answer you within 24 hours (e
 
 Please drop by my office hours (TBD) if you have questions regarding the course material that isn't resolved either in lecture or discussion. Unfortunately, since I too am a student, I won't be able to stay long after discussion or office hours due to other class/research commitments. If these times do not work for you, I will do my best to accomodate appointments (send me an email), but I cannot guarantee my availability at other times.
 
-### Academic Integrity
-
-*_adapted from R. Slaybaugh's syllabus – **get permission**_
+### Academic Integrity*
 
 #### UC Berkeley Honor Code
 
@@ -82,7 +80,7 @@ To copy text or ideas from another source without appropriate reference is plagi
 
 Cheating on exams and plagiarism are two common examples of dishonest, unethical behavior. Honesty and integrity are of great importance in all facets of life. They help to build a sense of self-confidence and are key to building trust within relationships, whether personal or professional. There is no tolerance for dishonesty in the academic world, for it undermines what we are dedicated to doing–furthering knowledge for the benefit of humanity. Your experience as a student at UC Berkeley is hopefully fueled by passion for learning and replete with fulfilling activities. I appreciate that being a student can be stressful. There may be times when there is temptation to engage in some kind of cheating in order to improve a grade or otherwise advance your career. This could be as blatant as having someone else sit for you in an exam, or submitting a written assignment that has been copied from another source. It could also be as subtle as glancing at a fellow student’s exam when you are unsure of an answer to a question and are looking for some confirmation. One might do any of these things and potentially not get caught. However, if you cheat, no matter how much you may have learned in this class, you have failed to learn perhaps the most important lesson of all.
 
-
+*_adapted from syllabi from R. Slaybaugh, with permission_
 
 ## Resources
 
@@ -109,6 +107,7 @@ Cheating on exams and plagiarism are two common examples of dishonest, unethical
 * Software Carpentry: [http://software-carpentry.org/lessons.html](http://software-carpentry.org/lessons.html)
 	* Bash Tutorial
 	* _others?_
+* MCNP tutorials from Sandra
 
 ### Other Campus Resources
 
