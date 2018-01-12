@@ -43,7 +43,7 @@ A tip from my own experience with this course: **read the assigned chapters befo
 
 ### Getting in contact
 
-The best way to reach me is via email. If I do not answer you within 24 hours (excluding weekends/holidays/breaks), feel free to send a follow up to be sure that I didn't miss the message.
+The best way to reach me is via email. I will do my best to answer within 48 hours (excluding weekends/holidays/breaks), but feel free to send a follow up after that to be sure that I didn't miss the message.
 
 **Note:** _I will not answer any correspondence initiated within 24 hours of a homework due date or exam_. This will apply universally. Do not leave assignments to the last minute. 
 
