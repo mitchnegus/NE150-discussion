@@ -122,13 +122,15 @@ Cheating on exams and plagiarism are two common examples of dishonest, unethical
 
 As per the class syllabus, everoyone enrolled in NE 150 will be provided with an account with DECF (the [Davis-Etcheverry Computing Laboratory](http://www.decf.berkeley.edu/)). DECF provides on-campus computer laboratories in Etcheverry 1111 and 1171, and the DECF computers can also be accessed remotely via [SSH](). More information will be provided regarding how to connect to the DECF computers. 
 
-After the first midterm, we will be using the DECF computers for running MCNP simulations of critical nuclear systems. In order to do this, you will need a license for MCNP, as it is an export controlled software. The license (specifically for MCNP6) is obtained through RSICC ([R... S... I... C... C...](http://rsicc.ornl.gov/Registration.aspx)). My recommendation is that you apply for this license as early as possible to ensure that you have access to the software by the time we reach that point of the semester. I will provide more details about this procedure as we progress. If you have difficulties getting an MCNP license, contact me and we will find a workaround–perhaps using [Serpent]() (a similar, but open-source, code). 	
+After the first midterm, we will be using the DECF computers for running MCNP simulations of critical nuclear systems. In order to do this, you will need a license for MCNP, as it is an export controlled software. The license (specifically for MCNP6) is obtained through RSICC ([Radiation Safety Information Computational Center](http://rsicc.ornl.gov/Registration.aspx)). My recommendation is that you apply for this license as early as possible to ensure that you have access to the software by the time we reach that point of the semester. I will provide more details about this procedure as we progress. If you have difficulties getting an MCNP license, contact me and we will find a workaround–perhaps using [Serpent]() (a similar, but open-source, code). 	
 
 
 
 ## Accessibility
 
-Please let me know if you need any additional accomodations to make this semester successful; together we can work out necessary arrangements.
+Students who have disability-related needs in the event of an emergency or evacuation should inform me of any special arrangements that need to be made. Please contact me in office hours or by email.
+
+Also, please let me know if you need any other accomodations to make this semester successful; together we can work out necessary arrangements.
 
 
 
@@ -142,7 +144,6 @@ Good luck, and have fun!
 
 ###### Still to do:
 
-- Get permission from Rachel to use Academic Integrity section
 - Find k_eff number
 - Check all links
 - Review concepts
