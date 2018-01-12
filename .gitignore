@@ -1,6 +1,5 @@
 # Instructor only files
-ne150 
-*.zip
+instructor
  
 #
 .ipynb_checkpoints
