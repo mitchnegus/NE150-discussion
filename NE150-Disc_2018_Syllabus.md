@@ -25,6 +25,7 @@ The majority of course material will be covered in lecture. Discussion sections 
 - Nuclear structure
 - Nuclear reactions
 - Cross sections
+- Multiplication factors
 - The 2/4/6 factor formulae
 - Neutron diffusion Theory
 - Review of differential equations and their solutions
@@ -36,14 +37,14 @@ The majority of course material will be covered in lecture. Discussion sections 
 
 Please let me know if there are any specific topics you'd like me to cover in more detail. I will do my best to hit topics that I found tricky when I took this course, but discussion section will be most effective if you let me know where you are having difficulty. 
 
-A tip from my own experience with this course: **read the assigned chapters before lecture**. The lectures can be fast paced, especially if you are trying to absorb the material for the first time. I found that the textbook(s) are accessible enough for students who have taken the course prerequisites without having attended lecture. This does represent a time commitment on your part, but you _will_ get significantly more from this course if you come to lecture having read through the material. 
+A tip from my own experience with this course: **read the assigned chapters before lecture** (and keep some scrap paper nearby to work through some of the derivations as you go!). The lectures can be fast paced, especially if you are trying to absorb the material for the first time. I found that the textbook(s) are accessible enough for students who have taken the course prerequisites without having attended lecture. This does represent a time commitment on your part, but you _will_ get significantly more from this course if you come to lecture having read through the material. 
 
 
 ## Discussion policies
 
 ### Getting in contact
 
-The best way to reach me is via email. I will do my best to answer within 48 hours (excluding weekends/holidays/breaks), but feel free to send a follow up after that to be sure that I didn't miss the message.
+The best way to reach me is via email. I will do my best to answer within 48 hours (excluding weekends/holidays/breaks), but feel free to send a follow up after that to be sure that I didn't miss the message. If you have a question regarding the course material that you think requires more than single sentence answer, please consider bringing it to office hours instead. I will be able to be much more thorough in my response, and the quality of the answer you receive will be significantly better.
 
 **Note:** _I will not answer any correspondence initiated within 24 hours of a homework due date or exam_. This will apply universally. Do not leave assignments to the last minute. 
 
@@ -67,11 +68,16 @@ Reviewing lecture and reading materials and studying for exams can be enjoyable 
 
 #### Cheating
 
-A good lifetime strategy is always to act in such a way that no one would ever imagine that you would even consider cheating. Anyone caught cheating on assignments in this course will be liable to receive a failing grade in the course and as well as be reported to the University Center for Student Conduct. To guarantee that you are not suspected of cheating, please keep your eyes on your own materials and do not converse with others during exams.
+A good lifetime strategy is always to act in such a way that no one would ever imagine that you would even consider cheating. Anyone caught cheating on assignments in this course will be liable to receive a failing grade in the course as well as be reported to the University Center for Student Conduct. As a GSI, I will need to report any instances of cheating to the instructor of record. To guarantee that you are not suspected of cheating, please keep your eyes on your own materials and do not converse with others during exams.
 
 #### Plagiarism
 
-To copy text or ideas from another source without appropriate reference is plagiarism and will result in a failing grade for your assignment and usually further disciplinary action. For additional information on plagiarism and how to avoid it, see, for example:
+
+To copy text or ideas from another source without appropriate reference is plagiarism and may result in a failing grade for your assignment and usually further disciplinary action. 
+
+Especially in this class, many of the introductory problems have been thoroughly worked out in texts, in online course readers from other universities, or in the literature. If you use an outside source for your assignment, be sure to cite that resource. This is good practice for working in academic or professional settings. (If you need a good place to start, try imitating the style of a published journal.)
+
+For additional information on plagiarism and how to avoid it, see, for example:
 
 * [http://www.lib.berkeley.edu/instruct/guides/citations.html#Plagiarism](http://www.lib.berkeley.edu/instruct/guides/citations.html#Plagiarism)
 * [http://gsi.berkeley.edu/teachingguide/misconduct/prevent-plag.html](http://gsi.berkeley.edu/teachingguide/misconduct/prevent-plag.html)
@@ -112,9 +118,9 @@ Cheating on exams and plagiarism are two common examples of dishonest, unethical
 ### Other Campus Resources
 
 * Library: [http://www.lib.berkeley.edu/node](http://www.lib.berkeley.edu/node)
-
-* Mental health: [http://www.uhs.berkeley.edu/students/counseling/cps.shtml](http://www.uhs.berkeley.edu/students/counseling/cps.shtml)
+* Mental health/CPS: [http://www.uhs.berkeley.edu/students/counseling/cps.shtml](http://www.uhs.berkeley.edu/students/counseling/cps.shtml); 510-642-9494
 * Sexual assault support: [http://survivorsupport.berkeley.edu/](ttp://survivorsupport.berkeley.edu/)
+* Career center: [https://career.berkeley.edu/](https://career.berkeley.edu/)
 
 
 
@@ -127,6 +133,8 @@ After the first midterm, we will be using the DECF computers for running MCNP si
 
 
 ## Accessibility
+
+Students with disabilities who need accommodations in order to access this course will be accommodated. Please contact DSP and apply for services. 
 
 Students who have disability-related needs in the event of an emergency or evacuation should inform me of any special arrangements that need to be made. Please contact me in office hours or by email.
 
