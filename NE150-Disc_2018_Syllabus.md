@@ -1,4 +1,5 @@
-# Nuclear Engineering 150 Discussion: _Introduction to Nuclear Reactor Theory_
+# NE 150 Discussion Syllabus
+## _Introduction to Nuclear Reactor Theory_
 
 
 
@@ -14,6 +15,8 @@ Discussion:
 Contact: negus@berkeley.edu
 
 Office Hours: Wednesday 10:30-11:30am, 1106 Etcheverry Hall 
+
+Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](https://mitchnegus.github.io/NE150-discussion/)
 
 ### Topics
 
