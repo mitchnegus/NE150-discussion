@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+.inner{
+  margin-left: 80px;
+}
+
 #container .inner img {
   max-width: 20%;
 }
