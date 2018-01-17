@@ -6,7 +6,7 @@
 ### Administrative
 
 Discussion: 
-t
+
 * Group 1 – Wednesday, 12:00-1:00pm, 88 Dwinelle Hall
 * Group 2 – Friday, 12:00-1:00pm, 31 Evans Hall
 
