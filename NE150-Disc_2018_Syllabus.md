@@ -1,6 +1,5 @@
 ---
 title: Syllabus
-permalink: /syllabus/
 ---
 
 # NE 150 Discussion Syllabus

@@ -1,6 +1,5 @@
 ---
 title: NE 150 – Discussion
-permalink: /ne150-disc/
 ---
 
 Welcome to the homepage for the discussion section of NE 150, UC Berkeley's introductory course on Nuclear Reactor Theory!
