@@ -137,6 +137,6 @@ Also, please let me know if you need any other accomodations to make this semest
 
 ## Final Note
 
-This is nuclear science–if you don't understand a concept on the first go, please don't be afraid to ask a question or reach out to me. I understand that there are students taking this course with a strong background in nuclear engineering, while there are others who are in their first year learning about nuclear science. Especially when dealing with nuclear reactors, it is often assumed that the audience is familiar with terminology and language of the field. Whether you don't recognize an acronym or can't figure out how to have your simulated reactor reach a $k_{eff}$ greater than $\nu$, I can't help you if I don't know about the problem.
+This is nuclear science–if you don't understand a concept on the first go, please don't be afraid to ask a question or reach out to me. I understand that there are students taking this course with a strong background in nuclear engineering, while there are others who are in their first year learning about nuclear science. Especially when dealing with nuclear reactors, it is often assumed that the audience is familiar with terminology and language of the field. Whether you don't recognize an acronym or can't figure out how to have your simulated reactor reach a \(k_{eff}\) greater than \(\nu\), I can't help you if I don't know about the problem.
 
 Good luck, and have fun!
