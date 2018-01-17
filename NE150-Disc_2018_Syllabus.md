@@ -1,4 +1,5 @@
-# Nuclear Engineering 150 Discussion: _Introduction to Nuclear Reactor Theory_
+# NE 150 Discussion Syllabus
+## _Introduction to Nuclear Reactor Theory_
 
 
 
