@@ -1,3 +1,7 @@
+---
+title: Syllabus
+---
+
 # NE 150 Discussion Syllabus
 ## _Introduction to Nuclear Reactor Theory_
 
