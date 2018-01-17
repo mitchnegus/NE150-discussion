@@ -5,4 +5,4 @@ I will do my best to keep bcourses up-to-date with changes to any and all docume
 
 Check back often for updates, and good luck! 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  _Mitch Negus, GSI Spring 2018_
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  _Mitch Negus, GSI Spring 2018_
