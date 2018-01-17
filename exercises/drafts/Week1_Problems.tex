@@ -1,0 +1,174 @@
+%% LaTeX template prepared by Sami Lewis for students in NE 101/210M, fall 2016
+%% NOTES:
+%%			- This is a simple, bare-bones template for the purposes of typing up homeworks. 
+%%				There are many more advanced things you can add if you wish to do so.
+%%			- You can make any changes to the template that you'd like.
+%%			- Things in all caps are things you need to fill in. Make sure to change them
+%%				all, including your name.
+%%			-	There are lots of other, nicer free templates online too!
+%%			- Run the template once without making any changes so that you can install
+%%				all of the packages and see what the formatting looks like.
+
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+\begin{document}
+\textbf{\large NUCENG 150 \hfill Mitch Negus}\\ 
+\textbf{Group Problems Week 1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 1}
+The radioactive isotope $^{233}$Pa can be produced following neutron capture by $^{232}$Th when the resulting $^{233}$Th decays to $^{233}$Pa. In the neutron flux of a typical reactor, neutron capture in 1 g of $^{232}$Th produces $^{233}$Th at of a rate of $2.0 \times 10^{11}\text{ s}^{-1}$.
+\begin{enumerate}[a)]
+\item What are the activities (in Ci) of $^{233}$Th and $^{233}$Pa after this sample is irradiated for 1.5 hours?
+\item The sample is then placed in storage with no further irradiation so that the $^{233}$Th can decay away. What are
+the activities (in Ci) of $^{233}$Th and $^{233}$Pa after 48 hours of storage?
+\item The decay of $^{233}$Pa results in $^{233}$U, which is also radioactive. After the above sample has been stored for 1 year what is the $^{233}$U activity in Ci? (Hint: it should not be necessary to set up an additional differential equation to find the $^{233}$U activity.)
+\end{enumerate}
+
+Recall: $1\text{ Ci} = 3.7 \times 10^{10}\text{ s}^{-1}$
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+
+Use the following masses for parts (a) and (b):
+
+\tab n: 1.008665 u \\
+\tab$^{1}$H: 1.007825 u \\
+\tab$^{2}$H: 2.014102 u \\
+\tab$^{56}$Fe: 55.934939 u \\
+\tab$^{98}$Y: 97.922203 u \\
+\tab$^{135}$I: 134.910048 u \\
+\tab$^{235}$U: 235.043924 u
+
+Also, recall: $\quad 1\text{u} \cdot c^{2} = 931.502$ MeV
+
+\begin{enumerate}[a)]
+\item Calculate the $Q$-value of the reaction:
+$$ ^{235}\text{U}\, + \,n \-\rightarrow\- ^{135}\text{I}\, + \,^{98}\text{Y}\, + \,3n $$
+\item Calculate the average binding energy per nucleon in MeV of $^{2}$H, $^{56}$Fe, and $^{235}$U.
+
+\end{enumerate}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+
+\begin{enumerate}[a)]
+\item Solve the first order differential equation
+$$ \frac{dy}{dx} + 3y = 0 $$
+\item Solve the second order differential equation ($A$ and $B$ are constants)
+$$ \frac{d^2 y}{dx^2} - A^2y = B $$
+The boundary condition is $y(\pm\frac{1}{A}) = 0$.
+\end{enumerate}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANSWERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Answers}
+
+\subsection*{Problem 2}
+\begin{enumerate}[a)]
+\item The $Q$-value of a reaction is given by:$$Q=[m(\text{x})+m(\text{X})-m(\text{y})-m(\text{Y})]c^{2}.$$
+
+\begin{spacing}{1.75}	
+$^{235}\text{\normalfont{U}}+n \rightarrow  \-\ ^{135}\text{\normalfont{I}}+ \! ^{98}\text{\normalfont{Y}}+3n$\\
+	\tab $Q = [m(^{235}\text{\normalfont{U}})+m(n)-m(^{135}\text{\normalfont{I}})-m(^{98}\text{\normalfont{Y}})-3m(n)]c^{2}$\\
+	\tab $Q = [235.043924\text{u}+1.008665\text{u}-134.910048\text{u}-97.922203\text{u}-3(1.008665\text{u})]c^{2}$\\
+	\tab $Q = 0.194343\text{u} \cdot c^{2}$\\
+	\tab $\boxed{Q = 181.031 \text{ MeV}}$ 
+\end{spacing}
+
+
+\item The binding energy $B(Z,A)$ for any nuclei can be found approximately from the equation:$$M(Z,A) = Zm(^{1}\text{H})+(A-Z)m_{n}-B(Z,A)/c^{2},$$ where $M(Z,A),\; Zm(^{1}\text{H})$ and $m_{n}$ are experimentally calculated values. Per nucleon, the binding energy can be expressed as: $$B_{A}(Z,A) = [Zm(^{1}\text{H})+(A-Z)m_{n}-M(Z,A)]c^{2}/A.$$
+
+\begin{spacing}{1.75}
+
+\textbf{$^{2}$H}\\
+$B_{A}(1,2) = [m(^{1}\text{H})+(2-1)m_{n}-M(1,2)]c^{2}/2$\\
+$B_{A}(1,2) = [(1.007825\text{u})+(1.008665\text{u})-(2.014102\text{u})]c^{2}/2$\\
+$B_{A}(1,2) = 0.001194\text{u} \cdot c^{2}$\\
+$\boxed{B_{A}(1,2) = 1.112\text{ MeV}}$\\
+\textbf{$^{56}$Fe}\\
+$B_{A}(26,56) = [26m(^{1}\text{H})+(56-26)m_{n}-M(26,56)]c^{2}/56$\\
+$B_{A}(26,56) = [26(1.007825\text{u})+30(1.008665\text{u})-(55.934939\text{u})]c^{2}/56$\\
+$B_{A}(26,56) = 0.009437\text{u} \cdot c^{2}$\\
+$\boxed{B_{Z}(26,56) = 8.791\text{ MeV}}$\\
+\textbf{$^{235}$U}\\
+$B_{A}(92,235) = [92m(^{1}\text{H})+(235-92)m_{n}-M(92,235)]c^{2}/235$\\
+$B_{A}(92,235) = [92(1.007825\text{u})+143(1.008665\text{u})-(235.043924\text{u})]c^{2}/235$\\
+$B_{A}(92,235) = 0.00814924 u\text{u} \cdot c^{2}$\\
+$\boxed{B_{Z}(92,235) = 7.591\text{ MeV}}$
+\end{spacing}
+\end{enumerate}
+
+
+\subsection*{Problem 3}
+\begin{enumerate}[a)]
+\item 
+\begin{align}
+\frac{dy}{dx}	&= -3y \\
+\frac{dy}{y} 	& = -3\,dx \\
+\int\frac{dy}{y}&= -3 \int \,dx \\
+\ln y			&= -3 x + C \\
+y				&= e^{-3x + C} \\
+\end{align}
+$$\boxed{y = Ce^{-3x}}$$
+
+Solve the second order differential equation
+$$ \frac{d^2 y}{dx^2} - A^2y = B $$
+For the homogeneous equation, $\frac{d^2 y}{dx^2} - A^2y = 0$, try $y_c = X_1 e^{Ax} + X_2 e^{-Ax}$ as the complementary solution ($X_1$ and $X_2$ are constants). Then
+$$ \frac{d^2 y}{dx^2} = X_1 A^2 e^{Ax} + X_2 A^2 e^{-Ax} $$
+and
+$$ (X_1 A^2 e^{Ax} + X_2 A^2 e^{-Ax}) - A^2(X_1 e^{Ax} + X_2 e^{-Ax}) = 0 $$
+$$ A^2 (X_1 e^{Ax} + X_2 e^{-Ax}) - A^2 (X_1 e^{Ax} + X_2 e^{-Ax}) = 0 $$
+
+This is \underline{true}.
+
+For the inhomogeneous equation, $\frac{d^2 y}{dx^2} - A^2y = B$, $y_P = -B/A^2$ is the only particular solution satisfying the equation. The general solution is the sum of the complementary and particular solutions, $y = y_c + y_p$. 
+$$ y = X_1 e^{Ax} + X_2 e^{-Ax} - \frac{B}{A^2} $$
+Now we can solve for $X_1$ and $X_2$. 
+$$ y(\frac{1}{A}) = X_1 e^{A(\frac{1}{A})} + X_2 e^{-A(\frac{1}{A})} - \frac{B}{A^2} = 0 $$
+and
+$$ y(-\frac{1}{A}) = X_1 e^{A(-\frac{1}{A})} + X_2 e^{A(\frac{1}{A})} - \frac{B}{A^2} = 0 $$
+We can note that in these two equations, $X_1$ and $X_2$ can be interchanged freely, and so must be equal. We will say, $X_1 = X_2 = X$. Then, we have
+$$ 0 = X e^{A(-\frac{1}{A})} + X e^{A(\frac{1}{A})} - \frac{B}{A^2} $$
+$$ 0 = X (e^{-1} + e^{1}) - \frac{B}{A^2} $$
+$$ X = \frac{B}{A^2(\frac{1}{e} + e)} $$
+The we plug this $X$ into the final solution, which gives
+$$ y = \frac{B}{A^2(\frac{1}{e} + e)} (e^{Ax} + e^{-Ax}) - \frac{B}{A^2} $$
+\end{enumerate}
+Note that $e^{Ax} + e^{-Ax}$ is similar in form to $\cosh(Ax)$ which we could have also used to solve this problem.
+
+
+
+\end{document}
+
