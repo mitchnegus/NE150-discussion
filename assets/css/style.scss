@@ -9,6 +9,12 @@ a.button{
   font-size: 12px;
 }
 
+a.button span {
+  display: block;
+  height: 23px;
+  padding-left: 0px;
+}
+
 #view-on-github span {
   background: transparent url(../images/octocat-icon.png) -25px 5% no-repeat;
 }
