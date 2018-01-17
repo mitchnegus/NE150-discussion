@@ -14,7 +14,7 @@ Discussion:
 
 Contact: negus@berkeley.edu
 
-Office Hours: Wednesday 10:30-11:30am, 1106 Etcheverry Hall 
+Office Hours: Wednesday 10:30-11:30am, 1106 Etcheverry Hall _(To be confirmed)_ 
 
 Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](https://mitchnegus.github.io/NE150-discussion/)
 
