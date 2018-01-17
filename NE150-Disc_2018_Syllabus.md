@@ -2,7 +2,6 @@
 ## _Introduction to Nuclear Reactor Theory_
 
 ## Overview
-
 ### Administrative
 
 Discussion: 
@@ -26,7 +25,7 @@ The majority of course material will be covered in lecture. Discussion sections 
 - Cross sections
 - Multiplication factors
 - The 2/4/6 factor formulae
-- Neutron diffusion Theory
+- Neutron diffusion theory
 - Review of differential equations and their solutions
 - Solving the diffusion equation to model nuclear systems
 - The multigroup diffusion equation
@@ -119,7 +118,7 @@ Cheating on exams and plagiarism are two common examples of dishonest, unethical
 
 As per the class syllabus, everoyone enrolled in NE 150 will be provided with an account with DECF (the [Davis-Etcheverry Computing Laboratory](http://www.decf.berkeley.edu/)). DECF provides on-campus computer laboratories in Etcheverry 1111 and 1171, and the DECF computers can also be accessed remotely via [SSH](https://en.wikipedia.org/wiki/Secure_Shell). More information will be provided regarding how to connect to the DECF computers. 
 
-After the first midterm, we will be using the DECF computers for running MCNP simulations of critical nuclear systems. In order to do this, you will need a license for MCNP, as it is an export controlled software. The license (specifically for MCNP6) is obtained through RSICC ([Radiation Safety Information Computational Center](http://rsicc.ornl.gov/Registration.aspx)). My recommendation is that you apply for this license as early as possible to ensure that you have access to the software by the time we reach that point of the semester. I will provide more details about this procedure as we progress. If you have difficulties getting an MCNP license, contact me and we will find a workaround–perhaps using [Serpent](http://montecarlo.vtt.fi/) (a similar, but open-source, code). 	
+After the first midterm, we will be using the DECF computers for running MCNP simulations of critical nuclear systems. In order to do this, you will need a license for MCNP, as it is an export controlled software. The license (specifically for MCNP6) is obtained through RSICC ([Radiation Safety Information Computational Center](http://rsicc.ornl.gov/Registration.aspx)). My recommendation is that you apply for this license as early as possible to ensure that you have access to the software by the time we reach that point of the semester. I will provide more details about this procedure as we progress. If you have difficulties getting an MCNP license, contact me and we will find a workaround–perhaps using [Serpent](http://montecarlo.vtt.fi/) (a similar Monte Carlo code, but with less export controls). 	
 
 
 
