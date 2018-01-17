@@ -3,22 +3,6 @@
 
 @import "{{ site.theme }}";
 
-a.button{
-  width: 70%;
-  padding: 0px 0px 0px 0px;
-}
-
-a.button span {
-  display: block;
-  height: 23px;
-  padding-left: -20px;
-  font-size: 14px;
-}
-
-#view-on-github span {
-  background: transparent url(../images/octocat-icon.png) -20px 5% no-repeat;
-}
-
 .inner{
   margin-left: 250px;
 }
