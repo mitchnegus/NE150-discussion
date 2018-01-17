@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+a.button{
+  width = 80%
+}
+
 .inner{
   margin-left: 250px;
 }
