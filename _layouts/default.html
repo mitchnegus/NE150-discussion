@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset='utf-8'>
@@ -9,17 +10,26 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	  
+    <!-- LaTeX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 {% seo %}
   </head>
 
   <body>
+	  
+    <div class="sidenav">
+      <a href="https://mitchnegus.github.io/NE150-discussion">Home</a>
+      <a href="https://mitchnegus.github.io/NE150-discussion/NE150-Disc_2018_Syllabus">Syllabus</a>
+    </div>
+	  
     <div id="container">
       <div class="inner">
 
         <header>
-          <h1>{{ default: site.title | default: site.github.repository_name }}</h1>
-          <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
         </header>
         <section id="downloads" class="clearfix">
           {% if site.show_downloads %}
