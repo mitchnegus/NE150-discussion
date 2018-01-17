@@ -3,13 +3,6 @@
 
 @import "{{ site.theme }}";
 
-.sidebar{
-	width: 20%;
-	float: left;
+#container .inner img {
+  max-width: 80%;
 }
-
-.content{
-	width: 80%;
-	float: left;
-}
-
