@@ -15,6 +15,8 @@ Contact: negus@berkeley.edu
 
 Office Hours: Wednesday 10:30-11:30am, 1106 Etcheverry Hall 
 
+Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](https://mitchnegus.github.io/NE150-discussion/)
+
 ### Topics
 
 The majority of course material will be covered in lecture. Discussion sections will be used to review the material again, ideally in a way that complements what has already been presented. Some points that I specifically hope to address in discussion sections are: 
