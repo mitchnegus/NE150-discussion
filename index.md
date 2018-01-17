@@ -1,7 +1,3 @@
----
-title: NE 150 – Discussion
----
-
 Welcome to the homepage for the discussion section of NE 150, UC Berkeley's introductory course on Nuclear Reactor Theory!
 This website contains some [basic info](NE150-Disc_2018_Syllabus) about discussion sections, and may be updated with useful resources throughout the semester.
 
