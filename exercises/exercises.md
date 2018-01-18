@@ -4,5 +4,5 @@ This page will be updated with exercises from discussion as the semester progres
 
 ## Week 1
 
-[Exercises]()  
+[Exercises](exercises/disc01_exercises.pdf)  
 [Solutions]()
