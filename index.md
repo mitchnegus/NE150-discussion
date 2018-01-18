@@ -13,4 +13,4 @@ Check back often for updates, and good luck!
 [NE 150 Lecture Syllabus](NE150_2018_Syllabus.pdf)  
 [NE 150 Lecture Schedule](NE150_2018_Schedule.pdf)
 
-[NE 150 Discussion Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1 (Links to an external site.)
+[NE 150 Discussion Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1)
