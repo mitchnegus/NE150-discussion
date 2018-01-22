@@ -4,5 +4,5 @@ This page will be updated with exercises from discussion as the semester progres
 
 ## Week 1
 
-[Exercises](disc01_exercises.pdf)  
-[Solutions]()
+Review of prerequisite material: radioactive decay, binding energy, cross section plots, differential equations.  
+[Exercises](disc01_exercises.pdf) ([Solutions](disc01_solutions.pdf))
