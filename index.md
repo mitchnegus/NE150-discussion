@@ -17,7 +17,6 @@ Check back often for updates, and good luck!
 ### NE 150 Pre-survey
 
 [NE 150 Discussion (Spring 2018) Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1)  
-[NE 150 Discussion (Spring 2018) Pre-Survey Results](surveys/presurvey_2018.md)
 
 Results of the anonymous pre-survey from spring 2018. Ratings were collected for familiarity with a set of topics and exercises corresponding to course prerequisites. The scale was:
 
@@ -27,7 +26,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 4. I can do this.
 5. Do we have to learn this again?
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_0.png)
+![png](surveys/presurvey_2018_hists/survey_q1.png)
 
 
     
@@ -35,7 +34,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_2.png)
+![png](surveys/presurvey_2018_hists/survey_q2.png)
 
 
     
@@ -43,7 +42,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_4.png)
+![png](surveys/presurvey_2018_hists/survey_q3.png)
 
 
     
@@ -51,7 +50,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_6.png)
+![png](surveys/presurvey_2018_hists/survey_q4.png)
 
 
     
@@ -59,7 +58,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_8.png)
+![png](surveys/presurvey_2018_hists/survey_q5.png)
 
 
     
@@ -67,7 +66,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_10.png)
+![png](surveys/presurvey_2018_hists/survey_q6.png)
 
 
     
@@ -75,7 +74,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_12.png)
+![png](surveys/presurvey_2018_hists/survey_q7.png)
 
 
     
@@ -83,7 +82,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_14.png)
+![png](surveys/presurvey_2018_hists/survey_q8.png)
 
 
     
@@ -91,7 +90,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_16.png)
+![png](surveys/presurvey_2018_hists/survey_q9.png)
 
 
     
@@ -99,7 +98,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_18.png)
+![png](surveys/presurvey_2018_hists/survey_q10.png)
 
 
     
@@ -107,7 +106,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_20.png)
+![png](surveys/presurvey_2018_hists/survey_q11.png)
 
 
     
@@ -115,7 +114,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_22.png)
+![png](surveys/presurvey_2018_hists/survey_q12.png)
 
 
     
@@ -123,7 +122,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_24.png)
+![png](surveys/presurvey_2018_hists/survey_q13.png)
 
 
     
@@ -131,7 +130,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_26.png)
+![png](surveys/presurvey_2018_hists/survey_q14.png)
 
 
     
@@ -139,7 +138,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_28.png)
+![png](surveys/presurvey_2018_hists/survey_q15.png)
 
 
     
@@ -147,7 +146,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_30.png)
+![png](surveys/presurvey_2018_hists/survey_q16.png)
 
 
     
@@ -155,7 +154,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_32.png)
+![png](surveys/presurvey_2018_hists/survey_q17.png)
 
 
     
@@ -163,7 +162,7 @@ Results of the anonymous pre-survey from spring 2018. Ratings were collected for
 
 
 
-![png](surveys/presurvey_2018_files/presurvey_2018_1_34.png)
+![png](surveys/presurvey_2018_hists/survey_q18.png)
 
 
 
