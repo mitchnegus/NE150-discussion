@@ -1,9 +1,13 @@
 # Instructor only files
 instructor
  
-#
+# Custom files
 .ipynb_checkpoints
 *.xls*
+
+# LaTeX files
+*.synctex.gz
+*.aux
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
