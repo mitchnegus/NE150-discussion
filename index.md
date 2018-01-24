@@ -10,7 +10,8 @@ Check back often for updates, and good luck!
 ---
 
 ### Other Resources
-[NE 150 Lecture Syllabus](NE150_2018_Syllabus.pdf)  
-[NE 150 Lecture Schedule](NE150_2018_Schedule.pdf)
+[NE 150 Lecture (Spring 2018) Syllabus](NE150_2018_Syllabus.pdf)  
+[NE 150 Lecture (Spring 2018) Schedule](NE150_2018_Schedule.pdf)
 
-[NE 150 Discussion Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1)
+[NE 150 Discussion (Spring 2018) Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1)  
+[NE 150 Discussion (Spring 2018) Pre-Survey Results](surveys/presurvey_2018.md)
