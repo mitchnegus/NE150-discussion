@@ -17,7 +17,7 @@ Check back often for updates, and good luck!
 ### NE 150 Pre-survey
 
 [NE 150 Discussion (Spring 2018) Pre-Survey](https://goo.gl/forms/1gLAzCfnptbH8Cki1)  
-[NE 150 Discussion (Spring 2018) Pre-Survey Results](surveys/presurvey_2018.html)
+[NE 150 Discussion (Spring 2018) Pre-Survey Results](surveys/presurvey_2018.md)
 
 Results of the anonymous pre-survey from spring 2018. Ratings were collected for familiarity with a set of topics and exercises corresponding to course prerequisites. The scale was:
 
