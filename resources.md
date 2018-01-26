@@ -15,6 +15,7 @@
 * The Hacker Within: [http://thehackerwithin.github.io/berkeley/](http://thehackerwithin.github.io/berkeley/)
 * Software Carpentry: [http://software-carpentry.org/lessons.html](http://software-carpentry.org/lessons.html)
 	* Specifically, the tutorial on the Unix Shell ([http://swcarpentry.github.io/shell-novice/](http://swcarpentry.github.io/shell-novice/))
+** [RSICC MCNP request info](computing/rsicc_instructions.md)
 
 ## Other Campus Resources
 
