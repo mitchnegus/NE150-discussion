@@ -4,6 +4,7 @@ instructor
 # Custom files
 .ipynb_checkpoints
 *.xls*
+*.pptx
 
 # LaTeX files
 *.synctex.gz
