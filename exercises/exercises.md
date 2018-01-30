@@ -10,4 +10,5 @@ Review of prerequisite material: radioactive decay, binding energy, cross sectio
 ## Week 2
 
 Fundamentals: calculating enrichments, atom/weight percentages, and more complicated decay schemes as related to reactor power.  
+[Concept question slides](../concepts/disc02_concepts.pdf)  
 [Exercises](disc02_exercises.pdf) ([Solutions](disc02_solutions.pdf))
