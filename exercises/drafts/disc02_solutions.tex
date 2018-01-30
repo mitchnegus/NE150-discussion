@@ -19,11 +19,15 @@
 % Set path to figure image files
 \graphicspath{ {fig/} }
 
+% Use if statement to hide problem 1 solution
+\newif\ifeqns
+\eqnsfalse
+
 \begin{document}
 
 \begin{center}
 \textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
-\textbf{Team Exercises \#2}
+\textbf{Team Exercise Solutions \#2}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,11 +37,99 @@ Compute the atomic densities of $^{235}$U, $^{238}$U, and O in UO$_2$ when its d
 
 
 
+\section*{Problem 1 Solution}
+
+\ifeqns
+First, let's note that we will use the shorthand U5 and U8 in subscripts to denote $^{235}$U and $^{238}$U respectively. 
+
+To begin we note that the densities of $^{235}$U and $^{238}$U can be found as fractions of the total UO$_2$. Since the partial densities are dependent on the mass of the components, the fractions are equivalent to the weight \% enrichment.
+$$ \rho_{\text{UO}_2} = \rho_{\text{U5O}_2} + \rho_{\text{U8O}_2}$$
+$$ \begin{array}{lr}
+        \rho_{\text{U5O}_2} = w\rho_{\text{UO}_2}    \\
+        \rho_{\text{U8O}_2} = (1-w)\rho_{\text{UO}_2}\\
+        \end{array} \text{ where } w = 0.05 $$
+        
+Now, we can use the fact that the number density of a material, $n$, is equal to the material's density, $\rho$, multiplied by Avogadro's number, $N_A$, and divided by the molar mass, $m$, of the material. 
+$$ n = \frac{\rho N_A}{m} $$
+We find
+$$ n_{\text{U5O}_2} = \frac{\rho_{\text{U5O}_2} N_A}{m_{\text{U5O}_2}} $$
+$$ n_{\text{U8O}_2} = \frac{\rho_{\text{U8O}_2} N_A}{m_{\text{U8O}_2}} $$
+If we make the simplification that $n_{\text{U5}} = n_{\text{U5O}_2}$ and $n_{\text{U8}} = n_{\text{U8O}_2}$, and also substitute our equations for $\rho_{\text{U5O}_2}$ and $\rho_{\text{U8O}_2}$ in terms of $\rho_{\text{UO}_2}$ from above, then we find 
+\begin{align*}
+n_{\text{U5}} &= \frac{w\rho_{\text{UO}_2} N_A}{m_{\text{U5O}_2}} \\
+n_{\text{U8}} &= \frac{(1-w)\rho_{\text{UO}_2} N_A}{m_{\text{U8O}_2}} \\
+\end{align*}
+At this point, we can also separate our molar masses into molar masses of the components, for which we can find data. 
+$$ m_{\text{U5O}_2} = m_{\text{U5}} + 2m_{\text{O}} $$
+$$ m_{\text{U8O}_2} = m_{\text{U8}} + 2m_{\text{O}} $$
+We now have enough information to solve for both of these quantities, and so we plug in values. We also note that $n_O = 2(n_{\text{U8}} + n_{\text{U8}})$ since each uranium atom is bonded to 2 oxygen atoms.
+\begin{align*}
+n_{\text{U5}}	&= \frac{w\rho_{\text{UO}_2} N_A}{m_{\text{U5}} + 2m_{\text{O}}}		& \boxed{n_{\text{U5}}= ... }\\
+n_{\text{U8}}	&= \frac{(1-w)\rho_{\text{UO}_2} N_A}{m_{\text{U8}} + 2m_{\text{O}}} 	& \boxed{n_{\text{U8}}= ... }\\
+n_{\text{O}}	&= 2(n_{\text{U5}} + n_{\text{U8}})  									& \boxed{n_{\text{O}}= ...  }\\
+\end{align*}
+\else
+\textit{This problem is currently on Homework 1 (Spring 2018). The solution will be posted after the homework due date.}
+\fi
+
+
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
 
-Free neutrons undergo $\beta^{-}$ decay with a half-life of 10.4 minutes. Determine the probability that a neutron will decay before being absorbed in an infinite absorbing material (assume no scattering). Estimate this probability for a thermal neutron ($v = 2200$ m/s) in water.
+Free neutrons undergo $\beta^{-}$ decay with a half-life of 10.2 minutes. Determine the probability that a neutron will decay before being absorbed in an infinite absorbing material (assume no scattering). Estimate this probability for a thermal neutron ($v = 2200$ m/s) in water.
+
+
+
+\section*{Problem 2 Solution}
+
+Since we are assuming no scattering, at any given time $t$, there are three possible "fates" of our neutron in the next infinitesimal timestep, $dt$. These are (1) the particle continues with no decay or interaction, (2) the neutron decays, or (3) the neutron is absorbed. We want to find the probability that, given a destructive event has taken place (situation 2 or 3), the event was decay, rather than absorption. Formally, we write this as 
+$$ \text{p}(E=d | E \in \{d,a\}) $$
+
+which we read as ``the instantaneous probability that an event is decay, given the event was decay or absorption.'' Statistically this is equivalent to
+\begin{equation}
+\label{prob}
+\frac{\text{p}(E=d)}{\text{p}(E \in \{d,a\}} \text{ or } \frac{\text{p}(d)}{\text{p}(d) + \text{p}(a)}.
+\end{equation}
+(If you're not comfortable with the statistics here, you can reason through this intuitively. We have some event occuring, being either a decay or an absorption collision. The probability of that event depends on the individual probabilities of the independent events, decay and absorption. The probability of that event being a decay is just the fraction of the event's total probability that is attributable to the decay.)
+
+From here on, we will write the argument of the probality function as a subscript, which will allow us to note the probability's dependence on either time or space. (For example, $\text{p}(d) \rightarrow \text{p}_d$.)
+
+Now, we know that the exponential decay law is $N(t) = N_0 e^{-\lambda t}$. The probability that a neutron decays in some time $t$ is then
+$$ P_d(t) = 1-\frac{N(t)}{N_0} = 1-e^{-\lambda t} $$
+We can calculate that the instantantaneous probability that a neutron decays between times $t$ and $t+dt$ is 
+$$ \frac{dP_d(t)}{dt} = \lambda e^{-\lambda t} $$
+From this equation, we note that $dP_d(t) = p_d(t)dt$. Remember, $P_d(t)$ is the total probability of decay, and so $p_d(t)$ is the instantaneous probability of decay per time. When multiplied by $dt$, this is $\text{p}_d(t)$.
+$$ \text{p}_d(t) = p_d(t) \, dt = \lambda e^{-\lambda t} dt $$
+We rewrite this equation in terms of $N(t)$, and  
+$$ \text{p}_d(t) = \frac{\lambda N(t)}{N_0} dt$$
+
+Additionally, we know that the attenuation of neutrons moving through a material also follows an exponential function. The number of neutrons remaining after traveling through a material with macroscopic absorption cross section $\Sigma_a$, is
+$$ N(x) = N_0 e^{-\Sigma_a x} $$
+(note: $\Sigma_a = \sigma_a n$, where $\sigma_a$ is the microscopic absorption cross section and $n$ is the number density of the material in question) 
+
+We repeat the procedure from above, but now in space rather than time. The probability for a collision is
+$$ P_a(x) = 1-\frac{N(x)}{N_0} = 1 - e^{-\Sigma_a x} $$
+and the instantaneous probability is 
+$$ \frac{dP_a(x)}{dt} = \Sigma_a e^{\Sigma_a x} $$
+or 
+$$ \text{p}_a(x) = p_a(x) \, dx = \Sigma_a e^{\Sigma_a x} dx .$$
+Again, eliminating $dx$ and writing in terms of $N(x)$, we have
+$$ \text{p}_a(x) = \frac{\Sigma_a N(x)}{N_0} dx $$
+Now, we observe that using $\text{p}_d(t)$ and $\text{p}_a(x)$ in equation (\ref{prob}) causes all terms to be dependent on $N$, the number of neutrons. Unfortunately, we have $p_d$ reliant on $N(t)$, the number of neutrons surviving until time $t$, and $\text{p}_a$ reliant on $N(x)$, the number of neutrons reaching distance $x$. We are told, however, that these neutrons are thermal, and so are moving at $v = 2200$m/s. If we say $dx = v \, dt$, then we can rewrite $N(x) dx$ as a function of time! 
+$$ N(x) \, dx = N(t) v \, dt $$
+and
+$$ \text{p}_a(t) = \frac{\Sigma_a N(t) v}{N_0} dt $$
+Finally, we do substitute this into equation (\ref{prob}), and get
+\begin{align*}
+\text{p}(E=d | E \in \{d,a\})	&= \frac{\frac{\lambda N(t)}{N_0} dt}{\frac{\lambda N(t)}{N_0} dt + \frac{\Sigma_a N(t) v}{N_0} dt}\\
+								&= \frac{\lambda}{\lambda + \Sigma_a v}\\
+								&= \left(1 + \frac{\Sigma_a v}{\lambda}\right)^{-1}\\
+\end{align*}
+We can look up $\Sigma_a$ to find it is approximately $0.022\text{ cm}^{-1}$ (or $2.2\text{ m}^{-1}$, and can calculate that 10.2 minutes is 612 seconds.  Using this, along with $v = 2200$ m/s, and $\lambda = \frac{\ln 2}{612} = 1.13\times10^{-3}\text{ s}^{-1}$, we can find the probability.
+$$ \text{p}(E=d | E \in \{d,a\}) = \left(1 + \frac{(2.2\text{ m}^{-1})(2200\text{ m/s})}{1.13\times10^{-3}\text{ s}^{-1}}\right)^{-1} $$
+$$\boxed{ \text{p}(E=d | E \in \{d,a\}) = 2.33\times10^{-7} }$$
 
 
 
@@ -49,12 +141,99 @@ Consider a 1000 MWE reactor with a 33\% efficiency conversion from MWT to MWE. W
 
 
 
+\section*{Problem 3 Solution}
+
+We need to find the minimum required volume of UO$_2$, $V$, so let's begin by expressing that volume of UO$_2$ in terms of the number of UO$_2$ molecules it contains. 
+
+First, we use $M_{\text{UO}_2}$ as the total mass of UO$_2$ and $\rho_{\text{UO}_2}$ as the density of UO$_2$ (about 10.4 g/cm$^3$ for our purposes)
+$$ V = \frac{M_{\text{UO}_2}}{\rho_{\text{UO}_2}} $$
+Then, we can write the mass of UO$_2$ as the number of UO$_2$ molecules, $N_{\text{UO}_2}$, times the mass of a UO$_2$ molecule, $m_{\text{UO}_2}$. Since we know that the UO$_2$ is enriched such that 3\% of the molecules contain $^{235}$U, we can say $m_{\text{UO}_2} = 0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2m_{\text{O}}$. Then
+$$ M_{\text{UO}_2} = N_{\text{UO}_2}(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2m_{\text{O}}) $$
+We can use this equality in our total volume equation to find
+\begin{equation}
+\label{vol}
+V = \frac{N_{\text{UO}_2}(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2 m_{\text{O}})}{\rho_{\text{UO}_2}}
+\end{equation}
+Now we need to relate this volume, in terms of number of UO$_2$ molecules, to the electric power produced by the reactor. Say $P_E$ is the electric power, $P_T$ is thermal power, and $\varepsilon$ is the efficiency. 
+$$ P_E = \varepsilon P_T $$
+The total energy produced by the reactor in time $t$ can be found by simply multiplying the power by the time of production.
+$$ E = P_T t $$
+or equivalently
+$$ P_T = \frac{E}{t} .$$
+The energy from one fission is $E_f$ and the energy harnessed from one fission is $0.95E_f$. The total energy harnessed can then be expressed in terms of the number of fissions, $N_f$ and the energy captured per event,
+$$ E = 0.95E_f N_f $$
+If we consider the extreme and highly unrealistic case that \textit{all} $^{235}$U atoms fission, then the number of $^{235}$U atoms required is $N_{\text{U5}} = N_f$. Since $^{235}$U is 3\% of the total uranium by atom, then $N_{\text{U5}} = 0.03N_{\text{U}}$. Taking this one step further, there is a one-to-one ratio of uranium atoms to UO$_2$ molecules, so $N_{\text{U}} = N_{\text{UO}_2}$.
+
+We combine these facts together to relate the electric power produced to the number of uranium dioxide molecules required.
+\begin{align*} 
+P_E	&= \varepsilon P_T \\
+	&= \varepsilon \frac{E}{t} \\
+	&= \frac{0.95\varepsilon E_f N_f}{t} \\
+	&= \frac{(0.95)(0.03)\varepsilon E_f N_{\text{UO}_2}}{t} \\
+\end{align*}
+We solve for $N_{\text{UO}_2}$ to get
+\begin{equation}
+\label{num}
+N_{\text{UO}_2} = \frac{P_E t}{(0.95)(0.03)\varepsilon E_f}
+\end{equation}
+
+Now, we use equation (\ref{num}) for the number of UO$_2$ molecules required for the given power in equation (\ref{vol}) for the volume of UO$_2$ required. We find
+$$ V = \frac{P_E t(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2 m_{\text{O}})}{(0.95)(0.03)\varepsilon E_f\rho_{\text{UO}_2}} $$
+Finally, we can include our values. We note the following
+\begin{itemize}
+\item $P_E = 1000\text{ MWE} = 1000\text{ J/s}$
+\item $t = 1\text{ yr} = 31,557,600\text{ s}$
+\item $E_f = 200\text{ MeV} = 3.204 \times 10^{-11}$ J
+\item $m_{\text{U5}} = 235.044\text{ amu} = 3.9028 \times 10^{-22}$ g
+\item $m_{\text{U8}} = 238.051\text{ amu} = 3.9528 \times 10^{-22}$ g
+\item $m_{\text{O}} = 15.995\text{ amu} = 2.656 \times 10^{-23}$ g
+\end{itemize}
+$$ V = \frac{(1000\text{ J/s})(31557600\text{ s})(0.03(3.9028 \times 10^{-22}\text{ g}) + 0.97(3.9528 \times 10^{-22}\text{ g}) + 2(2.656 \times 10^{-23}\text{ g}))}{(0.95)(0.03)(0.33)(3.204 \times 10^{-11}\text{ J})(10.41\text{ g/cm}^3)} $$
+$$\boxed{ V = 4.51\text{ cm}^3 }$$
+
+
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 4}
 
 Given UO$_2$ with $2.5 \times 10^{21}$ atoms/cm$^3$ of $^{235}$U and $2.0\times10^{22}$ atoms/cm$^3$ of $^{238}$U, find the partial densities of $^{235}$U, $^{238}$U, and O, and determine the enrichment.
 
+
+
+\section*{Problem 4 Solution}
+
+The number density of material $i$ can be found using the formula
+$$ n_i = \frac{\rho_i N_A}{M_i} $$
+where $\rho_i$ is the partial density of material $i$, $M_i$ is the molar mass of $i$, and $N_A$ is Avogadro's number. We can reverse this formula to find the partial density of a material from the atomic density.
+$$ \rho_i = \frac{N_i M_i}{N_A} $$
+We can use this formula for the three isotopes we are considering. We also note the following:
+\begin{itemize}
+\item $n_{\text{O}} = 2(n_{\text{U5}} + n_{\text{U5}})$
+\item $M_{\text{U5}} = 235.04\text{ g/mol}$
+\item $M_{\text{U8}} = 238.05\text{ g/mol}$
+\item $M_{\text{O}} = 16.00\text{ g/mol}$
+\end{itemize}
+
+\begin{multicols}{2}
+$$ \rho_{\text{U5}} = \frac{n_{\text{U5}}  M_{\text{U5}} }{N_A} $$
+$$ \rho_{\text{U5}} = \frac{(2.5\times10^{21}\text{ atoms/cm}^3)(235.04\text{ g/mol}) }{6.022\times10^{23}\text{ atoms/mol}} $$
+$$\boxed{ \rho_{\text{U5}} = 0.976\text{ g/cm}^3 }$$
+
+
+$$ \rho_{\text{U8}} = \frac{n_{\text{U8}}  M_{\text{U8}} }{N_A} $$
+$$ \rho_{\text{U8}} = \frac{(2.0\times10^{22}\text{ atoms/cm}^3)(238.05\text{ g/mol}) }{6.022\times10^{23}\text{ atoms/mol}} $$
+$$\boxed{ \rho_{\text{U8}} = 7.91\text{ g/cm}^3 }$$
+
+\end{multicols}
+
+$$ \rho_{\text{O}} = \frac{n_{\text{O}}  M_{\text{O}} }{N_A} $$
+$$ \rho_{\text{O}} = \frac{2(n_{\text{U5}} + n_{\text{U5}})  M_{\text{O}} }{N_A} $$
+$$ \rho_{\text{O}} = \frac{2(2.25\times10^{22}\text{ atoms/cm}^{3})(16.00\text{ g/mol}) }{6.022\times10^{23}\text{ atoms/mol}} $$
+$$\boxed{ \rho_{\text{O}} = 1.20\text{ g/cm}^3 }$$
+
+The enrichment of $^{235}$U is therefore
+$\frac{\rho_{\text{U5}}}{\rho_{\text{U5}}+\rho_{\text{U8}}} = 0.1098 \quad\Rightarrow \quad\boxed{10.98\%}$
 
 
 
