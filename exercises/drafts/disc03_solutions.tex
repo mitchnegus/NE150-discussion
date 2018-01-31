@@ -1,0 +1,91 @@
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+% Use if statement to hide problem solutions
+\newif\ifeqns
+\eqnsfalse
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
+\textbf{Team Exercise Solutions \#3}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 1}
+
+A reactor is operating for a long time at some known power density $P_0$. Then, it instantaneously changes power to some power density $P_1$. One fission product of interest is $^{135}$Xe, though it has a neglible yield from the initial fission reaction. $^{135}$Xe precursors $^{135}$Te and $^{135}$I are produced with a combined yield of approximately 6\%, before decaying via $\beta^{-}$ decay to $^{135}$I and $^{135}$Xe respectively. Find the number density of $^{135}$Xe as a function of time after the power change. Let $Q_f$ be the energy produced per fission, approximately $200$ MeV.
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|}
+			\hline
+			Nucleus		&	Half-life 	& Thermal $\sigma_{\text{a}}$ \\
+			\hline
+			$^{135}$Te	&  $19.0$ s 	& $\sim 0$\\
+			$^{135}$I	&  $6.6$ hr 	& $\sim 0$\\
+			$^{135}$Xe	&  $9.2$ hr 	& $2.6 \times 10^6$ barns \\
+			\hline
+	\end{tabular}
+	\label{tab:design-specs}
+\end{table}
+
+
+
+\section*{Problem 1 Solution}
+
+We will create the following simple decay chain graphic, built from the information provided in the problem, to visualize the processes described in the problem.
+
+GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
+GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
+GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
+GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
+
+Starting off, since this is a problem related to decay, we will start from the usual equation for changes in a quantity of radionuclides.
+
+$$ \frac{dN}{dt} = \text{production} - \text{losses} $$
+
+First, we find the neutron production. We are told that after the transition, the reactor is now generating with power density $P_1$. 
+
+The amount of $^{135}$Xe is dependent on its parents, $^{135}$Te and $^{135}$I. Since the half-life of $^{135}$Te (19.0 s) is practically insignificant in comparison to the multi-hour half-lives of its daughters (to be exact, $T_{\nicefrac{1}{2},\text{Te135}} = 0.08\,T_{\nicefrac{1}{2},\text{I135}}$ and $T_{\nicefrac{1}{2},\text{Te135}} = 0.06\,T_{\nicefrac{1}{2},\text{Xe135}}$), we can treat it as instantaneously decaying into iodine.
+
+Now, we can recognize ...
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+
+\textit{Text of problem 2}
+
+
+
+\section*{Problem 2 Solution}
+
+
+
+
+
+
+\end{document}
+
