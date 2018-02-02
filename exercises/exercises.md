@@ -4,11 +4,17 @@ This page will be updated with exercises from discussion as the semester progres
 
 ## Week 1
 
-Review of prerequisite material: radioactive decay, binding energy, cross section plots, differential equations.  
+Review of prerequisite material: radioactive decay, binding energy, cross section plots, differential equations  
 [Exercises](disc01_exercises.pdf) ([Solutions](disc01_solutions.pdf))
 
 ## Week 2
 
-Fundamentals: calculating enrichments, atom/weight percentages, and more complicated decay schemes as related to reactor power.  
+Fundamentals/Nuclear Physics: calculating enrichments, atom/weight percentages, and radioactive decay  
 [Concept question slides](../concepts/disc02_concepts.pdf)  
 [Exercises](disc02_exercises.pdf) ([Solutions](disc02_solutions.pdf))
+
+## Week 3
+
+Nuclear Physics: binding energies, the fission process, fissile/fissionable nuclei  
+[Concept question slides](../concepts/disc03_concepts.pdf)  
+[Exercises](disc03_exercises.pdf) ([Solutions](disc03_solutions.pdf))
