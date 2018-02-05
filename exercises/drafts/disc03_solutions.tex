@@ -19,6 +19,29 @@
 % Set path to figure image files
 \graphicspath{ {fig/} }
 
+\usepackage{tikz} % Allows the creation of diagrams
+	\usetikzlibrary{shapes.geometric, arrows}
+	\tikzstyle{forwardfn} = [rectangle, 
+					  minimum width=2cm, 
+					  minimum height=1.25cm,
+					  text centered, 
+					  draw=black, 
+					 ]
+	\tikzstyle{backwardfn} = [rectangle, 
+					      rounded corners,
+					      minimum width=2cm, 
+					      minimum height=1.5cm,
+					      text centered, 
+					      draw=white, 
+					     ]
+	\tikzstyle{placeholder} = [rectangle,
+					      minimum width=2cm,
+					      minimum height=1cm,
+					      draw=white,
+					      ]
+	\tikzstyle{arrow} = [thick,->,>=stealth]
+	\tikzstyle{farrow} = [ultra thick,->,>=stealth]
+
 % Use if statement to hide problem solutions
 \newif\ifeqns
 \eqnsfalse
@@ -55,10 +78,30 @@ A reactor is operating for a long time at some known power density $P_0$. Then, 
 
 We will create the following simple decay chain graphic, built from the information provided in the problem, to visualize the processes described in the problem.
 
-GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
-GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
-GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
-GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC GRAPHIC \\
+\begin{center}
+\begin{tikzpicture}[node distance=3.25cm]
+\node (blank) [placeholder]{};
+\node (fission) [forwardfn, align=center, right of =blank, xshift=2cm, yshift=0.75cm] {\large \textbf{Fission}};
+\node (tellurium135) [forwardfn, align=center, left of =blank] {\large$^{135}$Te};
+\node (iodine135) [forwardfn, align=center, below of =tellurium135, right of =tellurium135] {\large$^{135}$I};
+\node (xenon135) [forwardfn, align=center, below of =iodine135, right of =iodine135] {\large$^{135}$Xe};
+\node (xenon136) [placeholder, align=center, left of =xenon135, xshift=-0.5cm] {};
+\node (cesium135) [placeholder, align=center, below of =xenon135, right of =xenon135, xshift=-0.9cm, yshift=1cm]{};
+\node (yield) [backwardfn, align=center, right of =tellurium135, xshift=3.2cm, yshift=0cm,]{\large \textbf{6\%}};
+\node (beta-te-i) [backwardfn, align=center, right of =tellurium135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 19.0$ s};
+\node (beta-i-xe) [backwardfn, align=center, right of =iodine135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 6.6$ h};
+\node (beta-xe-cs) [backwardfn, align=center, right of =xenon135, xshift=-0.7cm, yshift=-1cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 9.2$ h};
+\node (abs-xe-cs) [backwardfn, align=center, below of =xenon136, xshift=1.6cm, yshift=2.7cm] {\large$\sigma_a \phi$};
+
+\draw [farrow] (fission) -- (tellurium135);
+\draw [farrow] (fission) -- (iodine135);
+\draw [arrow] (tellurium135) -- (iodine135);
+\draw [arrow] (iodine135) -- (xenon135);
+\draw [arrow] (xenon135) -- (cesium135);
+\draw [arrow] (xenon135) -- (xenon136);
+
+\end{tikzpicture}
+\end{center}
 
 Starting off, since this is a problem related to decay, we will start from the usual equation for changes in the number density of radionuclides. (This equation may be more familiar in terms of absolute quantity of a material,$N$, in atoms; $n$ is the number density, found by dividing $N$ by the volume containing the $N$ nuclei)
 \begin{equation}
@@ -99,7 +142,7 @@ To express $n_{\text{I}}$ in terms of $t$, we again use equation (\ref{general})
 \end{equation}
 We have ignored absorptive losses since the thermal absorption cross section for iodine is essentially zero. 
 
-The production of iodine due to fission can be calculated from the iodine-yield of the fission reaction. While this information is not provided, the combined yield, $y$, of iodine and tellurium \textit{is} given. Since the half-life of $^{135}$Te (19.0 s) is practically insignificant in comparison to the multi-hour half-lives of its daughters (to be exact, $T_{\nicefrac{1}{2},\text{Te135}} = 0.0008(T_{\nicefrac{1}{2},\text{I135}})$ and $T_{\nicefrac{1}{2},\text{Te135}} = 0.0006(T_{\nicefrac{1}{2},\text{Xe135}})$), we can treat it as instantaneously decaying into iodine. With this assumption, the production of iodine due to fission is just the fission rate density multiplied by the combined yield of iodine and tellurium. The fission rate density can be found by dividing the power density by the energy per fission, $Q_f$, so
+The production of iodine due to fission can be calculated from the iodine-yield of the fission reaction. While this information is not provided, the combined yield, $y$, of iodine and tellurium \textit{is} given. Since the half-life of $^{135}$Te (19.0 s) is practically insignificant in comparison to the multi-hour half-lives of its daughters (to be exact, $t_{\nicefrac{1}{2},\text{Te135}} = 0.0008(t_{\nicefrac{1}{2},\text{I135}})$ and $t_{\nicefrac{1}{2},\text{Te135}} = 0.0006(t_{\nicefrac{1}{2},\text{Xe135}})$), we can treat it as instantaneously decaying into iodine. With this assumption, the production of iodine due to fission is just the fission rate density multiplied by the combined yield of iodine and tellurium. The fission rate density can be found by dividing the power density by the energy per fission, $Q_f$, so
 $$ R_{\text{I,fission}} = y\frac{P}{Q_f} .$$
 The loss from the decay of iodine is just the activity of iodine,
 $$ \mathcal{A}_{\text{I}} = \lambda_{\text{I}}n_{\text{I}}. $$
