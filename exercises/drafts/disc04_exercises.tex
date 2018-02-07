@@ -1,0 +1,74 @@
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
+\textbf{Team Exercises \#4}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 1}
+
+A reactor contains 5\% (by atom) enriched uranium dioxide, which is 15\% of the entire core by volume.
+\begin{enumerate}[a)]
+\item Calculate the macroscopic cross section for this core if we were to treat it as a homogeneous volume. 
+\item If the reactor were a cube with a side length of 4 m and a beam of $10^{15}$ thermal neutrons were incident on one face of the cube, how many neutrons would we expect to make it through to the other side?
+\end{enumerate}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|c|c|c|}
+			\hline
+			Nucleus		& Thermal $\sigma_{\text{t}}$ \\
+			\hline
+			$^{1}$H		&  20.8 b 		\\
+			$^{16}$O	&  3.5 b 		\\
+			$^{235}$U	&  607.5 b 		\\
+			$^{238}$U	&  11.8 b 		\\
+			\hline
+			Compound	& $\rho$ 		\\
+			\hline
+			H$_2$O		& 1 g/cm$^3$	\\
+			UO$_2$		& 10.4 g/cm$^3$	\\
+			\hline
+	\end{tabular}
+	\label{tab:design-specs}
+\end{table}
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+
+A neutron beam with an intensity of $2 \times 10^{12}\text{ neutrons/(cm}^2{\cdot}\text{s)}$ is incident on an unknown shielding material and has a beam spot of 5 cm$^3$. The shielding material has a thickness of 10 cm.
+\begin{enumerate}[a)]
+\item On average, $3.0\times10^9$ neutrons/s make it through the shield uncollided. What is the macroscopic cross section of the shield material?
+\item What is the mean free path of a neutron in the shielding material?
+\item If a single beam pulse is 10 $\mu$s, how many collisions are expected to take place in the shielding material?
+\end{enumerate}
+
+
+
+\end{document}
+
