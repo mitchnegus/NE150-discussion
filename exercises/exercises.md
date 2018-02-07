@@ -27,4 +27,4 @@ Nuclear Physics: binding energies, the fission process, fissile/fissionable nucl
 
 ...  
 [Concept question slides](concepts/disc04_concepts.pdf)  
-[Exercises]()([Solutions]())
+[Exercises]() ([Solutions]())
