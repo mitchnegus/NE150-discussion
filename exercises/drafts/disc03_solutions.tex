@@ -21,13 +21,13 @@
 
 \usepackage{tikz} % Allows the creation of diagrams
 	\usetikzlibrary{shapes.geometric, arrows}
-	\tikzstyle{forwardfn} = [rectangle, 
+	\tikzstyle{isotope} = [rectangle, 
 					  minimum width=2cm, 
 					  minimum height=1.25cm,
 					  text centered, 
 					  draw=black, 
 					 ]
-	\tikzstyle{backwardfn} = [rectangle, 
+	\tikzstyle{decay} = [rectangle, 
 					      rounded corners,
 					      minimum width=2cm, 
 					      minimum height=1.5cm,
@@ -81,17 +81,17 @@ We will create the following simple decay chain graphic, built from the informat
 \begin{center}
 \begin{tikzpicture}[node distance=3.25cm]
 \node (blank) [placeholder]{};
-\node (fission) [forwardfn, align=center, right of =blank, xshift=2cm, yshift=0.75cm] {\large \textbf{Fission}};
-\node (tellurium135) [forwardfn, align=center, left of =blank] {\large$^{135}$Te};
-\node (iodine135) [forwardfn, align=center, below of =tellurium135, right of =tellurium135] {\large$^{135}$I};
-\node (xenon135) [forwardfn, align=center, below of =iodine135, right of =iodine135] {\large$^{135}$Xe};
+\node (fission) [isotope, align=center, right of =blank, xshift=2cm, yshift=0.75cm] {\large \textbf{Fission}};
+\node (tellurium135) [isotope, align=center, left of =blank] {\large$^{135}$Te};
+\node (iodine135) [isotope, align=center, below of =tellurium135, right of =tellurium135] {\large$^{135}$I};
+\node (xenon135) [isotope, align=center, below of =iodine135, right of =iodine135] {\large$^{135}$Xe};
 \node (xenon136) [placeholder, align=center, left of =xenon135, xshift=-0.5cm] {};
 \node (cesium135) [placeholder, align=center, below of =xenon135, right of =xenon135, xshift=-0.9cm, yshift=1cm]{};
-\node (yield) [backwardfn, align=center, right of =tellurium135, xshift=3.2cm, yshift=0cm,]{\large \textbf{6\%}};
-\node (beta-te-i) [backwardfn, align=center, right of =tellurium135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 19.0$ s};
-\node (beta-i-xe) [backwardfn, align=center, right of =iodine135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 6.6$ h};
-\node (beta-xe-cs) [backwardfn, align=center, right of =xenon135, xshift=-0.7cm, yshift=-1cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 9.2$ h};
-\node (abs-xe-cs) [backwardfn, align=center, below of =xenon136, xshift=1.6cm, yshift=2.7cm] {\large$\sigma_a \phi$};
+\node (yield) [decay, align=center, right of =tellurium135, xshift=3.2cm, yshift=0cm,]{\large \textbf{6\%}};
+\node (beta-te-i) [decay, align=center, right of =tellurium135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 19.0$ s};
+\node (beta-i-xe) [decay, align=center, right of =iodine135, xshift=-0.5cm, yshift=-1.2cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 6.6$ h};
+\node (beta-xe-cs) [decay, align=center, right of =xenon135, xshift=-0.7cm, yshift=-1cm] {\large$\beta^-$ \\ \footnotesize $t_{\nicefrac{1}{2}} = 9.2$ h};
+\node (abs-xe-cs) [decay, align=center, below of =xenon136, xshift=1.6cm, yshift=2.7cm] {\large$\sigma_a \phi$};
 
 \draw [farrow] (fission) -- (tellurium135);
 \draw [farrow] (fission) -- (iodine135);
