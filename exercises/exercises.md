@@ -27,4 +27,4 @@ Nuclear Physics: binding energies, the fission process, fissile/fissionable nucl
 
 Nuclear Physics: fissile/fissionable nuclei, macroscopic/microscopic cross sections, neutron mean free paths, attenuation of neutrons  
 [Concept question slides](concepts/disc04_concepts.pdf)  
-[Exercises](disc04_exercises.pdf) ([Solutions]())
+[Exercises](disc04_exercises.pdf) ([Solutions](disc04_solutions.pdf))
