@@ -1,0 +1,38 @@
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
+\textbf{Notes}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rate Independence of Absorption in $1/v$-absorbers} 
+
+The rate of absorption in a $1/v$-absorber with microscopic absorption cross section $\sigma_a$ is independent of the energy of the neutrons involved in the reaction. This should make some intuitive sense. Neutrons with greater energies are traveling faster and so will tend to collide in less time, but will also have lower cross sections and so will be less likely to be absorbed. 
+
+We can prove this independence more rigorously. We start by recalling the formula for a reaction rate, given energy dependent fluxes and cross sections. The total reaction rate is the product of the macr
+
+$$ R = \int_0^{\infty} \Sigma_a(E) \, \phi(E) \, dE $$
+\end{document}
