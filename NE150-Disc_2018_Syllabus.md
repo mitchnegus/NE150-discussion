@@ -9,9 +9,12 @@ Discussion:
 * Group 1 – Wednesday, 12:00-1:00pm, 88 Dwinelle Hall
 * Group 2 – Friday, 12:00-1:00pm, 31 Evans Hall
 
-Contact: negus@berkeley.edu
+Contact: <negus@berkeley.edu>
 
-Office Hours: Wednesday 10:30-11:30am, 1106 Etcheverry Hall  
+Office Hours: 
+
+* Monday, 12:00-1:00pm, 1106 Etcheverry Hall
+* Wednesday, 10:30-11:30am, 1106 Etcheverry Hall  
 
 Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](https://mitchnegus.github.io/NE150-discussion/)
 
