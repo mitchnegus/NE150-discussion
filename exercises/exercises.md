@@ -28,3 +28,9 @@ Nuclear Physics: binding energies, the fission process, fissile/fissionable nucl
 Nuclear Physics: fissile/fissionable nuclei, macroscopic/microscopic cross sections, neutron mean free paths, attenuation of neutrons  
 [Concept question slides](concepts/disc04_concepts.pdf)  
 [Exercises](disc04_exercises.pdf) ([Solutions](disc04_solutions.pdf))
+
+## Week 5
+
+Neutron interactions: rate independence of $1/v$ absorbers, Maxwell-Boltzmann probability distributions (not yet uploaded)  
+[Notes](../notes/disc05_notes.pdf)
+
