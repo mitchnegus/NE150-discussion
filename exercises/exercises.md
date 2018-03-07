@@ -29,8 +29,21 @@ Nuclear Physics: fissile/fissionable nuclei, macroscopic/microscopic cross secti
 [Concept question slides](concepts/disc04_concepts.pdf)  
 [Exercises](disc04_exercises.pdf) ([Solutions](disc04_solutions.pdf))
 
+
 ## Week 5
 
 Neutron interactions: rate independence of $1/v$ absorbers, Maxwell-Boltzmann probability distributions (not yet uploaded)  
 [Notes](../notes/disc05_notes.pdf)
 
+
+## Week 7
+
+Neutron Multiplication: the 4/6 factor formula and terms, the lifecycle of a neutron generation
+[Concept question slides](concepts/disc07_concepts.pdf)  
+
+
+## Week 8
+
+Monte Carlo: using DECF, MCNP inputs, execution and outputs
+[DECF walkthrough](../computing/decf_walkthrough.md)
+[MCNP walkthrough](../computing/mcnp_walkthrough.md)
