@@ -1,6 +1,6 @@
 # DECF Walkthrough
 
-Here are some simple instructions to get you up and running on the DECF machines. Once you have completed these instructions, move on to the [MCNP instructions]() for writing and running MCNP simulations.
+Here are some simple instructions to get you up and running on the DECF machines. Once you have completed these instructions, move on to the [MCNP instructions](mcnp_walkthrough.md) for writing and running MCNP simulations.
 
 1. #### Reset password
 	Go to the [DECF's account tools](https://www.decf.berkeley.edu/acct/) webpage. Follow the instrcutions to either _reset a forgotten password_, or _change your password_.
@@ -139,3 +139,6 @@ Other commands:
 * hidden files (`.file`)  
 * printenv  
 * screen
+
+---
+[MCNP Walkthrough >>](mcnp_walkthrough.md)
