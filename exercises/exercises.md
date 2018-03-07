@@ -32,7 +32,7 @@ Nuclear Physics: fissile/fissionable nuclei, macroscopic/microscopic cross secti
 
 ## Week 5
 
-Neutron interactions: rate independence of $1/v$ absorbers, Maxwell-Boltzmann probability distributions (not yet uploaded)  
+Neutron interactions: rate independence of $$1/v$$ absorbers, Maxwell-Boltzmann probability distributions (not yet uploaded)  
 [Notes](../notes/disc05_notes.pdf)
 
 
@@ -45,5 +45,6 @@ Neutron Multiplication: the 4/6 factor formula and terms, the lifecycle of a neu
 ## Week 8
 
 Monte Carlo: using DECF, MCNP inputs, execution and outputs  
+[Concept question slides](concepts/disc08_concepts.pdf)  
 [DECF walkthrough](../computing/decf_walkthrough.md)  
 [MCNP walkthrough](../computing/mcnp_walkthrough.md)
