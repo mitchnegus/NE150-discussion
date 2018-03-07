@@ -38,12 +38,12 @@ Neutron interactions: rate independence of $1/v$ absorbers, Maxwell-Boltzmann pr
 
 ## Week 7
 
-Neutron Multiplication: the 4/6 factor formula and terms, the lifecycle of a neutron generation
+Neutron Multiplication: the 4/6 factor formula and terms, the lifecycle of a neutron generation  
 [Concept question slides](concepts/disc07_concepts.pdf)  
 
 
 ## Week 8
 
-Monte Carlo: using DECF, MCNP inputs, execution and outputs
-[DECF walkthrough](../computing/decf_walkthrough.md)
+Monte Carlo: using DECF, MCNP inputs, execution and outputs  
+[DECF walkthrough](../computing/decf_walkthrough.md)  
 [MCNP walkthrough](../computing/mcnp_walkthrough.md)
