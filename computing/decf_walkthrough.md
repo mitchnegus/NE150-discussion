@@ -17,7 +17,7 @@ Here are some simple instructions to get you up and running on the DECF machines
 
 	**_Mac/Linux users_**
 	
-	* Open terminal (it is preinstalled; on Mac, look under 'Utilities')
+	* Open terminal (it is preinstalled; on Mac, look under _Utilities_)
 	* ssh into DECF 
 	
 		```
