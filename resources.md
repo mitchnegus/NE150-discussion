@@ -14,6 +14,7 @@
 #### NE 150 Components
 * DECF (1171 and 1111 Etcheverry): <http://www.decf.berkeley.edu/>
 * [DECF Walkthrough](computing/decf_walkthrough.md)
+* [MCNP Walkthrough](computing/mcnp_walkthrough.md)
 * [RSICC MCNP request info](computing/rsicc_instructions.md)
 
 #### External Resources
