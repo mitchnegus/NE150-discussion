@@ -1,6 +1,6 @@
 # MCNP Walkthrough
 
-Now that you can create and navigate directories, build and save text files, and check cluster availability, you can get started running MCNP simulations. (If you don't know what I'm talking about, go back and start with the [DECF walkthrough](decf_walkthrough.md).
+Now that you can create and navigate directories, build and save text files, and check cluster availability, you can get started running MCNP simulations. (If you don't know what I'm talking about, go back and start with the [DECF walkthrough](decf_walkthrough.md).)
 
 **Remember that you _cannot_ run MCNP on Kepler.**
 
