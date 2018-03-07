@@ -65,7 +65,7 @@ If you go to the bottom of the output file, you should see a table:
  ***********************************************************************************************************************
 ```
 
-The key parameter of interest here is the final result for $k_{\textit{eff}}$, shown here to be 0.30640. Our uranium cube is clearly not critical.
+The key parameter of interest here is the final result for $$k_{\textit{eff}}$$, shown here to be 0.30640. Our uranium cube is clearly not critical.
 
 ### Other important concepts
 
@@ -82,7 +82,7 @@ Some important things we will note are:
 
 ##### KCODE 
 
-The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $k_{\textit{eff}} = 1.0$, we skip 10 cycles before averaging $k_{\textit{eff}}$, and run a total of 35 cycles (25 are averaged). 
+The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $$k_{\textit{eff}} = 1.0$$, we skip 10 cycles before averaging $$k_{\textit{eff}}$$, and run a total of 35 cycles (25 are averaged). 
 
 
 ##### KSRC

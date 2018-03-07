@@ -104,7 +104,7 @@ Here are some simple instructions to get you up and running on the DECF machines
 	
 	Now, if we type `ls` we shouldn't see anything listed, but we can check that we are in the right place by typing `pwd`. We should see that we've moved into the location `/home5/ne150-##/ne150_mcnp`.
 	
-	The Unix command line uses special characters to indicate two special directories in relation to where you are currently located. First is `.`, which is a shortcut for whatever directory you are inside. `.` is equivalent to the output of the `pwd` command. The second special character is `..`, a special shortcut for the (parent) directory immediately above your current directory. To get back into this parent directory, just type
+	The Unix command line uses special characters to indicate two special directories in relation to where you are currently located. First is `.`, which is a shortcut for whatever directory you are inside. The `.` is equivalent to the output of the `pwd` command. The second special character is `..`, a special shortcut for the (parent) directory immediately above your current directory. To get back into this parent directory, just type
 	
 	```
 	cd ..
@@ -127,7 +127,7 @@ Here are some simple instructions to get you up and running on the DECF machines
 		
 1. #### Exit the DECF machines
 
-	Logging off the DECF computers is very straightforward. Just type `exit`, and you will sever the SSH connection.
+	Finally, when you are done, logging off the DECF computers is straightforward. Just type `exit`, and you will sever the SSH connection.
 
 
 Other commands:  
