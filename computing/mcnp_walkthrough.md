@@ -2,7 +2,7 @@
 
 Now that you can create and navigate directories, build and save text files, and check cluster availability, you can get started running MCNP simulations. (If you don't know what I'm talking about, go back and start with the [DECF walkthrough](decf_walkthrough.md).)
 
-**Remember that you _cannot_ run MCNP on Kepler.**
+**Remember that you _cannot_ rucn MCNP on Kepler.**
 
 ### MCNP Input Files
 First, we need to construct an MCNP input file. I will describe this more in-depth during discussion.
@@ -23,7 +23,7 @@ c Beginning of surface
 6 pz -2
 c End of surfaces
 
-M1 92235 1        $ pure uranium-235
+M1 92235 1        $ pure uranium-235 [ID ZAID Density]
 kcode 10000 1 10 50
 ksrc 0 0 0
 PRINT 50

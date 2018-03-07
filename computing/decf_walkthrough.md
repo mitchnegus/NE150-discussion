@@ -9,12 +9,13 @@ Here are some simple instructions to get you up and running on the DECF machines
 1. #### Connect to the DECF system  
 
 	You must log-in to the Kepler, the remote DECF computer, using SSH (secure shell) or an SSH client. How you do this depends on your operating system. In both examples, replace `ne150-##` with your unique DECF username. This can be found in the text file attachment I emailed you earlier in the semester.
-	##### _Windows users_
+	
+	**_Windows users_**
 
 	* Install Cygwin/Putty/Gitbash/Windows Bash  
 	* open a remote connection to DECF (`ne150-##@kepler.berkeley.edu`)
 
-	##### _Mac/Linux users_
+	**_Mac/Linux users_**
 	
 	* Open terminal (it is preinstalled; on Mac, look under 'Utilities')
 	* ssh into DECF 
