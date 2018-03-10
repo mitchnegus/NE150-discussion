@@ -16,7 +16,7 @@ Office Hours:
 
 Contact: <negus@berkeley.edu> 
 
-Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](https://mitchnegus.github.io/NE150-discussion/)
+Discussion section website: [https://mitchnegus.github.io/NE150-discussion/](index.md)
 
 ### Topics
 
