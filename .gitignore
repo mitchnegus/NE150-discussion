@@ -6,6 +6,14 @@ instructor
 *.xls*
 *.pptx
 
+# Ruby files for local website preview
+.ruby-version
+Gemfile
+Gemfile.lock
+
+# Local website files
+_site/
+
 # LaTeX files
 *.synctex.gz
 *.aux

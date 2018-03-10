@@ -7,7 +7,7 @@
 ## Nuclear Data
 
 * KAERI: <http://atom.kaeri.re.kr/>
-* U.S. Nuclear Data [<http://www.nndc.bnl.gov/>
+* U.S. Nuclear Data <http://www.nndc.bnl.gov/>
 
 ## Computing 
 
