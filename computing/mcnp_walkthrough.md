@@ -82,7 +82,7 @@ Some important things we will note are:
 
 ##### KCODE 
 
-The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $$k_{\textit{eff}} = 1.0$$, we skip 10 cycles before averaging $$k_{\textit{eff}}$$, and run a total of 35 cycles (25 are averaged). 
+The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $$k_{\textit{eff}} = 1.0$$, we skip 10 cycles before averaging $$k_{\textit{eff}}$$, and run a total of 50 cycles (40 are averaged). 
 
 
 ##### KSRC
