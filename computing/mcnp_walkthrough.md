@@ -2,7 +2,7 @@
 
 Now that you can create and navigate directories, build and save text files, and check cluster availability, you can get started running MCNP simulations. (If you don't know what I'm talking about, go back and start with the [DECF walkthrough](decf_walkthrough.md).)
 
-**Remember that you _cannot_ rucn MCNP on Kepler.**
+**Remember that you _cannot_ run MCNP on Kepler.**
 
 ### MCNP Input Files
 First, we need to construct an MCNP input file. I will describe this more in-depth during discussion.
@@ -35,7 +35,7 @@ PRINT 50
 MCNP uses a specific set of data libraries. These are not included in the set of files that your computer searches by default. Instead, you have to add them to this path. The command for this is 
 
 ```
-setenv DATAPATH /usr/local/mcnp5_lib-160  
+$ setenv DATAPATH /usr/local/mcnp5_lib-160  
 ```
 
 
@@ -44,7 +44,7 @@ setenv DATAPATH /usr/local/mcnp5_lib-160
 To run the MCNP input you have created, the command is 
 
 ```
-mcnp5 inp=cube.inp
+$ mcnp5 inp=cube.inp
 ```
 
 ### MCNP Output
