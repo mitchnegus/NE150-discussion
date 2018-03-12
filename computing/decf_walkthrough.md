@@ -18,10 +18,10 @@ Here are some simple instructions to get you up and running on the DECF machines
 	**_Mac/Linux users_**
 	
 	* Open terminal (it is preinstalled; on Mac, look under _Utilities_)
-	* ssh into DECF 
+	* ssh into DECF (replacing `##` with your number)
 	
 		```
-		ssh -X ne150-##@kepler.berkeley.edu
+		$ ssh -X ne150-##@kepler.berkeley.edu
 		```
 
 	If your login is successful, you should see a welcome message appear on the screen. It should look something like this:
@@ -82,7 +82,7 @@ Here are some simple instructions to get you up and running on the DECF machines
 	NE 150 - Spring 2018.
 	```
 	
-	Once the file is written save it (`<ctrl> O`) and exit (`<ctrl> X`). 
+	Once the file is written save it, by typing `^O` (for write-out), and exit, by typing `^X` (`^` is the `<ctrl>` key).
 
 
 1. #### Navigate through your files
@@ -123,7 +123,8 @@ Here are some simple instructions to get you up and running on the DECF machines
 	```
 	man ls
 	```
-	
+
+To exit the manual, type `q`.
 		
 1. #### Exit the DECF machines
 

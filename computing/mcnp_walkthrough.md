@@ -7,6 +7,8 @@ Now that you can create and navigate directories, build and save text files, and
 ### MCNP Input Files
 First, we need to construct an MCNP input file. I will describe this more in-depth during discussion.
 
+Below is an example file. I have named it `cube.inp`. You can create this file yourself by [opening it as a text file on DECF](decf_walkthrough.md/#create-a-text-file) (_i.e._  `nano cube.inp`).
+
 ```
 Simple Uranium-235 Cube
 c cell cards for uranium cube (64cm^3) simulation
