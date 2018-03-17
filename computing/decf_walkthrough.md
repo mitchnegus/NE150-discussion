@@ -106,7 +106,7 @@ Rather than having a user interface, like _My Computer_ on Windows, or _Finder_ 
 	NE 150 - Spring 2018.
 	```
 	
-	Once the file is written save it, by typing `^O` (for write-out), 	and exit, by typing `^X` (`^` is the `<ctrl>` key).
+	Once the file is written save it, by typing `^O` (for write-out), and exit, by typing `^X` (`^` is the `<ctrl>` key). If you forget these commands, nano conveniently displays them all at the bottom of the screen.
 
 1. ### Navigate the filesystem
 
