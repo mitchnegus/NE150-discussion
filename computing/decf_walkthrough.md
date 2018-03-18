@@ -1,16 +1,19 @@
 # DECF Walkthrough
 
-### Contents
+## Contents
 
-#### [DECF](#decf)
-[Reset password](#reset-password)  
-[Connect to DECF](#connect-to-decf)  
-[Check availabile computers](#check-available-computers)  
-[Exit DECF](#exit-decf)  
-#### [Command-line basics](#command-line-basics)
-[Create text files](#create-a-text-file)  
-[Navigate the filesystem](#navigate-the-filesystem)  
-[Get help](#get-help)
+[**DECF**](#decf)  
+
+* [Reset password](#reset-password)  
+* [Connect to DECF](#connect-to-decf)  
+* [Check availabile computers](#check-available-computers)  
+* [Exit DECF](#exit-decf)  
+
+[**Command-line basics**](#command-line-basics) 
+
+* [Create text files](#create-a-text-file)  
+* [Navigate the filesystem](#navigate-the-filesystem)  
+* [Get help](#get-help)
 
 ## DECF
 
@@ -26,7 +29,7 @@ Here are instructions to get you up and running on the DECF machines. Once you h
 	
 	**_Windows users_**
 
-	* Install Cygwin/Putty/Gitbash/Windows Bash  
+	* Install [Cygwin](https://www.cygwin.com/)/[Putty](https://www.putty.org/)/Gitbash/Windows Bash  
 	* open a remote connection to DECF (`ne150-##@kepler.berkeley.edu`)
 
 	**_Mac/Linux users_**

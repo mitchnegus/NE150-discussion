@@ -75,6 +75,7 @@ Some important things we will note are:
 
 * Comment cards (`c`) / signs (`$`)
 * Macrobodies
+* Why it's not always best to use fewer surfaces. (recalculation at each boundary)
 * Complement operator `#`
 * Elemental vs isotopic ZAID (8000 vs 8016)
 * Why are we skipping cycles in KCODE?
