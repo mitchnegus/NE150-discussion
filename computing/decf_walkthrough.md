@@ -213,12 +213,16 @@ You can use multiple `..` shortcuts separated by backslashes to go up through an
 	To exit the manual, type `q`.
 
 
-### Other commands:  
-* cp/cp -r  
-* rm/rm -rf  
-* ls -la  
-* clear  
-* echo
+### Other commands: 
+
+There are many other commands or concepts that you may find useful. I've included a list here; feel free to look them up.
+
+* Copy file: `cp`/`cp -r`
+* Remote copy: `scp`/`scp -r`
+* Delete file: `rm`/`rm -rf`  
+* List all: `ls -la` 
+* Clear screen: `clear ` 
+* Print to console: `echo`
 * variables
 * hidden files (`.file`)  
 * printenv  
