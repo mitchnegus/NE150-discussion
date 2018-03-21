@@ -158,16 +158,16 @@ The highest directory on your computer is always given as just a single backslas
 Let's take a look at an example directory tree that you might use for NE150:
 		
 ```
-|| - /
-||   - home/
-||     - ne150-##/
-||       - README.txt
-||       - mcnp-tests/
-||         - mcnp-test1.inp
-||         - mcnp-test2.inp
-||       - hw/
-||         - hw1.inp
-||         - hw2.inp
+/
+└── home/
+    └── ne150-##/
+        ├── README.txt
+        ├── mcnp-tests/
+        │   ├── mcnp-test1.inp
+        │   └── mcnp-test2.inp
+        └── hw/
+            ├── hw1.inp
+            └── hw2.inp
 ``` 
 
 In this example, each indent represents another subdirectory level, and we have added another subdirectory, `hw`, to join `mcnp-tests` inside our `ne150-##` directory. We can also see that several MCNP input files were added to the subdirectories of `ne150-##`.  One of these files, `mcnp-test1.inp` exists in the `mcnp-tests` directory, and so the absolute path to that file would be
