@@ -2,10 +2,12 @@
 
 Now that you can create and navigate directories, build and save text files, and check cluster availability, you can get started running MCNP simulations. (If you don't know what I'm talking about, go back and start with the [DECF walkthrough](decf_walkthrough.md).)
 
-**Remember that you _cannot_ rucn MCNP on Kepler.**
+**Remember that you _cannot_ run MCNP on Kepler.**
 
 ### MCNP Input Files
 First, we need to construct an MCNP input file. I will describe this more in-depth during discussion.
+
+Below is an example file. I have named it `cube.inp`. You can create this file yourself by [opening it as a text file on DECF](decf_walkthrough.md/#create-a-text-file) (_i.e._  `nano cube.inp`).
 
 ```
 Simple Uranium-235 Cube
@@ -35,7 +37,7 @@ PRINT 50
 MCNP uses a specific set of data libraries. These are not included in the set of files that your computer searches by default. Instead, you have to add them to this path. The command for this is 
 
 ```
-setenv DATAPATH /usr/local/mcnp5_lib-160  
+$ setenv DATAPATH /usr/local/mcnp5_lib-160  
 ```
 
 
@@ -44,7 +46,7 @@ setenv DATAPATH /usr/local/mcnp5_lib-160
 To run the MCNP input you have created, the command is 
 
 ```
-mcnp5 inp=cube.inp
+$ mcnp5 inp=cube.inp
 ```
 
 ### MCNP Output
@@ -65,7 +67,7 @@ If you go to the bottom of the output file, you should see a table:
  ***********************************************************************************************************************
 ```
 
-The key parameter of interest here is the final result for $k_{\textit{eff}}$, shown here to be 0.30640. Our uranium cube is clearly not critical.
+The key parameter of interest here is the final result for $$k_{\textit{eff}}$$, shown here to be 0.30640. Our uranium cube is clearly not critical.
 
 ### Other important concepts
 
@@ -73,6 +75,7 @@ Some important things we will note are:
 
 * Comment cards (`c`) / signs (`$`)
 * Macrobodies
+* Why it's not always best to use fewer surfaces. (recalculation at each boundary)
 * Complement operator `#`
 * Elemental vs isotopic ZAID (8000 vs 8016)
 * Why are we skipping cycles in KCODE?
@@ -82,7 +85,7 @@ Some important things we will note are:
 
 ##### KCODE 
 
-The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $k_{\textit{eff}} = 1.0$, we skip 10 cycles before averaging $k_{\textit{eff}}$, and run a total of 35 cycles (25 are averaged). 
+The `KCODE` card indicates that we are performing a criticality calculation. The source size is 10,000 particles, we estimate $$k_{\textit{eff}} = 1.0$$, we skip 10 cycles before averaging $$k_{\textit{eff}}$$, and run a total of 50 cycles (40 are averaged). 
 
 
 ##### KSRC

@@ -7,7 +7,7 @@
 ## Nuclear Data
 
 * KAERI: <http://atom.kaeri.re.kr/>
-* U.S. Nuclear Data [<http://www.nndc.bnl.gov/>
+* U.S. Nuclear Data <http://www.nndc.bnl.gov/>
 
 ## Computing 
 
@@ -15,6 +15,7 @@
 * DECF (1171 and 1111 Etcheverry): <http://www.decf.berkeley.edu/>
 * [DECF Walkthrough](computing/decf_walkthrough.md)
 * [MCNP Walkthrough](computing/mcnp_walkthrough.md)
+* [MCP Primer](http://bl831.als.lbl.gov/~mcfuser/publications/MCNP/MCNP_primer.pdf)
 * [RSICC MCNP request info](computing/rsicc_instructions.md)
 
 #### External Resources
