@@ -12,12 +12,16 @@
 [**Command-line basics**](#command-line-basics) 
 
 * [Create text files](#create-a-text-file)  
-* [Navigate the filesystem](#navigate-the-filesystem)  
+* [Navigate the filesystem](#navigate-the-filesystem)
+* [Manipulate files and directories](#manipulate-files-and-directories)
 * [Get help](#get-help)
+
+
 
 ## DECF
 
 Here are instructions to get you up and running on the DECF machines. Once you have logged in to DECF, you can continue on to the next section where you can find command-line basics. If you are already familiar with the command-line, you can move on to the [MCNP instructions](mcnp_walkthrough.md) for writing and running MCNP simulations.
+
 
 ### Reset password
 
@@ -76,13 +80,16 @@ MCNP and Serpent are not loaded on all of the DECF computers, just those in Etch
 	ssh <jive,mambo,foxtrot,minuet,etc.>` 
 	```
 		
-	Note that here you do not need either your username or the full web address. Since you are in the system already, this information is saved. Also, your files and folders are shared across all these machines (and Kepler), so you don't always have to choose the same one.
+	Ommit the angle brackets, and note that you do not need either your username or the full web address here. Since you are in the DECF system already, this information is saved. Also, your files and folders are shared across all these machines (and Kepler), so you don't always have to choose the same one.
 		
 	**Do not run MCNP/Serpent on Kepler.**
+		
 		
 ### Exit DECF
 
 Finally, when you are done, logging off the DECF computers is straightforward. Just type `exit`, and you will sever the SSH connection.
+
+
 
 ## Command-line basics
 
@@ -91,9 +98,10 @@ The command-line works very similar to an interactive programming language, and 
 
 Rather than having a user interface, like _My Computer_ on Windows, or _Finder_ on Mac, the command-line requires that you type in one or more commands as (usually) terse keywords, and then hitting enter to execute the command. In the following instructions, a `$` is the prompt symbol, and indicates that what follows needs to be entered into the terminal.
 		 
+		 
 ### Create text files
 
-Working on the command line often requires us to write notes, inputs, and/or scripts. These can all be created as simple text files. Let's create a README as a test. First, we open a text editor. If you are going to be working with the command line a whole bunch, I suggest you eventually get familiar with some of the more powerful editors–especially either _Vi_ or _Emacs_. You might find the learning curve for those a bit steep for the moment though, so I will use the much simpler and more lightweight _nano_. The command is 
+Working on the command line often requires us to write notes, inputs, and/or scripts. These can all be created as simple text files. Let's create a README as a test. First, we open a text editor. If you are going to be working with the command line a lot, I suggest you eventually get familiar with some of the more powerful editors–especially either _Vi_ or _Emacs_. You might find the learning curve for those a bit steep for the moment though, so I will use the much simpler and more lightweight _nano_. The command is 
 	
 ```
 $ nano README.txt
@@ -113,11 +121,12 @@ NE 150 - Spring 2018.
 	
 Once the file is written save it, by typing `^O` (for write-out), and exit, by typing `^X` (`^` is the `<ctrl>` key). If you forget these commands, nano conveniently displays them all at the bottom of the screen.
 
+
 ### Navigate the filesystem
 
 The structure on this system is very similar to your personal computer, with files and folders (technically called directories). You can **list** the contents of the directory you are in at the moment by typing `ls`. If you execute this command, you shouldn't see anything but the README, if you just created it in this directory. Also, you can always tell where in your file-system you are by typing `pwd`, which stands for **p**resent **w**orking **d**irectory. The console output should show something like `/home/ne150-##` (again, replacing `##` with your personal account number). This is the local computer address of your current location, called the **path**.
 	
-In the path, each term separated by a backslash is a separate directory, and you are located in the last one. (In this example, you are in your root directory, `ne150-##`, a subdirectory of `home5`.)
+In the path, each term separated by a backslash is a separate directory, and you are located in the last one. (In this example, you are in your root directory, `ne150-##`, a subdirectory of `home`.)
 		
 #### Directories and subdirectories
 	
@@ -126,7 +135,6 @@ You may create directories and subdirectories using the command `mkdir` (for "**
 ```
 $ mkdir mcnp-tests
 ```
-	
 		
 On your personal computer, you'd click this new folder, `mcnp-tests`, to go inside. On the command line, we use the command `cd` (for **c**hange **d**irectory). Create a new directory, `mcnp-tests` by running
 
@@ -135,14 +143,6 @@ $ cd mcnp-tests
 ```
 	
 Now, if we type `ls` we shouldn't see anything listed, but we can check that we are in the right place by typing `pwd`. We should see that we've moved into the location `/home/ne150-##/mcnp-tests`.
-	
-The Unix command line uses special characters to indicate two special directories in relation to where you are currently located. First is `.`, which is a shortcut for whatever directory you are inside at the moment. The `.` is equivalent to the output of the `pwd` command. The second special character is `..`, a special shortcut for the (parent) directory immediately above your current directory. To get back into this parent directory, just type
-	
-```
-$ cd ..
-```	
-
-Again, the command `pwd` should show that you are back in `/home/ne150-##`.
 
 
 You can change directories to anywhere on your system by specifying the entire path to that location (assuming the location exists and you have permission to access it).
@@ -150,7 +150,35 @@ You can change directories to anywhere on your system by specifying the entire p
 ```
 $ cd /some/other/place
 ```	
-		
+
+##### Special Path Shortcuts
+	
+The Unix command line uses special characters to indicate some special directories in relation to where you are currently located: `.`,`..`, `~`, and `-`.
+
+* **`.`** The single period is a shortcut for whatever directory you are inside at the moment. It is equivalent to the output of the `pwd` command. 
+* **`..`** The double period is a shortcut for the (parent) directory immediately above your current directory. To get back into this parent directory, just type
+	
+	```
+	$ cd ..
+	```	
+* **`~`** The tilde is a shortcut for your username's home directory. This is where you are placed immediately after login; on DECF this is the `/home/ne150-##` directory. The path to the `mcnp-tests` directory (explicitly `/home/ne-150-##/mcnp-tests`) can be abbreviated as `~/mcnp-tests`. While you could also use `~` to conveniently get back to your home directory with the command
+	
+	```
+	$ cd ~
+	```
+the home directory is such a commonly accessed location that `~` is the default location. Just typing 
+
+	```
+	$ cd
+	``` 
+will work too.
+* **`-`** The dash is a shortcut for the directory you were previously in. Typing 
+
+	```
+	$ cd -
+	```
+is like using a web-browser's back button, and will take you to your last location. Note that you cannot use the `-` in file or directory paths, just when changing directories.
+
 #### Absolute and relative paths
 	
 The highest directory on your computer is always given as just a single backslash, `/`. Any file or location on your computer can be specified in relation to this directory, and that path is the **absolute path**. In the example above, the directory `/` contains a directory named `some`, which contains a directory named `other`, which contains a directory named `place`. 
@@ -208,6 +236,10 @@ You can use multiple `..` shortcuts separated by backslashes to go up through an
 
 to specify that `/` is 3 directories above `mcnp-tests`. (Though in this specific instance, it is still much more efficient to just use the absolute path, `/`.)
 
+
+### Manipulate files and directories
+
+Once you are able to navigate your system, you should know how to manipulate files. Just 
 
 ### Get help
 
