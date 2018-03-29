@@ -1,4 +1,4 @@
-# DECF Walkthrough
+# DECF & Command-Line Tutorials
 
 ## Contents
 
@@ -14,6 +14,7 @@
 * [Create text files](#create-a-text-file)  
 * [Navigate the filesystem](#navigate-the-filesystem)
 * [Manipulate files and directories](#manipulate-files-and-directories)
+* [Command-line efficiency](#command-line-efficiency)
 * [Get help](#get-help)
 
 
@@ -94,20 +95,21 @@ Finally, when you are done, logging off the DECF computers is straightforward. J
 ## Command-line basics
 
 Once you have connected to the DECF machines, you will only be able to operate them via the command-line. As such, it is critical that you know how to use the command-line, at least at a very basic level. 
-The command-line works very similar to an interactive programming language, and is often called the shell. There are a variety of different shell types, and the DECF default is _tcsh_. You may also frequently hear of _Bash_, which is the default shell on macOS and Ubuntu, which on the whole is very similar to _tcsh_, except for some minor differences.
 
-Rather than having a user interface, like _My Computer_ on Windows, or _Finder_ on Mac, the command-line requires that you type in one or more commands as (usually) terse keywords, and then hitting enter to execute the command. In the following instructions, a `$` is the prompt symbol, and indicates that what follows needs to be entered into the terminal.
+The command-line works very similar to an interactive programming language, and is often called the shell. There are a variety of different shell types, and the shell type used by any given computer is dependent on the operating system. DECF, which runs a flavor of Linux, uses _tcsh_ as its default shell. You may also frequently hear of _Bash_, which is the default shell on macOS and Ubuntu. _Bash_ is on the whole very similar to _tcsh_, except for some minor differences. 
+
+Rather than having a user interface, like _My Computer_ on Windows, or _Finder_ on Mac, the command-line requires that you type in one or more commands as (usually) terse keywords, and then hitting enter to execute the command. In the following instructions, a `$` is the prompt symbol, and indicates that what follows needs to be entered into the terminal. Each `$` indicates a new command.
 		 
 		 
 ### Create text files
 
-Working on the command line often requires us to write notes, inputs, and/or scripts. These can all be created as simple text files. Let's create a README as a test. First, we open a text editor. If you are going to be working with the command line a lot, I suggest you eventually get familiar with some of the more powerful editors–especially either _Vi_ or _Emacs_. You might find the learning curve for those a bit steep for the moment though, so I will use the much simpler and more lightweight _nano_. The command is 
+Working on the command line often requires us to write notes, inputs, and/or scripts. These can all be created as simple text files. Let's create a README as a test. First, we open a text editor. If you are going to be working with the command line a lot, you should eventually get familiar with some of the more powerful editors–especially either _Vi_ or _Emacs_. You might find the learning curve for those a bit steep for the moment though, so this tutorial will use the simpler and more lightweight _nano_. The command to open the editor is just `nano`, which will open a blank text file. Following the command with a filename will open a file with that name. To create a README, type
 	
 ```
 $ nano README.txt
 ```
 	
-Since `README.txt` does not yet exist, this command will both create _and_ 	open the file. If `README.txt` did exist, the command would just open it in _nano_. Let's type something in this file: 
+Since `README.txt` does not yet exist, this command will both create _and_ 	open the file. If `README.txt` did exist, the command would just open it. Let's now type something in this file: 
 	
 (example)
 
@@ -194,8 +196,8 @@ Let's take a look at an example directory tree that you might use for NE150:
         │   ├── mcnp-test1.inp
         │   └── mcnp-test2.inp
         └── hw/
-            ├── hw1.inp
-            └── hw2.inp
+            ├── mcnp-hw1.inp
+            └── mcnp-hw2.inp
 ``` 
 
 In this example, each indent represents another subdirectory level, and we have added another subdirectory, `hw`, to join `mcnp-tests` inside our `ne150-##` directory. We can also see that several MCNP input files were added to the subdirectories of `ne150-##`.  One of these files, `mcnp-test1.inp` exists in the `mcnp-tests` directory, and so the absolute path to that file would be
@@ -222,10 +224,10 @@ Lastly, we can also specify relative paths using the directory shortcuts `.` and
 
 which just explicitly indicates that `mcnp-tests` is a subdirectory in the current directory (`ne150-##`). 
 	
-Along these same lines, we can reference a file using any and all parent directories of the current directory using the `..` shorthand. If we are in the `mcnp-tests` directory and want to give the path to `mcnp-hw.inp`, we need to go up one directory to `ne150-##` (given by shortcut `..`), and back down into `hw` to find it. The relative path is then	
+Along these same lines, we can reference a file using any and all parent directories of the current directory using the `..` shorthand. If we are in the `mcnp-tests` directory and want to give the path to `mcnp-hw1.inp`, we need to go up one directory to `ne150-##` (given by shortcut `..`), and back down into `hw` to find it. The relative path is then	
 	
 ```
-../hw/mcnp-hw.inp
+../hw/mcnp-hw1.inp
 ```
 
 You can use multiple `..` shortcuts separated by backslashes to go up through an arbitrary number of parent directories. As an example, if you wanted to reference the root directory `/` from the `mcnp-tests` directory, you could use the relative path
@@ -239,7 +241,96 @@ to specify that `/` is 3 directories above `mcnp-tests`. (Though in this specifi
 
 ### Manipulate files and directories
 
-Once you are able to navigate your system, you should know how to manipulate files. Just 
+Once you are able to navigate your system, you should also learn how to manipulate files. Just like you are able to copy, move, and delete files on your personal computer, you can use keywords to perform the same actions on the command-line. To demonstrate, we will reproduce the example directory structure described in the last section.
+
+#### Redirecting an echo
+
+Almost all programming languages include some form of print statement that prints an output to the screen. On the command line, the `echo` command "echoes" the command's input to the console. 
+
+```
+$ echo "Hello world"
+Hello world
+```
+
+In addition to opening and writing a file using a text editor, we can use an output redirect to send the output of any command to a file. Any command followed by a `>` and a filename will have its output redirected into the file, rather than the console. 
+
+```
+$ echo "Hello World" > helloworld.txt
+```
+
+Note that this redirect will overwrite the file if it exists, and create a new file if it does not. Frequently you may want to add text to the file, rather than overwrite it. The `>>` redirect will append output to the end of a file in this manner. Let's create a file that will eventually contain an MCNP input. We can change into the `mcnp-tests` directory and create the file `mcnp-test1.inp` by typing
+
+```
+$ cd mcnp-tests
+$ echo "Sample MCNP Input" >> mcnp-test1.inp
+```
+
+If you open the `mcnp-test1.inp` file, you should the statement you passed to the echo command. 
+
+#### Remove files
+
+Since we no longer need the `helloworld.txt` file, we can remove it using the `rm` command:
+
+```
+rm helloworld.txt
+```
+
+You can remove directories in the same way, however you must add the `-r` option to indicate that the shell should recursively delete the  directory and all of it's contents. (You must include the `-r` option even if the directory is empty.)
+
+#### Copy files
+
+You can copy this file using the `cp` command.
+
+```
+$ cp mcnp-test1.inp mcnp-test2.inp
+```
+
+This takes the file `mncp-test1.inp` and copies it as the file `mcnp-test2.inp`, leaving the original in-place.
+
+Next, we can create the `hw` directory by copying the `mcnp-test` directory. Like removing directories, we must include the recursive, `-r` option to copy directories. If we move up one directory, back into `ne150-##`, we can recursively copy the `mcnp-tests` directory into one we might use for homework inputs.
+
+```
+$ cd ..
+$ cp -r mcnp-tests hw
+```
+
+#### Move and rename files
+
+Both moving and renaming files is performed with the same command (you might consider renaming a file as just moving the file to a new location corresponding to the new name). The command syntax follows a similar pattern to copying files.
+
+If we change into the `hw` directory, we can rename the freshly copied `mcnp-test1.inp` and `mcnp-test2.inp` files:
+
+```
+$ cd hw
+$ mv mcnp-test1.inp mcnp-hw1.inp
+$ mv mcnp-test2.inp mcnp-hw2.inp
+```
+
+Unlike copying or removing files, you do not need the recursive `-r` option when moving or renaming directories.
+
+##### Moving/Copying Rules
+
+There are some subtle rules that are followed depending on what you give the copy/move commands as arguments.
+
+###### File to file:
+If the first argument (the object to be copied) is a file and the second argument (the destination) is a file, the file will be moved/copied into that file.
+###### File to directory:
+If the first argument is a file and the second argument is a directory, the file will be moved/copied into that directory but keep its name.
+###### *Directory to directory:
+If the first argument is a directory and the second argument is a directory, the first directory will be moved/copied into the second directory, provided the second directory already exists. If it doesn't already exist, the first directory will be moved/copied as the second directory. 
+
+
+### Command-line efficiency
+
+When working on the command line, there are tons of useful tricks you can use to work more efficiently. Here are some of the ones that you might find most useful: 
+
+* **`<Up/Down-Arrows>`** Cycle through your previous inputs and save yourself from repeatedly typing the same command.
+* **`clear`** Clear the console to have an uncluttered workspace.
+* **`<tab>`** Autocomplete the command you're typing, including commands and paths.
+* **`<ctrl> + a`** Move the cursor to the start of the line (like the "Home" key).
+* **`<ctrl> + e`** Move the cursor to the end of the line (like the "End" key).
+* **`<ctrl> + k`** Delete everything from the cursor to the end of the line.
+
 
 ### Get help
 
@@ -256,12 +347,8 @@ To exit the manual, type `q`.
 
 There are many other commands or concepts that you may find useful. I've included a list here; feel free to look them up.
 
-* Copy file: `cp`/`cp -r`
 * Remote copy: `scp`/`scp -r`
-* Delete file: `rm`/`rm -rf`  
 * List all: `ls -la` 
-* Clear screen: `clear ` 
-* Print to console: `echo`
 * variables
 * hidden files (`.file`)  
 * printenv  
