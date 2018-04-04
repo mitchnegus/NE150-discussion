@@ -17,6 +17,7 @@ _site/
 # LaTeX files
 *.synctex.gz
 *.aux
+*.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
