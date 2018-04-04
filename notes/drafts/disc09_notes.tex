@@ -33,7 +33,7 @@
           \begin{tabular}{|M {0.1cm} M{5.0cm} M{5.0cm} M{0.1cm}|}
           \hline
           & $k = \frac{P(t)}{L(t)}$ & $\Lambda = \frac{\ell}{k}$ &\\
-          & $\ell = \frac{1}{\Sigma_a \bar{v}}$ & &\\
+          & $\ell = \frac{1}{\Sigma_a \bar{v}}$ & $\rho = \frac{k-1}{k}$ &\\
           & $L(t) = \frac{n(t)}{\ell}$ &  &\\
           \hline 
           \end{tabular}}
@@ -105,9 +105,15 @@ Now that we've established this equation, however, we must next construct a set 
 $$ \frac{dC_i(t)}{dt} = \beta_i \nu \Sigma_f \bar{v} n(t) - \lambda_i C_i(t) $$
 The first term is the production, the product of the fraction of delayed neutrons coming from the precursor (assumed equivalent to the fraction of precursor produced by fission) and the fission rate. The second term is the loss, given by the activity of the precursor as it decays away. 
 
-If we rewrite both of these equations using $k$ and $\ell$, we have 
-$$ \frac{dn(t)}{dt} = \frac{(1-\beta)k - 1}{\ell}n(t) + \sum_i \lambda_i C_i(t) $$
-$$ \frac{dC_i(t)}{dt} = \beta_i \frac{k}{\ell} n(t) - \lambda_i C_i(t) .$$
+We can factor out the neutron population, absorption cross section, and average velocity (altogether the absorption rate) in the first equation and rewrite both of these equations using $k$ and $\ell$:
+\begin{align*}
+\frac{dn(t)}{dt}	&= \left((1-\beta)\frac{\nu\Sigma_f\bar{v}}{\Sigma_a\bar{v}} - 1\right)\Sigma_a \bar{v} n(t) + \sum_i \lambda_i C_i(t) \\
+					&= \left(\frac{(1-\beta)k - 1}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
+					&= \left(\frac{k - 1 -\beta k}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
+\frac{dn(t)}{dt}	&= \left(\frac{(k - 1)}{k}\frac{k}{\ell} - \beta\frac{k}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
+\frac{dn(t)}{dt}	&= \left(\frac{k - 1}{k} - \beta\right)\frac{k}{\ell}n(t) + \sum_i \lambda_i C_i(t) \\
+\frac{dC_i(t)}{dt} &= \beta_i \frac{k}{\ell} n(t) - \lambda_i C_i(t)
+\end{align*}
 
 In both equations, we have the ratio $\frac{k}{\ell}$. Let's invert this term and call it the mean generation time, $\Lambda$. 
 $$ \Lambda \equiv \frac{\ell}{k} $$
@@ -117,6 +123,12 @@ You might think of the mean generation time as the average time it takes for a n
 \item If $k=2$, then it takes an average of one neutron lifetime to produce two additional neutrons.
 \item If $k=1/2$, then it takes an average of two neutron lifetimes to produce one additional neutron.
 \end{itemize}
+We also can introduce a parameter called the reactivity, $\rho$, where
+$$ \rho \equiv \frac{k-1}{k} $$
+Introducing the mean generation time and reactivity into the point reactor kinetics equations gives them their final form:
+$$ \frac{dn(t)}{dt} = \frac{\rho-\beta}{\Lambda}n(t) + \sum_i \lambda_i C_i(t) $$
+$$ \frac{dC_i(t)}{dt} =  \frac{\beta_i}{\Lambda} n(t) - \lambda_i C_i(t) .$$
+
 
 \newpage
 \section*{The mean neutron lifetime}
