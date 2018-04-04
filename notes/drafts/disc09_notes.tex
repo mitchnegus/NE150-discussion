@@ -1,7 +1,7 @@
 \documentclass{report}
 % PACKAGES %
 \usepackage[english]{} % Sets the language
-\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage[margin=2cm,includefoot,footskip=50pt]{geometry} % Sets the margin size
 \usepackage{graphicx} % Enhanced package for including graphics/figures
 \usepackage{float} % Allows figures and tables to be floats
 \usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
@@ -14,10 +14,31 @@
 \usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
 \usepackage{booktabs,multirow,multirow} % Gives extra table functionality
 \usepackage{enumerate}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=RoyalBlue]{hyperref}
 \newcommand{\tab}{\-\hspace{1.5cm}}
 
 % Set path to figure image files
 \graphicspath{ {fig/} }
+
+\usepackage{array} % Package needed for fancyhdr formatting
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % Define a new centered column with variable width
+
+\usepackage{fancyhdr}
+%\usepackage[hmargin=2cm,top=4cm,headheight=65pt,footskip=65pt]{geometry}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[CE,CO,LE,LO,RE,RO]{} %% clear out all footers
+\fancyfoot[C]{ {\renewcommand{\arraystretch}{1.8} %<- line spacing
+          \begin{tabular}{|M {0.1cm} M{5.0cm} M{5.0cm} M{0.1cm}|}
+          \hline
+          & $k = \frac{P(t)}{L(t)}$ & $\Lambda = \frac{\ell}{k}$ &\\
+          & $\ell = \frac{1}{\Sigma_a \bar{v}}$ & &\\
+          & $L(t) = \frac{n(t)}{\ell}$ &  &\\
+          \hline 
+          \end{tabular}}
+}
+
 
 \begin{document}
 
@@ -27,61 +48,99 @@
 \end{center}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Rate Independence of Absorption in $1/v$-absorbers} 
-
-The rate of absorption in a $1/v$-absorber with microscopic absorption cross section $\sigma_a$ is independent of the energy of the neutrons involved in the reaction. This should make some intuitive sense. Neutrons with greater energies are traveling faster and so will tend to collide faster. At the same time, they also have lower cross sections (higher $v$, lower $\sigma = 1/v$) and so will be less likely to be absorbed. 
-
-We can prove this independence more rigorously. We start by recalling the formula for a reaction rate, given energy dependent fluxes and cross sections. The reaction rate is the product of the macroscopic cross section of the material and the neutron flux. Since both cross section and flux can vary with energy, we must integrate over all possible energies to get a total reaction rate.
-
-\begin{equation}
-\label{reactionrate}
-R = \int_0^{\infty} \Sigma_a(E) \, \phi(E) \, dE
-\end{equation}
-
-From this formula, we recall the definitions for both macroscopic cross section and flux. They are
-$$ \Sigma_a(E) = N \sigma_a(E) \qquad\text{and}\qquad \phi(E) = n(E) v(E) $$
-where $N$ is the number density of the absorbing material, $\sigma_a(E)$ is the microscopic absorption cross section of the material at energy $E$, $n(E)$ is the neutron number density at energy $E$, and $v(E)$ is the neutron speed given corresponding energy $E$. 
-
-For $1/v$-absorbers, we note that the absorption cross section can be described given as
-\begin{equation}
-\label{microXS}
-\sigma_a(E) = \frac{C}{\sqrt{E}}
-\end{equation}
-where $C$ is some constant of proportionality. Remembering that $E = \frac{1}{2}mv^2$, we can include the $\sqrt{\frac{m}{2}}$ factor in the constant $C$, and it becomes clear that indeed, $\sigma_a(E) \propto 1/v$. Now, we know that the $1/v$ behavior is dominant for low velocities and energies. In this case, let's write our constant $C$ in terms of one specific energy and the corresponding microscopic cross section. The choice of energy $E_0$ is arbitrary and so we will leave our formula in terms of the variable $E_0$ (frequently $E_0$ is chosen to be the thermal energy, $E_0 = 0.0253\text{ eV}$). In this case, we find
-$$ \sigma_a(E_0) = \frac{C}{\sqrt{E_0}} $$
-or
-$$ C = \sigma_a(E_0)\sqrt{E_0} $$
-Using this to replace $C$ in equation (\ref{microXS}), 
-$$ \sigma_a(E) = \sigma_a(E_0)\sqrt{\frac{E_0}{E}} $$
-Now that we have eliminated $C$, we can write this equation in terms of neutron speeds. If $E = \frac{1}{2}mv^2$ (and accordingly, $E_0 = \frac{1}{2}mv_0^2$), then
-\begin{align*}
-\sigma_a(E)	&= \sigma_a(E_0)\sqrt{\frac{\frac{1}{2}mv_0^2}{\frac{1}{2}mv^2}} \\
-			&= \sigma_a(E_0)\sqrt{\frac{v_0^2}{v^2}} \\
-			&= \sigma_a(E_0)\frac{v_0}{v}
-\end{align*}
-Explicitly noting the energy dependence of this velocity, the macroscopic cross section is
-$$ \Sigma_a(E) = N \sigma_a(E_0)\frac{v_0}{v(E)} $$
-We now return to our original equation for the reaction rate, equation (\ref{reactionrate}) and substitute in our explicit formulas for macroscopic cross section and flux.
-
-$$ R = \int_0^{\infty} N \sigma_a(E_0)\frac{v_0}{v(E)} \, n(E) v(E) \, dE $$
-
-In this equation, $N$, $\sigma_a(E_0)$, and $v_0$ are constants and can be brought outside of the integral, and the two instances of $v(E)$ cancel.
-
-$$ R = N \sigma_a(E_0) v_0 \int_0^{\infty} n(E) \, dE $$
-
-The integral of all number densities for all energies is just the total number of neutrons in the system, $n_0$. 
-$$ n_0 = \int_0^{\infty} n(E) \, dE .$$
-This formula can be put back in terms of macroscopic cross section and flux, both now constants ($\Sigma_a(E_0) = N \sigma_a(E_0)$ and $\phi_0 = v_0 n_0$).
-\begin{align*}
-R	&= N \sigma_a(E_0) v_0 n_0 \\
-	&= \Sigma_a(E_0) \phi_0 \\
-\end{align*}
-This formula is clearly independent of energy, and suggests that the reaction rate will be constant regardless of the chosen energy. Perhaps more surprisingly, for $1/v$-absorbers the reaction rate is the same whether the neutrons are all at one energy or covering a range of energies. Any increase in the neutron flux is compensated for exactly by a decrease in cross section, and vice-versa.
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Derivation of the Point Reactor Kinetics Equations} 
+
+\subsection*{Defining a critical system}
+We've already discussed that the multiplication factor of a system is given by the ratio of neutrons in one ``generation'' to the ratio of neutrons in the previous generation:
+$$ k = \frac{\text{neutrons in generation }i + 1}{\text{neutrons in generation }i}.$$
+At the same time, the multiplication factor can be expressed as the ratio of the number of neutrons produced to the number of neutrons lost by the system:
+$$ k(t) = \frac{P(t)}{L(t)}.$$
+The power of this formulation is that we can generalize the number of neutrons produced, $P(t)$, and lost, $L(t)$, as functions of time, so that we can describe time-dependent changes to our multiplication factor. Also, it is often easier to determine the rate of production and loss than actually counting all of the neutrons. (If $P$ and $L$ are expressed as rate densities---with units of neutrons produced/lost per volume---the equation for $k$ still holds.)
+
+Given this new formulation, we can take a closer look at the production and loss of neutrons in our system. The production factor, $P(t)$, is a function of the average neutron flux, $\bar{\phi}(t) = \bar{v}n(t)$, so that 
+$$ P(t) = \nu \Sigma_f \bar{v} n(t) .$$
+and the loss of neutrons (assuming no leakage from our system) is just the neutron absorption rate, 
+$$L(t) = \Sigma_a \bar{v}n(t) .$$
+This gets us to the answer we'd expect in a very simplistic case (somewhat like the two factor formula---no leakage, one energy group averages)
+$$ k = \frac{\nu \Sigma_f}{\Sigma_a} .$$
+
+Finally, we can start introducing our first simplification. If we remember from our previous discussion of neutron economies that the mean neutron lifetime is 
+$$ \ell \equiv \frac{1}{\Sigma_a \bar{v}}, $$
+\begin{center}(If you're not convinced of this, see \hyperref[meanlifetime]{the justification} at the end of these notes.)\end{center}
+and we can simplify our loss term to just 
+$$L(t) = \frac{n(t)}{\ell} .$$
+
+$^*$As we progress through these derivations there will be a number of substitutions that will be made to simplify our formulas. For ease of reference, the most relevant definitions and substitutions are included in the table at the bottom of each page.
+
+\newpage
+\subsection*{Changing neutron populations}
+While the multiplication factor $k$ is incredibly valuable in establishing a critical system, reactor operators are often interested in the actual populations of neutrons in a reactor. A critical system with few neutrons will produce far less power than a critical reactor with lots of neutrons---even though both systems have $k = 1$. 
+
+Instead, we can look at the rate of change of the neutron population over time. Like $k$, this rate also depends on the production and loss of neutrons just as we defined them in the last section:
+\begin{equation}\label{prodminusloss} \frac{dn(t)}{dt} = P(t) - L(t) \end{equation}
+Note that unlike $k$, we could use this equation to model systems without multiplication. We won't discuss those situations, instead looking at multiplying systems with and without sources, but the process for solving them is similar to (and less complicated than) what we will go through here.
+
+Looking at equation (\ref{prodminusloss}), expressing the righthand side as a function of the neutron population $n(t)$ would make finding a solution straightforward. We can do this using some substitutions from the last section. First, we factor out $L(t)$ on the right side,
+$$ \frac{dn(t)}{dt} = \left( \frac{P(t)}{L(t)} - 1 \right) L(t) $$
+and then use substitutions for the multiplication factor and neutron loss rate:
+$$ \frac{dn(t)}{dt} = \left( k - 1 \right) \frac{n(t)}{\ell} .$$
+Finally, we solve this equation for $n(t)$, finding that 
+$$ n(t) = n_0 e^{\frac{k-1}{\ell}t} .$$
+%Our simple multiplying system can be made more complicated (but still solvable) if we have a multiplying medium \textit{and} a source. The solution (not derived here) is then
+%$$ n(t) = \frac{S_0 \ell}{k-1}\left(e^{\frac{k-1}{\ell}t}-1\right) .$$
+
+\subsection*{Delayed neutrons}
+Up until now, our discussion has focused only on prompt neutrons---we've assumed that all neutrons are born at the moment of fission. This is not an entirely accurate picture of any fissioning system. In reality, a significant quantity of neutrons are produced from fission products decaying up to seconds after the initial fission event. 
+
+To incorporate delayed neutrons, we start by returning to equation (\ref{prodminusloss}), but now using the full definitions of $P(t)$ and $L(t)$ for multiplying systems.
+$$ \frac{dn(t)}{dt} = \nu\Sigma_f\bar{v}n(t) - \Sigma_a\bar{v}n(t) $$
+To correct this equation, we recognize that some fraction of the neutrons will be delayed ($\beta$) while the remaining fraction will be prompt ($1-\beta$). We reduce the fission term accordingly, and now add in a term corresponding to the delayed neutrons produced. For every fission product whose decay produces neutrons (called a delayed neutron precursor), the neutron production matches the activity of that isotope. We sum the contributions of all the delayed neutron precursors together,
+$$ \frac{dn(t)}{dt} = (1-\beta)\nu\Sigma_f\bar{v}n(t) - \Sigma_a\bar{v}n(t) + \sum_i \lambda_i C_i(t)$$
+Here, $C_i(t)$ is the time-dependent concentration of isotope $i$ with decay constant $\lambda_i$.
+
+Now that we've established this equation, however, we must next construct a set of equations to determine the concentrations of the delayed neutron precursors. Like the neutron population, the concentration of a precursor is determined by the production and losses of the precursor. For precursor $i$, this is
+$$ \frac{dC_i(t)}{dt} = \beta_i \nu \Sigma_f \bar{v} n(t) - \lambda_i C_i(t) $$
+The first term is the production, the product of the fraction of delayed neutrons coming from the precursor (assumed equivalent to the fraction of precursor produced by fission) and the fission rate. The second term is the loss, given by the activity of the precursor as it decays away. 
+
+If we rewrite both of these equations using $k$ and $\ell$, we have 
+$$ \frac{dn(t)}{dt} = \frac{(1-\beta)k - 1}{\ell}n(t) + \sum_i \lambda_i C_i(t) $$
+$$ \frac{dC_i(t)}{dt} = \beta_i \frac{k}{\ell} n(t) - \lambda_i C_i(t) .$$
+
+In both equations, we have the ratio $\frac{k}{\ell}$. Let's invert this term and call it the mean generation time, $\Lambda$. 
+$$ \Lambda \equiv \frac{\ell}{k} $$
+You might think of the mean generation time as the average time it takes for a new neutron to be born from fission. Consider how the mean generation time changes with $k$:
+\begin{itemize}
+\item If $k=1$, then it takes an average of one neutron lifetime to produce one additional neutron.
+\item If $k=2$, then it takes an average of one neutron lifetime to produce two additional neutrons.
+\item If $k=1/2$, then it takes an average of two neutron lifetimes to produce one additional neutron.
+\end{itemize}
+
+\newpage
+\section*{The mean neutron lifetime}
+\label{meanlifetime}
+If we define the lifetime of a neutron as $t$, then the mean lifetime is $\ell = \bar{t}$. The mean lifetime is calculated like all expectation values, as the product of the lifetime of a neutron and the probability of that lifetime, integrated over all possible neutron lifetimes.
+$$\bar{t} = \int_0^{\infty} t p(t) \, dt $$
+The probability that a particle travels distance $x$ in a material with macroscopic cross section $\Sigma_a$ is given as
+$$ p(x) \, dx = \Sigma_a e^{-\Sigma_a x} \, dx ,$$		 									
+and this formula can be used converted into a probability as a function of lifetime (rather than survival distance) noting that $x = vt$ and $dx = v\,dt$. 
+\begin{align*}
+p(t) \, dt	&= p(x) \, dx \\
+			&= \Sigma_a e^{-\Sigma_a x} \, dx \\
+			&= \Sigma_a v \, e^{-\Sigma_a vt} \, dt \\
+\end{align*}
+Substituting this into the integral above, and moving the constants out of the integral itself, we have
+$$ \bar{t} = \Sigma_a v\int_0^{\infty} t \, e^{-\Sigma_a vt} \, dt .$$
+The solution to integrals of this form can be found in a standard integral table:
+$$ \int x e^{ax} \, dx = \frac{e^{ax}}{a^2}(ax-1) .$$   
+With this, 
+\begin{align*}
+\bar{t}	&= \Sigma_a v \left[ \frac{e^{-\Sigma_a vt}}{\left(-\Sigma_a v\right)^2}(-\Sigma_a v t-1) \right]_0^{\infty} \\
+		&= \left[ \frac{e^{-\Sigma_a vt}}{\Sigma_a v}(-\Sigma_a v t-1) \right]_0^{\infty} \\
+\ell = \bar{t}	&= \frac{1}{\Sigma_a v} . \end{align*}
+
 
 
 \end{document}
