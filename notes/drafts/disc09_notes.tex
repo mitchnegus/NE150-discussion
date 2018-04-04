@@ -51,7 +51,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Derivation of the Point Reactor Kinetics Equations} 
+\section*{Derivation of the point reactor kinetics equations} 
 
 \subsection*{Defining a critical system}
 We've already discussed that the multiplication factor of a system is given by the ratio of neutrons in one ``generation'' to the ratio of neutrons in the previous generation:
@@ -110,7 +110,7 @@ We can factor out the neutron population, absorption cross section, and average 
 \frac{dn(t)}{dt}	&= \left((1-\beta)\frac{\nu\Sigma_f\bar{v}}{\Sigma_a\bar{v}} - 1\right)\Sigma_a \bar{v} n(t) + \sum_i \lambda_i C_i(t) \\
 					&= \left(\frac{(1-\beta)k - 1}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
 					&= \left(\frac{k - 1 -\beta k}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
-\frac{dn(t)}{dt}	&= \left(\frac{(k - 1)}{k}\frac{k}{\ell} - \beta\frac{k}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
+					&= \left(\frac{(k - 1)}{k}\frac{k}{\ell} - \beta\frac{k}{\ell}\right)n(t) + \sum_i \lambda_i C_i(t) \\
 \frac{dn(t)}{dt}	&= \left(\frac{k - 1}{k} - \beta\right)\frac{k}{\ell}n(t) + \sum_i \lambda_i C_i(t) \\
 \frac{dC_i(t)}{dt} &= \beta_i \frac{k}{\ell} n(t) - \lambda_i C_i(t)
 \end{align*}
@@ -128,6 +128,7 @@ $$ \rho \equiv \frac{k-1}{k} $$
 Introducing the mean generation time and reactivity into the point reactor kinetics equations gives them their final form:
 $$ \frac{dn(t)}{dt} = \frac{\rho-\beta}{\Lambda}n(t) + \sum_i \lambda_i C_i(t) $$
 $$ \frac{dC_i(t)}{dt} =  \frac{\beta_i}{\Lambda} n(t) - \lambda_i C_i(t) .$$
+
 
 
 \newpage
