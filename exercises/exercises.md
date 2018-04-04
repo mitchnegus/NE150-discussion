@@ -52,4 +52,12 @@ Monte Carlo: using DECF, MCNP inputs, execution and outputs
 
 ## Week 9
 
-Kinetics: the point-reactor kinetic equations, mean neutron generation times
+Kinetics: the point-reactor kinetic equations (PRKEs), neutron populations, mean neutron generation times, reactivity  
+[Notes](../notes/disc09_notes.pdf)
+
+
+## Week 10
+
+Kinetics/Diffusion: solving the PRKEs, the inhour equation, methodology of diffusion equation problems  
+[Notes - Inhour Equation (in progress)](../notes/disc10_notes-inhour.pdf)  
+[Notes - Diffusion (in progress)](../notes/disc10_notes-diffusion.pdf)

@@ -80,8 +80,38 @@ R	&= N \sigma_a(E_0) v_0 n_0 \\
 This formula is clearly independent of energy, and suggests that the reaction rate will be constant regardless of the chosen energy. Perhaps more surprisingly, for $1/v$-absorbers the reaction rate is the same whether the neutrons are all at one energy or covering a range of energies. Any increase in the neutron flux is compensated for exactly by a decrease in cross section, and vice-versa.
 
 
-
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{The Maxwell-Boltzmann Distribution for Neutrons} 
+
+The fundamental assumption behind the Maxwell-Boltzmann (MB) distribution is that particles behave like an ideal gas; specifically
+\begin{itemize}
+\item interactions are classical (collisions are instantaneous and elastic)
+\item the surrounding environment is thermal
+\end{itemize}
+While this might seem like a stretch given the various other processes we have discussed (fission, radiative capture, and inelastic scattering) the distribution still does a reasonable job approximating the thermal neutron energy distribution in reactors. Remember that reactors have significant quantities of moderator and so neutron-moderator collisions are generally elastic; if our reactor was pure uranium, this model would be far less effective.
+
+Still, we are making some big assumptions, so let's be very explicit. Modeling the thermal distribution of neutrons with the MB distribution assumes
+\begin{enumerate}
+\item no absorption
+\item no leakage
+\item no sources
+\end{enumerate}
+\-\\
+Now, we can look at the distribution itself. We won't derive it here, but using statistical physics it can be shown that
+$$ M(v) = 4 \pi v^2 \left(\frac{m}{2 \pi k_B T} \right)^{3/2} e^{\frac{-m v^2}{2 k_B T}} ,$$
+or equivalently (as a distribution for energies)
+$$ M(E) = 2\sqrt{\frac{E}{\pi}}\left(\frac{1}{kT}\right)^{3/2} e^{-\frac{E}{kT}} .$$
+\begin{figure}[h]
+\begin{multicols}{2}\begin{enumerate}[(a)]
+\item \includegraphics[width=8cm]{mb-dist_v.png}
+\item \includegraphics[width=8cm]{mb-dist_E.png}
+\end{enumerate}\end{multicols}
+\caption{(a) The MB distribution as a function of velocity, compared to (b) the distribution as a function of energy.}
+\end{figure}
+
+
+
 
 
 \end{document}
