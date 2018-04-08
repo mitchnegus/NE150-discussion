@@ -59,5 +59,5 @@ Kinetics: the point-reactor kinetic equations (PRKEs), neutron populations, mean
 ## Week 10
 
 Kinetics/Diffusion: solving the PRKEs, the inhour equation, methodology of diffusion equation problems (notes are currently handwritten and don't cover full solutions, but at least can give you a start on seeing the similarity in the methodologies)  
-[Notes - Inhour Equation](../notes/drafts/disc10_notes-inhour_handwritten.pdf)  
+[Notes - Inhour Equation](../notes/disc10_notes-inhour.pdf)  
 [Notes - Diffusion](../notes/drafts/disc10_notes-diffusion_handwritten.pdf)
