@@ -74,6 +74,14 @@ $$ s = \frac{1}{\ell(1-\rho_0)}\left(\rho_0 - \sum_{j=1}^6 \frac{\beta_j s}{(s+\
 Finally, we solve algebraically for $\rho_0$ to get the \textbf{inhour equation}:
 $$ \rho_0 = \frac{s\ell}{s\ell + 1} + \frac{1}{s\ell + 1}\sum_{j=1}^6 \frac{\beta_j s}{(s+\lambda_j)} .$$ 
 
+When this equation is plotted, we can see that there are 7 possible solutions ($s_1$, $s_2$, $s_3$, ... $s_7$) for any value of $\rho_0$. There are also 7 vertical asymptotes, each corresponding to a value of $s$ for which the denominator of any term in the 6-group inhour equation goes to zero (at $s=-\frac{1}{\ell}$ and $s=-\lambda_j$ for all $j$).
+%\includegraphic[width=10cm]{inhour-6group.jpg}
+
+If we only had 1 delayed neutron group rather than 6, our equation would be 
+$$ \rho_0 = \frac{s\ell}{s\ell + 1} + \frac{1}{s\ell + 1}\frac{\beta_j s}{(s+\lambda)} .$$ 
+There would now only be two possible solutions ($s_1$ and $s_2$) and two vertical asymptotes (at $s=-\frac{1}{\ell}$ and $s=-\lambda$).
+%\includegraphic[width=10cm]{inhour-1group.jpg}
+
 
 
 \end{document}
