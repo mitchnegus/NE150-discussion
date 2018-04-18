@@ -1,0 +1,80 @@
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm,includefoot,footskip=50pt]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=RoyalBlue]{hyperref}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
+\textbf{Notes}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TOPIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Solutions to the point reactor kinetics equations} 
+
+\subsection*{The inhour equation}
+
+The point reactor kinetics equations (PRKEs) are given by the following equations for the rate of change of both power, $P(t)$ and concentration of delayed neutron precursor group $j$, $C_j(t)$:
+\begin{align*}
+\frac{dP(t)}{dt}	&= \frac{\rho_0 - \beta}{\Lambda} P(t) + \sum_{j=1}^6 \lambda_j C_j(t) \\
+\frac{dC_j(t)}{dt}	&= \frac{\beta_j}{\Lambda} P(t) - \lambda_j C_j(t) , \qquad j= 1,2,3,...,6 
+\end{align*}
+We assume here that we are using the conventional 6 delayed neutron precursor groups, each with delayed neutron fraction $\beta_j$, average decay constant $\lambda_j$, a mean generation time $\Lambda \equiv \frac{\ell}{k}$, and constant reactivity insertion $\rho_0$.
+
+We had previously determined that the solutions of these equations are of the general form 
+$$ P(t) = Pe^{st} \quad\text{and}\quad C_j(t) = C_je^{st} ,$$
+where $P$ and $C_j$ are constant coefficients, and $s$ is also a constant related to the time-dependent nature of the system. Note that since we have mutliple differential equations there will be an equivalent number of possible solutions. For the 6 group case there are 7 equations---1 power equation and 6 precursor equations. The complete solution will therefore be a combination (superposition) of all 7 possible solutions.
+$$ P(t) = \sum_{i=1}^7 P_i \, e^{s_i t} $$
+Frequently, reactor operators are interested in knowing what the effect would be of introducing something into the system that would change how the neutron population (or power production) evolves over time. For example, inserting a control rod or adding a soluble absorber to the moderator would constitute a reactivity adjustment of this type. If we decide not to solve for the constant coefficients for power and precursor group concentration, $P$ and $C_j$, we can instead make some simplifications to learn about the reactor's behavior over time for some arbitary reactivity insertion. We will solve for this reactivity, $\rho_0$. 
+
+First, we start by plugging the general form of the solutions back into the original PRKEs, taking the derivative on the left side of each equation, and dividing out the factor of $e^{st}$ from every term gives the following:
+\begin{align*}
+sP	&= \frac{\rho_0 - \beta}{\Lambda} P + \sum_{j=1}^6 \lambda_j C_j \\
+sC_j	&= \frac{\beta_j}{\Lambda} P - \lambda_j C_j , \qquad j= 1,2,3,...,6
+\end{align*}
+Then, we take the second of these equations and solve for $C_j$ in terms of $P$,
+$$ C_j = \frac{\beta_j}{\Lambda(s+\lambda_j)}P ,$$
+and substitute this expression back into the first of these equations to eliminate the $C_j$ term altogether.
+$$ sP = \frac{\rho_0 - \beta}{\Lambda} P + \sum_{j=1}^6 \frac{\beta_j \lambda_j}{\Lambda(s+\lambda_j)}P $$ 
+At this point, we can eliminate $P$ by dividing it out of both sides of the equation, as well as factor out $\frac{1}{\Lambda}$ from all of the terms.
+$$ s = \frac{1}{\Lambda}\left(\rho_0 - \beta + \sum_{j=1}^6 \frac{\beta_j \lambda_j}{(s+\lambda_j)}\right) $$ 
+We note that $\beta = \sum_{j=1}^6 \beta_j$ and we can move the $\beta$ term into the summation as
+$$ s = \frac{1}{\Lambda}\left(\rho_0 + \sum_{j=1}^6 \frac{\beta_j \lambda_j}{(s+\lambda_j)}-\beta_j\right) $$ 
+or more simply
+$$ s = \frac{1}{\Lambda}\left(\rho_0 - \sum_{j=1}^6 \frac{\beta_j s}{(s+\lambda_j)}\right) .$$ 
+Here it is important to recall that $\Lambda \equiv \frac{\ell}{k}$, and $\rho_0 = \frac{k-1}{k}$. Since both terms are dependent on $k$ and our final goal is to solve for $\rho_0$, we will eliminate $\Lambda$. Manipulation of the reactivity formula leads us to the expression
+$$ k = \frac{1}{1-\rho_0} $$
+and so using this in our formula for the mean generation time gives
+$$ \Lambda = \ell(1-\rho_0) $$
+We substitute this in for $\Lambda$ in our equation for $s$ to get
+$$ s = \frac{1}{\ell(1-\rho_0)}\left(\rho_0 - \sum_{j=1}^6 \frac{\beta_j s}{(s+\lambda_j)}\right) .$$
+Finally, we solve algebraically for $\rho_0$ to get the \textbf{inhour equation}:
+$$ \rho_0 = \frac{s\ell}{s\ell + 1} + \frac{1}{s\ell + 1}\sum_{j=1}^6 \frac{\beta_j s}{(s+\lambda_j)} .$$ 
+
+
+
+\end{document}
+
