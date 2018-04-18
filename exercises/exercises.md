@@ -36,6 +36,11 @@ Neutron interactions: rate independence of $$1/v$$ absorbers, Maxwell-Boltzmann 
 [Notes](../notes/disc05_notes.pdf)
 
 
+## Week 6
+
+Review for first midterm (no Friday discussion)
+
+
 ## Week 7
 
 Neutron multiplication: the 4/6 factor formula and terms, the lifecycle of a neutron generation  
@@ -64,6 +69,11 @@ Kinetics/diffusion: PRKEs solutions, the inhour equation, methodology of diffusi
 
 
 ## Week 11
+
+Discussion of solutions to the second midterm.
+
+
+## Week 12
 
 Reflectors/multigroup diffusion: diffusion equation for reflected systems, diffusion equation with multiple energy groups  
 [Exercises](disc11_exercises.pdf) ([Solutions]() - not yet posted)
