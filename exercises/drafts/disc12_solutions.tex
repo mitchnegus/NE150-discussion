@@ -19,6 +19,11 @@
 % Set path to figure image files
 \graphicspath{ {fig/} }
 
+% Set some custom shortcuts
+\newcommand{\lap}{\nabla^2}
+\newcommand{\p}{\partial}
+
+
 \begin{document}
 
 \begin{center}
@@ -42,8 +47,37 @@ Consider a critical sphere composed of a homogeneous multiplying medium, and sur
 
 \begin{enumerate}[a)]
 
-\item 
 \item
+
+ In a symmetric spherical system, the one-speed, steady-state diffusion equation is
+$$ -D \lap \phi(r) + \Sigma_a (r) \phi(r) = \nu \Sigma_f(r) \phi(r) + S(r) .$$
+For any arbitrary function, $f(r,\theta,\varphi)$, the full Laplacian in spherical coordinates is
+$$ \lap f(r,\theta,\varphi) = \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p f}{\p r}\right) +  \frac{1}{r^2 \sin\theta} \frac{\p}{\p \theta}\left(\sin\theta \frac{\p f}{\p \theta}\right) + \frac{1}{r^2 \sin^2 \theta} \frac{\p^2 f}{\p \varphi^2} .$$
+If the function $f(r,\theta,\varphi)$ is radially symmetric then $f(r,\theta,\varphi) = f(r)$, and there will be no variation in the $\theta$ or $\varphi$ directions ($\frac{\p f}{\p \theta} = 0$ and $\frac{\p f}{\p \varphi} = 0$).  The second and third terms vanish, and
+$$ \lap f(r) = \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p f}{\p r}\right) .$$
+We substitute this back into our one-speed, steady-state diffusion equation, using $\phi(r)$ instead of $f(r)$.
+$$ -D \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_a (r) \phi(r) = \nu \Sigma_f(r) \phi(r) + S(r) .$$
+Finally, we recognize that our problem has two regions. There is no external source in either, so $S(r) = 0$. Since the regions are homogeneous, the diffusion coefficients and cross sections are constant in each: $D_C$, $\Sigma_{a,C}$, $\nu$, and $\Sigma_f$ in the core; $D_R$ and $\Sigma_{a,R}$ in the reflector. We will define the outer radius of the core as $a$, and the outer radius of the reflector as $\frac{3a}{2}$. Then, our diffusion equations for both regions are:
+$$ -D_C \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a,C} \phi(r) = \nu \Sigma_f \phi(r), \quad 0 < r < a \quad\text{(core)} $$
+$$ -D_R \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a,R}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)}.$$
+For our final solution, we will make two more substitutions, $\kappa_C^2 = \frac{\nu\Sigma_f - \Sigma_{a,C}}{D_C}$ and $L_R^2 = \frac{D_R}{\Sigma_{a,R}}$, to get
+$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) - \kappa_C^2 \phi(r) = 0, \quad 0 < r < a \quad\text{(core)} $$
+$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) - \frac{1}{L_R^2}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)} .$$
+There are also four boundary conditions that accompany these equations. A vacuum boundary condition (where we will use the extrapolated distance $d$ to indicate where the flux goes to zero), a finiteness condition, and two interface conditions (both continuous current and flux at the boundary). 
+\begin{align*}
+&(1)& \phi_R\left(\frac{3a}{2}+d\right) &= 0 	& &\text{(vacuum)} \\
+&(2)& \phi(r) &< \infty  					& &\text{(finiteness)} \\
+&(3)& J_C(a) &= J_R(a)						& &\text{(continuous current)} \\
+&(4)& \phi_C(a) &= \phi_R(a)				& &\text{(continuous flux)}
+\end{align*}
+
+\item
+
+Since the diffusion equation takes a different form in each region, the solutions describing the flux shapes in those regions are also different. In the core, the flux has the functional form
+$$ \phi_C(r) = \frac{A_C}{r} \sin\left(\kappa_C r\right) + \frac{B_C}{r} \cos\left(\kappa_C r\right) , \quad 0 < r < a,$$
+and in the reflector,
+$$ \phi_R(r) = \frac{A_R}{r} e^{-r/L_R} + \frac{B_R}{r} e^{r/L_R}, \quad\quad\quad a < r < \frac{3a}{2} .$$
+The second term in the flux solution for the core goes to infinity as $r$ goes to zero ($\frac{1}{r} \rightarrow \infty$ and $\cos(\kappa r) \rightarrow 1$). For the finiteness condition to be satisfied, we must set $B_C = 0$. 
 \item
 
 \end{enumerate}
