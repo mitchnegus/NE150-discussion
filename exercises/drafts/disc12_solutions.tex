@@ -77,7 +77,24 @@ Since the diffusion equation takes a different form in each region, the solution
 $$ \phi_C(r) = \frac{A_C}{r} \sin\left(\kappa_C r\right) + \frac{B_C}{r} \cos\left(\kappa_C r\right) , \quad 0 < r < a,$$
 and in the reflector,
 $$ \phi_R(r) = \frac{A_R}{r} e^{-r/L_R} + \frac{B_R}{r} e^{r/L_R}, \quad\quad\quad a < r < \frac{3a}{2} .$$
-The second term in the flux solution for the core goes to infinity as $r$ goes to zero ($\frac{1}{r} \rightarrow \infty$ and $\cos(\kappa r) \rightarrow 1$). For the finiteness condition to be satisfied, we must set $B_C = 0$. 
+Imposing our first vacuum boundary condition,
+\begin{align*}
+\phi_R\left(\frac{3a}{2}+d\right) = 0 	&= \frac{A_R}{\left(\frac{3a}{2}+d\right)} e^{-\left(\frac{3a}{2}+d\right)/L_R} + \frac{B_R}{\left(\frac{3a}{2}+d\right)} e^{\left(\frac{3a}{2}+d\right)/L_R} \\
+										&= A_R e^{-2\left(\frac{3a}{2}+d\right)/L_R} + B_R .
+\end{align*}
+We can solve this for $B_R$ in terms of $A_R$:
+$$ B_R = -A_R e^{-(3a+2d)/L_R} $$
+Considering the second boundary condition, we notice that the second term in the flux solution for the core goes to infinity as $r$ goes to zero ($\frac{1}{r} \rightarrow \infty$ and $\cos(\kappa r) \rightarrow 1$). For the finiteness condition to be satisfied, we must set $B_C = 0$.
+
+From these two boundary conditions, our flux shapes simplify to
+$$ \phi_C(r) = \frac{A_C}{r} \sin\left(\kappa_C r\right) , \quad 0 < r < a,$$
+$$ \phi_R(r) = \frac{A_R}{r}\left(e^{-r/L_R} - e^{-(3a+2d)/L_R} e^{r/L_R}\right), \quad\quad\quad a < r < \frac{3a}{2} .$$
+We use these simpler equations in our second two boundary conditions, noting that the current continuity condition could be equivalently written as 
+$$ -D_C\frac{d}{dr}\phi_C(a) = -D_R\frac{d}{dr}\phi_R(a) $$.
+Then we have 
+$$ -D_C\frac{d}{dr}\left(\frac{A_C}{r} \sin\left(\kappa_C r\right)\right)\bigg|_{r=a} = -D_R\frac{d}{dr}\left(\frac{A_R}{r}\left(e^{-r/L_R} - e^{-(3a+2d)/L_R} e^{r/L_R}\right)\right)\bigg|_{r=a} $$
+$$ D_C\left[\frac{A_C}{a} \kappa_C\cos\left(\kappa_C a\right) - \frac{A_C}{a^2} \sin\left(\kappa_C a\right)\right] = D_R\left[\frac{A_R}{rL_R}\left(-e^{-r/L_R} - e^{-(3a+2d)/L_R} e^{r/L_R}\right) + \left(e^{-r/L_R} - e^{-(3a+2d)/L_R} e^{r/L_R}\right)\left(\frac{A_R}{r^2}\right)\right] $$.
+
 \item
 
 \end{enumerate}
