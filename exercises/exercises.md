@@ -76,4 +76,10 @@ Discussion of solutions to the second midterm.
 ## Week 12
 
 Reflectors/multigroup diffusion: diffusion equation for reflected systems, diffusion equation with multiple energy groups  
-[Exercises](disc12_exercises.pdf) ([Solutions]() - not yet posted)
+[Exercises](disc12_exercises.pdf) ([Solutions](drafts/disc12_solutions_handwritten.pdf)- more in-depth solutions to come)
+
+
+## Week 13
+
+Neutron poisons: excess reactivity, xenon poisoning (and xenon-triggered deadtime), trends in fission product poison concentrations
+[Exercises](disc13_exercises.pdf) ([Solutions]() - not yet posted)
