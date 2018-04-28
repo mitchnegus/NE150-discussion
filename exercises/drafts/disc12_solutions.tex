@@ -201,11 +201,11 @@ Now we begin to impose the assumptions of the system. First, fission only produc
 -D \nabla^2 \phi_2(r) + \Sigma_{t,2} \phi_2(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 2}\phi_{g'}(r) \\
 -D \nabla^2 \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 3}\phi_{g'}(r) 
 \end{align*}
-There is no upscattering, so group 2 can only inscatter (scatter back into group 2) or scatter into group 3. Group 3 can only inscatter. These assumptions mean $\Sigma_{s,2 \rightarrow 1} = 0$, $\Sigma_{s,3 \rightarrow 1} = 0$, and $\Sigma_{s,3 \rightarrow 2} = 0$, and our equations (which we now right out explicitly) simplify further:
+There is no upscattering---group 2 can only inscatter (scatter back into group 2) or scatter into group 3; group 3 can only inscatter. The groups are directly coupled, so group 1 can only scatter into group 2. These assumptions mean $\Sigma_{s,1 \rightarrow 3} = 0$, $\Sigma_{s,2 \rightarrow 1} = 0$, $\Sigma_{s,3 \rightarrow 1} = 0$, and $\Sigma_{s,3 \rightarrow 2} = 0$, and our equations (which we now right out explicitly) simplify further:
 \begin{align*}
 -D \nabla^2 \phi_1(r) + \Sigma_{t,1} \phi_1(r) &= \Sigma_{s,1 \rightarrow 1}\phi_1(r) + \chi_1 \nu \Sigma_{f,3}\phi_{3}(r) \\
 -D \nabla^2 \phi_2(r) + \Sigma_{t,2} \phi_2(r) &= \Sigma_{s,1 \rightarrow 2}\phi_1(r) +\Sigma_{s,2 \rightarrow 2}\phi_2(r) \\
--D \nabla^2 \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \Sigma_{s,1 \rightarrow 3}\phi_{1}(r) + \Sigma_{s,2 \rightarrow 3}\phi_{2}(r) + \Sigma_{s,3 \rightarrow 3}\phi_{3}(r).\\
+-D \nabla^2 \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \Sigma_{s,2 \rightarrow 3}\phi_{2}(r) + \Sigma_{s,3 \rightarrow 3}\phi_{3}(r).\\
 \end{align*}
 
 \item
@@ -214,14 +214,14 @@ To form a matrix equation, we will start by writing the multigroup equations sug
 \begin{align*}
 \left(-D \nabla^2 + \Sigma_{t,1} - \Sigma_{s,1 \rightarrow 1}\right)&\phi_1(r) && && &&= \chi_1 \nu \Sigma_{f,3}\phi_{3}(r) \\
 -\Sigma_{s,1 \rightarrow 2}&\phi_1(r) &+ \left(-D \nabla^2 + \Sigma_{t,2} - \Sigma_{s,2 \rightarrow 2}\right)&\phi_2(r) && &&= 0 \\
--\Sigma_{s,1 \rightarrow 3}&\phi_{1}(r) &- \Sigma_{s,2 \rightarrow 3}&\phi_{2}(r) &+ \left(-D \nabla^2 + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}\right)&\phi_{3}(r) &&= 0 
+&&- \Sigma_{s,2 \rightarrow 3}&\phi_{2}(r) &+ \left(-D \nabla^2 + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}\right)&\phi_{3}(r) &&= 0 
 \end{align*}
 In this form, we can more easily see that each term multiplying a flux could be an entry in a 
 matrix, with the matrix equation being given by
 $$\begin{bmatrix}
 -D \nabla^2 + \Sigma_{t,1} - \Sigma_{s,1 \rightarrow 1} & 0 & 0 \\
 -\Sigma_{s,1 \rightarrow 2} & -D \nabla^2 + \Sigma_{t,2} - \Sigma_{s,2 \rightarrow 2} & 0 & \\
--\Sigma_{s,1 \rightarrow 3} & - \Sigma_{s,2 \rightarrow 3} & -D \nabla^2 + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}
+0 & - \Sigma_{s,2 \rightarrow 3} & -D \nabla^2 + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}
 \end{bmatrix}\begin{bmatrix}
 \phi_1 \\
 \phi_2 \\
