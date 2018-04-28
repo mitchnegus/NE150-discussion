@@ -76,4 +76,4 @@ Discussion of solutions to the second midterm.
 ## Week 12
 
 Reflectors/multigroup diffusion: diffusion equation for reflected systems, diffusion equation with multiple energy groups  
-[Exercises](disc11_exercises.pdf) ([Solutions]() - not yet posted)
+[Exercises](disc12_exercises.pdf) ([Solutions](disc12_solutions.pdf))
