@@ -82,4 +82,4 @@ Reflectors/multigroup diffusion: diffusion equation for reflected systems, diffu
 ## Week 13
 
 Neutron poisons: excess reactivity, xenon poisoning (and xenon-triggered deadtime), trends in fission product poison concentrations  
-[Exercises](drafts/exercises13.pdf) ([Solutions]() - not yet posted)
+[Exercises](disc13_exercises.pdf) ([Solutions]() - not yet posted)
