@@ -1,0 +1,38 @@
+PWR Single Pin
+1 1 -10.41 -1 -10 20        tmp=7.76E-08 imp:n=1 $FUEL (#ID #MAT Surfaces TEMP import 1 for neutron)
+4 4 -0.7   -5 6 -7 8 -10 20 tmp=5.17E-08 imp:n=1 $WATER (Add: vol=… volume of the cells!)
+5 0         5:-6:7:-8:10:-20             imp:n=0 $EXTERNAL (neutron killed)
+
+c Fuel Rod Dimension
+1   cz  0.41 $Pellet Radius
+c  Unit Cell , Basic Lattice Cell
+*5  px  0.57
+*6  px -0.57
+*7  py  0.57
+*8  py -0.57
+c Axial Limits
+*10 pz  150.0
+*20 pz -150.0
+
+m1    8016.78c 2.0  $Fuel UO2 (m#MAT isotope.library ratio)
+     92235.63c 0.15 $Fuel UO2 (enrichment 15%)
+     92238.63c 0.85 $Fuel UO2
+c Water
+m4    1001.78c 2
+      8016.78c 1  
+mt4   lwtr.04t (mt#MAT thermal correction)
+c ----------Tallies -----
+fc4 Fflux in fuel , clad, water
+f4:n     1  4        $flux in material 1 and 4 
+e4:n     1e-6 1. 20. $energy bins (here only fast and thermal)
+fc14 Reaction rates in the fuel and its components
+f14:n    1
+fm14     (1  1 (-2) (-6))
+fc34 Absorption rate in water
+f34:n    4
+fm34     1  4  (-2) 
+c -----------------
+kcode     1000 1.00 50 250  $#particles keff guess cycles and particles skipped
+ksrc      0. 0. 0.          $location of the source 
+print
+mode n $use neutrons
