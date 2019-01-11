@@ -1,23 +1,5 @@
 \documentclass{report}
-% PACKAGES %
-\usepackage[english]{} % Sets the language
-\usepackage[margin=2cm]{geometry} % Sets the margin size
-\usepackage{graphicx} % Enhanced package for including graphics/figures
-\usepackage{float} % Allows figures and tables to be floats
-\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
-\usepackage{amssymb} % AMS symbols package
-\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
-\usepackage{verbatim} % Allows you to include code snippets
-\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
-\usepackage{parskip} % Allows you alter the spacing between paragraphs
-\usepackage{multicol} % Allows text division into multiple columns
-\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
-\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
-\usepackage{enumerate}
-\newcommand{\tab}{\-\hspace{1.5cm}}
-
-% Set path to figure image files
-\graphicspath{ {fig/} }
+\input{preamble}
 
 \begin{document}
 
@@ -90,7 +72,7 @@ $$ n_i = \frac{\rho_i N_A}{M_i} .$$
 For our two compounds, UO$_2$ and H$_2$O these number densities are
 $$ n_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} N_A}{M_{\text{UO}_2}} \qquad\text{and}\qquad n_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} N_A}{M_{\text{H}_2\text{O}}} .$$
 Before moving on to finding the microscopic cross sections, we can note that the molar mass of the compounds can be broken into the sum of the molar masses of their constituents according to their fraction in the compound.
-$$ n_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad n_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} N_A}{2M_{\text{H}} + M_\text{O}} .$$
+$$ n_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad n_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} N_A}{2M_{\text{H}} + M_{\text{O}}} .$$
 \-\\
 
 Next, we look at microscopic cross sections. The microscopic cross section of a compound is given by the sum of the microscopic cross sections of it's elemental components. The complete microscopic cross section for water can be found using this fact.
@@ -105,7 +87,7 @@ where $f_{i}$ is the atomic fraction of material $i$ in the compound (for uraniu
 \-\\
 
 Combining these number densities and macroscopic cross sections, we can expand and rewrite the macroscopic cross sections described by equation (\ref{macroXSi}) as
-$$ \Sigma_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} \left( f_{\text{U}5} \sigma_{\text{U}5} + f_{\text{U}8} \sigma_{\text{U}8}  + 2\sigma_{\text{O}}\right) N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad \Sigma_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} \left(2\sigma_{\text{H}} + \sigma_{\text{O}}\right) N_A}{2M_{\text{H}} + M_\text{O}} $$
+%$$ \Sigma_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} \left( f_{\text{U}5} \sigma_{\text{U}5} + f_{\text{U}8} \sigma_{\text{U}8}  + 2\sigma_{\text{O}}\right) N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad \Sigma_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} \left(2\sigma_{\text{H}} + \sigma_{\text{O}}\right) N_A}{2M_{\text{H}} + M_\text{O}} $$
 Now we can substitute the given values. 
 $$ \Sigma_{\text{UO}_2} = \frac{\left(10.4\text{ g/cm}^3\right) \left(0.05(607.5\text{ b}) + 0.95(11.8\text{ b})  + 2(3.5\text{ b})\right)\left(6.022\times10^{23}\text{ mol}^{-1}\right)}{0.05(235.044\text{ g/mol}) + 0.95(238.050\text{ g/mol}) + 2(15.995\text{ g/mol})} $$
 $$ \Sigma_{\text{UO}_2} = 112.7\text{ m}^{-1} $$
