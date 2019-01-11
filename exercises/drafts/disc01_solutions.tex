@@ -60,9 +60,13 @@ the activities (in Ci) of $^{233}$Th and $^{233}$Pa after 48 hours of storage?
 
 \section*{Problem 1 Solution}
 
+
 For all parts of this problem, let $R$ be the rate of neutron capture by 1 g of $^{232}$Th, $2.0 \times 10^{11} \;\text{s}^{-1}$.\\
 
-\subsection*{\textit{a.})}
+\begin{enumerate}[a)]
+
+\item
+
 First, convert all half-lives and irradiation times to seconds for consistency.\\ 
 \-\\
 \tab $\lambda_{\text{Th}} = \frac{\ln{2}}{1338\text{s}} = 5.18\times10^{-4}\text{s}^{-1}$; \tab $\lambda_{\text{Pa}}=\frac{\ln{2}}{2332800s}=2.971\times10^{-7}\text{s}^{-1}$; \tab 1.5 hr = 5400 s\\
@@ -131,7 +135,8 @@ $$ \mathcal{A}_{\text{Pa}}(1.5\text{ hr}) = 2.195 \times 10^{8}\text{ Bq} $$
 Finally, we convert this to Curies, 
 $$ \boxed{\mathcal{A}_{\text{Pa}}(1.5\text{ hr}) = 0.006\text{ Ci}}. $$
 
-\subsection*{\textit{b.})}
+\item
+
 Let's say that the 1.5 hour mark is now given by $t=t_0=1.5\text{ hr}$. We also note that 48 hours = 172,800 seconds.
 
 \textbf{Thorium-233}\\
@@ -199,7 +204,8 @@ Using the numerical values for $\lambda_{\text{Th}}$, $\lambda_{\text{Pa}}$, $t$
 \end{dmath*}
 $$\boxed{ \mathcal{A}_{\text{Pa}}(49.5\text{ hr}) = 0.008\text{ Ci} }$$
 
-\subsection*{\textit{c.})}
+\item 
+
 Note that $\lambda_{\text{U}} = \frac{\ln 2}{5.024^{12}\text{s}} = 1.380\times10^{-13}\text{s}^{-1}$. 
 
 In just one day, the probability that any given $^{233}$Th nucleus survives is
@@ -223,6 +229,8 @@ Using our rate of production, there are $2.0\times10^{11}\text{ s}^{-1}*(3600\te
 $$ \mathcal{A}_{\text{U}} = (1.380\times10^{-13}\text{s}^{-1})(1.08\times10^{15}) .$$
 This is ${149.04}\text{ Bq}$ or 
 $$\boxed{ 4.028\times10^{-9}\text{ Ci} }$$
+\end{enumerate}
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -253,7 +261,6 @@ Use the following masses for parts (a) and (b):
 \item Calculate the $Q$-value of the reaction:
 $$ ^{235}\text{U}\, + \,n \-\rightarrow\- ^{135}\text{I}\, + \,^{98}\text{Y}\, + \,3n $$
 \item Calculate the average binding energy per nucleon (in MeV) of $^{2}$H, $^{56}$Fe, and $^{235}$U.
-
 \end{enumerate}
 
 
@@ -261,7 +268,10 @@ $$ ^{235}\text{U}\, + \,n \-\rightarrow\- ^{135}\text{I}\, + \,^{98}\text{Y}\, +
 \section*{Problem 2 Solution}
 
 \begin{enumerate}[a)]
-\item The $Q$-value of a reaction is given by:$$Q=[m(\text{x})+m(\text{X})-m(\text{y})-m(\text{Y})]c^{2}.$$
+
+\item 
+
+The $Q$-value of a reaction is given by:$$Q=[m(\text{x})+m(\text{X})-m(\text{y})-m(\text{Y})]c^{2}.$$
 
 \begin{spacing}{1.75}	
 $^{235}\text{\normalfont{U}}+n \rightarrow  \-\ ^{135}\text{\normalfont{I}}+ \! ^{98}\text{\normalfont{Y}}+3n$\\
@@ -272,7 +282,9 @@ $^{235}\text{\normalfont{U}}+n \rightarrow  \-\ ^{135}\text{\normalfont{I}}+ \! 
 \end{spacing}
 
 
-\item The binding energy $B(Z,A)$ for any nuclei can be found approximately from the equation:$$M(Z,A) = Zm(^{1}\text{H})+(A-Z)m_{n}-B(Z,A)/c^{2},$$ where $M(Z,A),\; Zm(^{1}\text{H})$ and $m_{n}$ are experimentally calculated values. Per nucleon, the binding energy can be expressed as: $$B_{A}(Z,A) = [Zm(^{1}\text{H})+(A-Z)m_{n}-M(Z,A)]c^{2}/A.$$
+\item 
+
+The binding energy $B(Z,A)$ for any nuclei can be found approximately from the equation:$$M(Z,A) = Zm(^{1}\text{H})+(A-Z)m_{n}-B(Z,A)/c^{2},$$ where $M(Z,A),\; Zm(^{1}\text{H})$ and $m_{n}$ are experimentally calculated values. Per nucleon, the binding energy can be expressed as: $$B_{A}(Z,A) = [Zm(^{1}\text{H})+(A-Z)m_{n}-M(Z,A)]c^{2}/A.$$
 
 \begin{spacing}{1.75}
 
@@ -292,6 +304,7 @@ $B_{A}(92,235) = [92(1.007825\text{u})+143(1.008665\text{u})-(235.043924\text{u}
 $B_{A}(92,235) = 0.00814924 u\text{u} \cdot c^{2}$\\
 $\boxed{B_{Z}(92,235) = 7.591\text{ MeV}}$
 \end{spacing}
+
 \end{enumerate}
 
 
@@ -312,15 +325,19 @@ The boundary condition is $y(\pm\frac{1}{A}) = 0$.
 
 \section*{Problem 3 Solution}
 \begin{enumerate}[a)]
+
 \item 
-\begin{align}
+
+\begin{align*}
 \frac{dy}{dx}	&= -3y \\
 \frac{dy}{y} 	& = -3\,dx \\
 \int\frac{dy}{y}&= -3 \int \,dx \\
 \ln y			&= -3 x + C \\
 y				&= e^{-3x + C} \\
-\end{align}
+\end{align*}
 $$\boxed{y = Ce^{-3x}}$$
+
+\item 
 
 Solve the second order differential equation
 $$ \frac{d^2 y}{dx^2} - A^2y = B $$

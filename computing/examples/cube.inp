@@ -1,0 +1,21 @@
+Simple Uranium-235 Cube
+c cell cards for a uranium cube (64cm^3)
+1 1 -19.1 -1 2 -3 4 -5 6   IMP:N=1
+2 0       (1:-2:3:-4:5:-6) IMP:N=0
+c end of cell block
+
+c Beginning of the surfaces
+1 px 2
+2 px -2
+3 py 2
+4 py -2
+5 pz 2
+6 pz -2
+c End of surfaces
+
+c Beginning of the materials
+M1 92235 1       $ pure uranium-235
+kcode 10000 1 10 50
+ksrc 0 0 0
+PRINT 50
+

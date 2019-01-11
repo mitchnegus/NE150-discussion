@@ -1,0 +1,52 @@
+\documentclass{report}
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate}
+\newcommand{\tab}{\-\hspace{1.5cm}}
+
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Nuclear Engineering 150 -- Discussion Section}\\ 
+\textbf{Team Exercises \#10}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 1}
+
+Consider an infinite slab of material described by diffusion coefficient $D$ and macroscopic cross section $\Sigma_a$. The material extends infinitely in two dimensions, but has a vacuum boundaries at $x=a$ and $x=0$. At $x=0$ there is also a uniformly distributed source plane with strength $s''$ [neutrons per area]. Find the flux in this geometry. (You may use the substitution $L = \sqrt{\frac{D}{\Sigma_a}}$.)
+
+% See Lewis p. 143,148; http://www.nuceng.ca/ep4d3/text/3-diffusion-r1.pdf
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+
+Consider an infinite slab of material described by diffusion coefficient $D$ and macroscopic cross section $\Sigma_a$. The material extends infinitely in two dimensions, but has vacuum boundaries at $x=\pm a$. Inside the slab is a uniformly distributed source with strength $s'''$ [neutrons per volume]. Find the flux in this geometry. (You may use the substitution $L = \sqrt{\frac{D}{\Sigma_a}}$.)
+
+% See Lewis p. 147
+
+
+%% IN GENERAL
+% - Write out procedure of diff eq. problems
+% - Write out typical boundary conditions, when applied
+% - Emphasize diffusion approximation, (current to flux, partial currents to flux)
+
+\end{document}
+
