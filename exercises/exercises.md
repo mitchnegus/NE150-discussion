@@ -51,7 +51,7 @@ Neutron multiplication: the 4/6 factor formula and terms, the lifecycle of a neu
 
 Monte Carlo: using DECF, MCNP inputs, execution and outputs  
 [Concept question slides](concepts/disc08_concepts.pdf)  
-[DECF walkthrough](../computing/decf_walkthrough.md)  
+[DECF tutorial](../computing/decf_tutorial.md)  
 [MCNP walkthrough](../computing/mcnp_walkthrough.md)
 
 
