@@ -75,11 +75,11 @@ First, convert all half-lives and irradiation times to seconds for consistency.\
 \-\\
 The rate of change of the quantity of $^{233}$Th, $\frac{dN_{\text{th}}}{dt}$ is given by the production rate of $^{233}$Th, $R$, minus the decay rate (activity) of $^{233}$Th, $\lambda_{\text{Th}}N_{\text{Th}}$.
 $$\frac{dN_{\text{Th}}}{dt} = R - \lambda_{\text{Th}}N_{\text{Th}}$$
-We manipulate the equation so that the left side is only dependent on $N_{\text{Th}}$ and the right side is only dependent on $dt$. Then integrate:
+We solve the differential equation, manipulating the equation so that the left side is only dependent on $N_{\text{Th}}$ and the right side is only dependent on $dt$. Then we integrate:
 $$\int{\frac{dN_{\text{Th}}}{R-\lambda_{\text{Th}}N_{\text{Th}}}} = \int{dt}$$
 $$\frac{-1}{\lambda_{\text{Th}}}[\ln(R-\lambda_{\text{Th}}N_{\text{Th}})] = t + C,\quad C=\text{const.}$$
 $$R-\lambda_{\text{Th}}N_{\text{Th}} = e^{-\lambda_{\text{Th}}t -\lambda_{\text{Th}}C} = e^{-\lambda_{\text{Th}}t} e^{-\lambda_{\text{Th}}C}$$
-We note that since $C$ is an arbitrary constant, we could also say $e^{-\lambda_{\text{Th}}C}$ is an arbitrary constant, and just call it $C$ instead.
+We note that since $C$ is an arbitrary constant and $\lambda_{\text{Th}}$ is fixed, we could also say $e^{-\lambda_{\text{Th}}C}$ is an arbitrary constant, and just call it $C$ instead.
 $$ R-\lambda_{\text{Th}}N_{\text{Th}} = Ce^{-\lambda_{\text{Th}}t} $$
 We solve for $N_{\text{Th}}$ (explicitly including $N_{\text{Th}}$'s dependence on $t$), and get
 $$ N_{\text{Th}}(t) = \frac{R - Ce^{-\lambda_{\text{Th}}t}}{\lambda_{\text{Th}}} .$$
@@ -99,23 +99,25 @@ $$\boxed{ \mathcal{A}_{\text{Th}}(1.5\text{ hr}) = 5.076\text{ Ci} }.$$
 \-\\
 We follow a similar procedure for $^{233}$Pa, noting that the production rate of $^{233}$Pa is just the activity of $^{233}$Th as it decays into $^{233}$Pa, $\mathcal{A}_{\text{Th}}$.
 $$\frac{dN_{\text{Pa}}}{dt} = \mathcal{A}_{\text{Th}} - \lambda_{\text{Pa}}N_{\text{Pa}}$$
-From above, we can substitue our function for $\mathcal{A}_{\text{Th}}(t)$,
+From above, we can substitute our function for $\mathcal{A}_{\text{Th}}(t)$,
 $$\frac{dN_{\text{Pa}}}{dt} = R(1-e^{-\lambda_{\text{Th}}t}) - \lambda_{\text{Pa}}N_{\text{Pa}}$$
-We note here that we cannot separate both sides to be dependent only on a single differential, so we must try a different method of integration. We will use integrating factors. We do, however start in a similar fashion: collecting the terms dependent on $N_{\text{Pa}}$ on the same side.
+Since we cannot separate both sides to be dependent only on a single differential, we must try a different method of integration. We will use integrating factors. Still, we start in a similar fashion: collecting the terms dependent on $N_{\text{Pa}}$ on the same side.
 $$ \frac{dN_{\text{Pa}}}{dt}+\lambda_{\text{Pa}}N_{\text{Pa}} = R(1-e^{-\lambda_{\text{Th}}t}) $$
 The method of integrating factors suggests that we multiply both sides by an arbitrary exponential. We will use $e^{\lambda_{\text{Pa}}t}$.
 $$ e^{\lambda_{\text{Pa}}t}\frac{dN_{\text{Pa}}}{dt} + \lambda_{\text{Pa}}e^{\lambda_{\text{Pa}}t}N_{\text{Pa}} = e^{\lambda_{\text{Pa}}t}R(1-e^{-\lambda_{\text{Th}}t}) $$
-We can now observe that the left side of the equation appears to be the result of the product rule when the derivative with respect to time is taken of the expression $e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}$. We can then write the equation as
+We can now observe that the left side of the equation appears to be the result of the product rule when the time derivative of $e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}$ is found. We can then write the equation as
 $$\frac{d}{dt}(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}) = e^{\lambda_{\text{Pa}}t}R(1-e^{-\lambda_{\text{Th}}t})$$
 Moving the $dt$ term to the right side of the equation and using the distributive property, we have
-$$ d(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}) = R(e^{\lambda_{\text{Pa}}t}-e^{\lambda_{\text{Pa}}t}e^{-\lambda_{\text{Th}}t})dt .$$
+$$ d(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}) = R(e^{\lambda_{\text{Pa}}t}-e^{\lambda_{\text{Pa}}t}e^{-\lambda_{\text{Th}}t})dt $$
+or more simply (by exploiting properties of exponents)
+$$ d(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}) = R(e^{\lambda_{\text{Pa}}t}-e^{\lambda_{\text{Pa}}t-\lambda_{\text{Th}}t})dt .$$
 We integrate both sides,
-$$ \int{d(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}})} = \int{ R(e^{\lambda_{\text{Pa}}t}-e^{\lambda_{\text{Pa}}t-\lambda_{\text{Th}}t})dt}, $$
+$$ \int{d\left(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}\right)} = \int{ R(e^{\lambda_{\text{Pa}}t}-e^{\lambda_{\text{Pa}}t-\lambda_{\text{Th}}t})dt}, $$
 separate the integral on the right side,
-$$ e^{\lambda_{\text{Pa}}t}N_{\text{Pa}} = R\int{ e^{\lambda_{\text{Pa}}t}dt}-R\int{e^{(\lambda_{\text{Pa}}-\lambda_{\text{Th}})t}dt} $$
+$$ \int{d\left(e^{\lambda_{\text{Pa}}t}N_{\text{Pa}}\right)} = R\int{ e^{\lambda_{\text{Pa}}t}dt}-R\int{e^{(\lambda_{\text{Pa}}-\lambda_{\text{Th}})t}dt} $$
 and find
 $$e^{\lambda_{\text{Pa}}t}N_{\text{Pa}} = \frac{R}{\lambda_{\text{Pa}}}e^{\lambda_{\text{Pa}}t}-\frac{R}{\lambda_{\text{Pa}}-\lambda_{\text{Th}}}e^{(\lambda_{\text{Pa}}-\lambda_{\text{Th}})t} +\;C,\; C=\text{const.}$$
-Now we factor out the integrating factor back out from both sides and note the explicit time dependence of $N_{\text{Pa}}$,
+Now we factor out the integrating factor back out from both sides and note explicitly the time dependence of $N_{\text{Pa}}$,
 $$N_{\text{Pa}}(t) = \frac{R}{\lambda_{\text{Pa}}}-\frac{R}{\lambda_{\text{Pa}}-\lambda_{\text{Th}}}e^{-\lambda_{\text{Th}}t}+Ce^{-\lambda_{\text{Pa}}t}$$
 At $t=0$,
 $$ N_{\text{Pa}}(0) = \frac{R}{\lambda_{\text{Pa}}}-\frac{R}{\lambda_{\text{Pa}}-\lambda_{\text{Th}}}+C = 0, $$

@@ -39,17 +39,17 @@ A reactor contains 5\% (by atom) enriched uranium dioxide, which is 15\% of the 
 	\centering
 	\begin{tabular}{|c|c|c|}
 			\hline
-			Nucleus		& Thermal $\sigma_{\text{t}}$ & Mass \\
+			Nucleus		& Thermal $\sigma_{\text{t}}$ (b) & Mass (g/mol) \\
 			\hline
-			$^{1}$H		&  20.8 b 						& x		\\
-			$^{16}$O	&  3.5 b  						& x		\\
-			$^{235}$U	&  607.5 b  					& x		\\
-			$^{238}$U	&  11.8 b  						& x		\\
+			$^{1}$H		&  20.8						& 1.008			\\
+			$^{16}$O	&  3.5 						& 15.995		\\
+			$^{235}$U	&  607.5 					& 235.044		\\
+			$^{238}$U	&  11.8						& 238.050		\\
 			\hline
-			Compound	& \multicolumn{2}{|c|}{$\rho$}          \\
+			Compound	& \multicolumn{2}{|c|}{$\rho \left(\text{g/cm}^3\right)$}          \\
 			\hline
-			H$_2$O		& \multicolumn{2}{|c|}{1 g/cm$^3$}      \\
-			UO$_2$		& \multicolumn{2}{|c|}{10.4 g/cm$^3$}	\\
+			H$_2$O		& \multicolumn{2}{|c|}{1.0}      \\
+			UO$_2$		& \multicolumn{2}{|c|}{10.4}	\\
 			\hline
 	\end{tabular}
 	\label{tab:design-specs}
@@ -110,7 +110,7 @@ Now we can substitute the given values.
 $$ \Sigma_{\text{UO}_2} = \frac{\left(10.4\text{ g/cm}^3\right) \left(0.05(607.5\text{ b}) + 0.95(11.8\text{ b})  + 2(3.5\text{ b})\right)\left(6.022\times10^{23}\text{ mol}^{-1}\right)}{0.05(235.044\text{ g/mol}) + 0.95(238.050\text{ g/mol}) + 2(15.995\text{ g/mol})} $$
 $$ \Sigma_{\text{UO}_2} = 112.7\text{ m}^{-1} $$
 
-$$ \Sigma_{\text{H}_2\text{O}} = \frac{\left(1\text{ g/cm}^3\right) \left(2(20.8\text{ b}) + 3.5\text{ b}\right) \left(6.022\times10^{23}\text{ mol}^{-1}\right)}{2(1.008\text{ g/mol}) + 15.995\text{ g/mol}} $$
+$$ \Sigma_{\text{H}_2\text{O}} = \frac{\left(1.0\text{ g/cm}^3\right) \left(2(20.8\text{ b}) + 3.5\text{ b}\right) \left(6.022\times10^{23}\text{ mol}^{-1}\right)}{2(1.008\text{ g/mol}) + 15.995\text{ g/mol}} $$
 $$ \Sigma_{\text{H}_2\text{O}} = 150.8\text{ m}^{-1} $$
 
 and plug these into equation (\ref{totmacroXS}) for the total cross section of the core.
