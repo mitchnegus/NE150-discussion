@@ -1,0 +1,99 @@
+\section*{Problem 2 Solution}
+
+\begin{enumerate}[a)]
+
+\item 
+
+The steady-state, continuous energy diffusion equation is
+$$ -\nabla D(r,E) \nabla \phi(r,E) + \Sigma_t(r,E) \phi(r,E) = \int_0^{\infty} \Sigma_s(r,E' \rightarrow E)\phi(r,E')\,dE' + \chi(E) \int_0^{\infty} \nu(E') \Sigma_f(r,E')\phi(r,E')\,dE' .$$
+As a reminder, the terms are defined as:
+\begin{align*}
+\textbf{Loss terms (left side)} \qquad\qquad& \\
+-\nabla D(r,E) \nabla \phi(r,E)&:\text{ the neutrons with energy }E\text{ streaming from location }r\text{ to any other location} \\
+\Sigma_t(r,E) \phi(r,E)&:\text{ the total interaction rate of neutrons with energy }E\text{ at location }r  \\
+\textbf{Gain terms (right side)} \qquad\qquad& \\
+\int_0^{\infty} \Sigma_s(r,E' \rightarrow E)\phi(r,E')\,dE'&:\text{ the scattering rate of neutrons with any energy }E'\text{ into energy }E\text{ at location }r \\
+\chi(E) \int_0^{\infty} \nu(E') \Sigma_f(r,E')\phi(r,E')\,dE'&:\text{ the fission rate of neutrons with any energy }E'\text{ at location }r; \\
+& \quad\chi(E)\text{ is the fraction of neutrons produced by fission with energy }E
+\end{align*}
+It is given that $D$ and $\nu$ are constants, and we are told that the reactor is homogeneous so none of the cross sections depend on $r$. Our diffusion equation simplifies down to
+$$\boxed{ -D \lap \phi(r,E) + \Sigma_t(E) \phi(r,E) = \int_0^{\infty} \Sigma_s(E' \rightarrow E)\phi(r,E')\,dE' + \chi(E) \int_0^{\infty} \nu \Sigma_f(E')\phi(r,E')\,dE' }.$$
+
+\item
+
+We are asked to derive the three-group multigroup equation, so we need to find the collective behavior in each group. We can do this by taking the integral of the continuous equation over the energy range corresponding to each group. This process will allow us to take the continuous equation which is valid for all energies (and which may not be able to be solved analytically), and turn it into a discretized form that can be solved either by hand, or more likely, with a computer.
+
+Say we take the integral over some energy group, $g$, spanning energies $E_{g-1}$ to $E_g$ (for the lowest energy group, $E_{g-1} = 0$, and for the highest energy group, $E_g = \infty$). Our equation becomes
+\begin{align*}
+\int_{E_{g-1}}^{E_g} -D \lap \phi(r,E)\,dE + \int_{E_{g-1}}^{E_g} \Sigma_t(E) \phi(r,E)\,dE = \int_{E_{g-1}}^{E_g} \int_0^{\infty} \Sigma_s(E' &\rightarrow E)\phi(r,E')\,dE'\,dE \\
+&+ \int_{E_{g-1}}^{E_g} \chi(E) \int_0^{\infty} \nu \Sigma_f(E')\phi(r,E')\,dE'\,dE .
+\end{align*}
+We can similarly separate our integrals over $dE'$ on the right side into three intervals, one for each group. We will express our total integral, from $E' = 0$ to $E'=\infty$, as the sum of the integrals over these three intervals, each ranging from $E_{g'-1}$ to $E_{g'}$.
+\begin{align*}
+\int_{E_{g-1}}^{E_g} -D \lap \phi(r,E)\,dE + \int_{E_{g-1}}^{E_g} \Sigma_t(E) \phi(r,E)\,dE = &\int_{E_{g-1}}^{E_g} \sum_{g'=1}^3 \int_{E_{g'-1}}^{E_{g'}} \Sigma_s(E' \rightarrow E)\phi(r,E')\,dE'\,dE \\
+ &+ \int_{E_{g-1}}^{E_g} \chi(E) \sum_{g'=1}^3 \int_{E_{g'-1}}^{E_{g'}} \nu \Sigma_f(E')\phi(r,E')\,dE'\,dE 
+\end{align*}
+Where neither $D$ nor the Laplacian depend on $E$, we can remove them from the integral in the first term. And, since the only factor in the fission term depending on $E$ is $\chi(E)$, the fraction of fission-born neutrons produced into energy $E$, we can separate it as it's own integral. 
+$$ \chi_g = \int_{E_{g-1}}^{E_g} \chi(E)\,dE $$
+$\chi_g$ is just the fraction of fission-born neutrons produced in group $g$, the sum of the fraction of fission-born neutrons created in all energies from $E_{g-1}$ to $E_g$. Our diffusion equation simplifies to
+\begin{align*}
+-D \lap \int_{E_{g-1}}^{E_g} \phi(r,E)\,dE + \int_{E_{g-1}}^{E_g} \Sigma_t(E) \phi(r,E)\,dE = \int_{E_{g-1}}^{E_g} \sum_{g'=1}^3 \int_{E_{g'-1}}^{E_{g'}} \Sigma_s(E' &\rightarrow E)\phi(r,E')\,dE'\,dE \\
+ &+ \chi_g \nu \sum_{g'=1}^3 \int_{E_{g'-1}}^{E_{g'}} \Sigma_f(E')\phi(r,E')\,dE' .
+\end{align*}
+Here we recognize that the total flux in group $g$ is given by
+$$ \phi_g(r) = \int_{E_{g-1}}^{E_g} \phi(r,E)\,dE ,$$
+and that average cross sections for some energy group are equal to the flux-weighted average of the reaction rate over that group's energy range.
+$$ \Sigma_g = \frac{\int_{E_{g-1}}^{E_g} \Sigma(E)\phi(r,E)\,dE}{\int_{E_{g-1}}^{E_g} \phi(r,E)\,dE} = \frac{\int_{E_{g-1}}^{E_g} \Sigma(E)\phi(r,E)\,dE}{\phi_g(r)} $$
+Multiplying both sides by $\phi_g$ gives
+$$ \Sigma_g \phi_g = \int_{E_{g-1}}^{E_g} \Sigma(E)\phi(E)\,dE ,$$
+and so we can simplify all the flux and reaction rate integrals in the diffusion equation.
+$$ -D \lap \phi_g(r) + \Sigma_{t,g} \phi_g(r) = \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow g}\phi_{g'}(r) + \chi_g \nu \sum_{g'=1}^3 \Sigma_{f,g'}\phi_{g'}(r) $$
+Remember, this is actually a set of three equations, one for each group (1, 2, and 3).
+\begin{align*}
+-D \lap \phi_1(r) + \Sigma_{t,1} \phi_1(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 1}\phi_{g'}(r) + \chi_1 \nu \sum_{g'=1}^3 \Sigma_{f,g'}\phi_{g'}(r) \\
+-D \lap \phi_2(r) + \Sigma_{t,2} \phi_2(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 2}\phi_{g'}(r) + \chi_2 \nu \sum_{g'=1}^3 \Sigma_{f,g'}\phi_{g'}(r) \\
+-D \lap \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 3}\phi_{g'}(r) + \chi_3 \nu \sum_{g'=1}^3 \Sigma_{f,g'}\phi_{g'}(r)
+\end{align*}
+
+Now we begin to impose the assumptions of the system. First, fission only produces neutrons in group 1, so $\chi_2 = 0$ and $\chi_3 = 0$. Also fission is only induced in group 3, so $\Sigma_{f,1} = 0$ and $\Sigma_{f,2} = 0$. Our set of equations is now:
+\begin{align*}
+-D \lap \phi_1(r) + \Sigma_{t,1} \phi_1(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 1}\phi_{g'}(r) + \chi_1 \nu \Sigma_{f,3}\phi_{3}(r) \\
+-D \lap \phi_2(r) + \Sigma_{t,2} \phi_2(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 2}\phi_{g'}(r) \\
+-D \lap \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \sum_{g'=1}^3 \Sigma_{s,g' \rightarrow 3}\phi_{g'}(r) 
+\end{align*}
+There is no upscattering---group 2 can only inscatter (scatter back into group 2) or scatter into group 3; group 3 can only inscatter. The groups are directly coupled, so group 1 can only scatter into group 2. These assumptions mean $\Sigma_{s,1 \rightarrow 3} = 0$, $\Sigma_{s,2 \rightarrow 1} = 0$, $\Sigma_{s,3 \rightarrow 1} = 0$, and $\Sigma_{s,3 \rightarrow 2} = 0$, and our equations (which we now right out explicitly) simplify further:
+\begin{align*}
+-D \lap \phi_1(r) + \Sigma_{t,1} \phi_1(r) &= \Sigma_{s,1 \rightarrow 1}\phi_1(r) + \chi_1 \nu \Sigma_{f,3}\phi_{3}(r) \\
+-D \lap \phi_2(r) + \Sigma_{t,2} \phi_2(r) &= \Sigma_{s,1 \rightarrow 2}\phi_1(r) +\Sigma_{s,2 \rightarrow 2}\phi_2(r) \\
+-D \lap \phi_3(r) + \Sigma_{t,3} \phi_3(r) &= \Sigma_{s,2 \rightarrow 3}\phi_{2}(r) + \Sigma_{s,3 \rightarrow 3}\phi_{3}(r).\\
+\end{align*}
+
+\item
+
+To form a matrix equation, we will start by writing the multigroup equations suggestively, with everything but fission terms on the left and with our flux terms grouped together:
+\begin{align*}
+\left(-D \lap + \Sigma_{t,1} - \Sigma_{s,1 \rightarrow 1}\right)&\phi_1(r) && && &&= \chi_1 \nu \Sigma_{f,3}\phi_{3}(r) \\
+-\Sigma_{s,1 \rightarrow 2}&\phi_1(r) &+ \left(-D \lap + \Sigma_{t,2} - \Sigma_{s,2 \rightarrow 2}\right)&\phi_2(r) && &&= 0 \\
+&&- \Sigma_{s,2 \rightarrow 3}&\phi_{2}(r) &+ \left(-D \lap + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}\right)&\phi_{3}(r) &&= 0 
+\end{align*}
+In this form, we can more easily see that each term multiplying a flux could be an entry in a 
+matrix, with the matrix equation being given by
+$$\begin{bmatrix}
+-D \lap + \Sigma_{t,1} - \Sigma_{s,1 \rightarrow 1} & 0 & 0 \\
+-\Sigma_{s,1 \rightarrow 2} & -D \lap + \Sigma_{t,2} - \Sigma_{s,2 \rightarrow 2} & 0 & \\
+0 & - \Sigma_{s,2 \rightarrow 3} & -D \lap + \Sigma_{t,3} - \Sigma_{s,3 \rightarrow 3}
+\end{bmatrix}\begin{bmatrix}
+\phi_1 \\
+\phi_2 \\
+\phi_3
+\end{bmatrix} = \begin{bmatrix}
+0 & 0 & \chi_1 \nu \Sigma_{f,3} \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+\phi_1 \\
+\phi_2 \\
+\phi_3
+\end{bmatrix}$$
+\end{enumerate}
+

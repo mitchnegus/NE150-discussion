@@ -1,0 +1,49 @@
+\section*{Problem 2 Solution}
+
+Since we are assuming no scattering, at any given time $t$ there are three possible ``fates'' of our neutron in the next infinitesimal timestep, $dt$. These are (1) the particle continues with no decay or interaction, (2) the neutron decays, or (3) the neutron is absorbed. We want to find the probability that, given a destructive event has taken place (situation 2 or 3), the event was decay, rather than absorption. Formally, we write this as 
+$$ \text{p}(E=d | E \in \{d,a\}) $$
+
+which we read as ``the instantaneous probability that an event is decay, given the event was decay or absorption.'' Statistically this is equivalent to
+\begin{equation}
+\label{prob}
+\frac{\text{p}(E=d)}{\text{p}(E \in \{d,a\}} \text{ or } \frac{\text{p}(d)}{\text{p}(d) + \text{p}(a)}.
+\end{equation}
+(If you're not comfortable with the statistics here, you can reason through this intuitively. We have some event occuring, being either a decay or an absorption collision. The probability of that event depends on the individual probabilities of the independent events, decay and absorption. The probability of that event being a decay is just the fraction of the event's total probability that is attributable to the decay.)
+
+From here on, we will write the argument of the probality function as a subscript, which will allow us to note the probability's dependence on either time or space. (For example, $\text{p}(d) \rightarrow \text{p}_d$.)
+
+Now, we know that the exponential decay law is $N(t) = N_0 e^{-\lambda t}$. The probability that a neutron decays in some time $t$ is then
+$$ P_d(t) = 1-\frac{N(t)}{N_0} = 1-e^{-\lambda t} $$
+We can calculate that the instantantaneous probability that a neutron decays between times $t$ and $t+dt$ is 
+$$ \frac{dP_d(t)}{dt} = \lambda e^{-\lambda t} $$
+From this equation, we note that $dP_d(t) = p_d(t)dt$. Remember, $P_d(t)$ is the total probability of decay, and so $p_d(t)$ is the instantaneous probability of decay per time. When multiplied by $dt$, this is $\text{p}_d(t)$.
+$$ \text{p}_d(t) = p_d(t) \, dt = \lambda e^{-\lambda t} dt $$
+We rewrite this equation in terms of $N(t)$, and  
+$$ \text{p}_d(t) = \frac{\lambda N(t)}{N_0} dt$$
+
+Additionally, we know that the attenuation of neutrons moving through a material also follows an exponential function. The number of neutrons remaining after traveling through a material with macroscopic absorption cross section $\Sigma_a$, is
+$$ N(x) = N_0 e^{-\Sigma_a x} $$
+(note: $\Sigma_a = \sigma_a n$, where $\sigma_a$ is the microscopic absorption cross section and $n$ is the number density of the material in question) 
+
+We repeat the procedure from above, but now in space rather than time. The probability for a collision is
+$$ P_a(x) = 1-\frac{N(x)}{N_0} = 1 - e^{-\Sigma_a x} $$
+and the instantaneous probability is 
+$$ \frac{dP_a(x)}{dt} = \Sigma_a e^{\Sigma_a x} $$
+or 
+$$ \text{p}_a(x) = p_a(x) \, dx = \Sigma_a e^{\Sigma_a x} dx .$$
+Again, eliminating $dx$ and writing in terms of $N(x)$, we have
+$$ \text{p}_a(x) = \frac{\Sigma_a N(x)}{N_0} dx $$
+Now, we observe that using $\text{p}_d(t)$ and $\text{p}_a(x)$ in equation (\ref{prob}) causes all terms to be dependent on $N$, the number of neutrons. Unfortunately, we have $p_d$ reliant on $N(t)$, the number of neutrons surviving until time $t$, and $\text{p}_a$ reliant on $N(x)$, the number of neutrons reaching distance $x$. We are told, however, that these neutrons are thermal, and so are moving at $v = 2200$m/s. If we say $dx = v \, dt$, then we can rewrite $N(x) dx$ as a function of time! 
+$$ N(x) \, dx = N(t) v \, dt $$
+and
+$$ \text{p}_a(t) = \frac{\Sigma_a N(t) v}{N_0} dt $$
+Finally, we do substitute this into equation (\ref{prob}), and get
+\begin{align*}
+\text{p}(E=d | E \in \{d,a\})	&= \frac{\frac{\lambda N(t)}{N_0} dt}{\frac{\lambda N(t)}{N_0} dt + \frac{\Sigma_a N(t) v}{N_0} dt}\\
+								&= \frac{\lambda}{\lambda + \Sigma_a v}\\
+								&= \left(1 + \frac{\Sigma_a v}{\lambda}\right)^{-1}\\
+\end{align*}
+We can look up $\Sigma_a$ to find it is approximately $0.022\text{ cm}^{-1}$ (or $2.2\text{ m}^{-1}$, and can calculate that 10.2 minutes is 612 seconds.  Using this, along with $v = 2200$ m/s, and $\lambda = \frac{\ln 2}{612} = 1.13\times10^{-3}\text{ s}^{-1}$, we can find the probability.
+$$ \text{p}(E=d | E \in \{d,a\}) = \left(1 + \frac{(2.2\text{ m}^{-1})(2200\text{ m/s})}{1.13\times10^{-3}\text{ s}^{-1}}\right)^{-1} $$
+$$\boxed{ \text{p}(E=d | E \in \{d,a\}) = 2.33\times10^{-7} }$$
+

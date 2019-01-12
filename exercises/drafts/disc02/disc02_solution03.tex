@@ -1,0 +1,50 @@
+\section*{Problem 3 Solution}
+
+We need to find the minimum required volume of UO$_2$, $V$, so let's begin by expressing that volume of UO$_2$ in terms of the number of UO$_2$ molecules it contains. 
+
+First, we use $M_{\text{UO}_2}$ as the total mass of UO$_2$ and $\rho_{\text{UO}_2}$ as the density of UO$_2$ (about 10.4 g/cm$^3$ for our purposes)
+$$ V = \frac{M_{\text{UO}_2}}{\rho_{\text{UO}_2}} $$
+Then, we can write the mass of UO$_2$ as the number of UO$_2$ molecules, $N_{\text{UO}_2}$, times the mass of a UO$_2$ molecule, $m_{\text{UO}_2}$. Since we know that the UO$_2$ is enriched such that 3\% of the molecules contain $^{235}$U, we can say $m_{\text{UO}_2} = 0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2m_{\text{O}}$. Then
+$$ M_{\text{UO}_2} = N_{\text{UO}_2}(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2m_{\text{O}}) $$
+We can use this equality in our total volume equation to find
+\begin{equation}
+\label{vol}
+V = \frac{N_{\text{UO}_2}(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2 m_{\text{O}})}{\rho_{\text{UO}_2}}
+\end{equation}
+Now we need to relate this volume, in terms of number of UO$_2$ molecules, to the electric power produced by the reactor. Say $P_E$ is the electric power, $P_T$ is thermal power, and $\varepsilon$ is the efficiency. 
+$$ P_E = \varepsilon P_T $$
+The total energy produced by the reactor in time $t$ can be found by simply multiplying the power by the time of production.
+$$ E = P_T t $$
+or equivalently
+$$ P_T = \frac{E}{t} .$$
+The energy from one fission is $E_f$ and the energy harnessed from one fission is $0.95E_f$. The total energy harnessed can then be expressed in terms of the number of fissions, $N_f$ and the energy captured per event,
+$$ E = 0.95E_f N_f $$
+If we consider the extreme and highly unrealistic case that \textit{all} $^{235}$U atoms fission, then the number of $^{235}$U atoms required is $N_{\text{U5}} = N_f$. Since $^{235}$U is 3\% of the total uranium by atom, then $N_{\text{U5}} = 0.03N_{\text{U}}$. Taking this one step further, there is a one-to-one ratio of uranium atoms to UO$_2$ molecules, so $N_{\text{U}} = N_{\text{UO}_2}$.
+
+We combine these facts together to relate the electric power produced to the number of uranium dioxide molecules required.
+\begin{align*} 
+P_E	&= \varepsilon P_T \\
+	&= \varepsilon \frac{E}{t} \\
+	&= \frac{0.95\varepsilon E_f N_f}{t} \\
+	&= \frac{(0.95)(0.03)\varepsilon E_f N_{\text{UO}_2}}{t} \\
+\end{align*}
+We solve for $N_{\text{UO}_2}$ to get
+\begin{equation}
+\label{num}
+N_{\text{UO}_2} = \frac{P_E t}{(0.95)(0.03)\varepsilon E_f}
+\end{equation}
+
+Now, we use equation (\ref{num}) for the number of UO$_2$ molecules required for the given power in equation (\ref{vol}) for the volume of UO$_2$ required. We find
+$$ V = \frac{P_E t(0.03m_{\text{U5}} + 0.97m_{\text{U8}} + 2 m_{\text{O}})}{(0.95)(0.03)\varepsilon E_f\rho_{\text{UO}_2}} $$
+Finally, we can include our values. We note the following
+\begin{itemize}
+\item $P_E = 1000\text{ MWE} = 1000\text{ J/s}$
+\item $t = 1\text{ yr} = 31,557,600\text{ s}$
+\item $E_f = 200\text{ MeV} = 3.204 \times 10^{-11}$ J
+\item $m_{\text{U5}} = 235.044\text{ amu} = 3.9028 \times 10^{-22}$ g
+\item $m_{\text{U8}} = 238.051\text{ amu} = 3.9528 \times 10^{-22}$ g
+\item $m_{\text{O}} = 15.995\text{ amu} = 2.656 \times 10^{-23}$ g
+\end{itemize}
+$$ V = \frac{(1000\text{ J/s})(31557600\text{ s})(0.03(3.9028 \times 10^{-22}\text{ g}) + 0.97(3.9528 \times 10^{-22}\text{ g}) + 2(2.656 \times 10^{-23}\text{ g}))}{(0.95)(0.03)(0.33)(3.204 \times 10^{-11}\text{ J})(10.41\text{ g/cm}^3)} $$
+$$\boxed{ V = 4.51\text{ cm}^3 }$$
+

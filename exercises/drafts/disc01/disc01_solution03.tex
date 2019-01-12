@@ -1,0 +1,42 @@
+\section*{Problem 3 Solution}
+
+\begin{enumerate}[a)]
+
+\item 
+
+\begin{align*}
+\frac{dy}{dx}	&= -3y \\
+\frac{dy}{y} 	& = -3\,dx \\
+\int\frac{dy}{y}&= -3 \int \,dx \\
+\ln y			&= -3 x + C \\
+y				&= e^{-3x + C} \\
+\end{align*}
+$$\boxed{y = Ce^{-3x}}$$
+
+\item 
+
+Solve the second order differential equation
+$$ \frac{d^2 y}{dx^2} - A^2y = B $$
+For the homogeneous equation, $\frac{d^2 y}{dx^2} - A^2y = 0$, try $y_c = X_1 e^{Ax} + X_2 e^{-Ax}$ as the complementary solution ($X_1$ and $X_2$ are constants). Then
+$$ \frac{d^2 y}{dx^2} = X_1 A^2 e^{Ax} + X_2 A^2 e^{-Ax} $$
+and
+$$ (X_1 A^2 e^{Ax} + X_2 A^2 e^{-Ax}) - A^2(X_1 e^{Ax} + X_2 e^{-Ax}) = 0 $$
+$$ A^2 (X_1 e^{Ax} + X_2 e^{-Ax}) - A^2 (X_1 e^{Ax} + X_2 e^{-Ax}) = 0 $$
+
+This is \underline{true}.
+
+For the inhomogeneous equation, $\frac{d^2 y}{dx^2} - A^2y = B$, $y_P = -B/A^2$ is the only particular solution satisfying the equation. The general solution is the sum of the complementary and particular solutions, $y = y_c + y_p$. 
+$$ y = X_1 e^{Ax} + X_2 e^{-Ax} - \frac{B}{A^2} $$
+Now we can solve for $X_1$ and $X_2$. 
+$$ y(\frac{1}{A}) = X_1 e^{A(\frac{1}{A})} + X_2 e^{-A(\frac{1}{A})} - \frac{B}{A^2} = 0 $$
+and
+$$ y(-\frac{1}{A}) = X_1 e^{A(-\frac{1}{A})} + X_2 e^{A(\frac{1}{A})} - \frac{B}{A^2} = 0 $$
+We can note that in these two equations, $X_1$ and $X_2$ can be interchanged freely, and so must be equal. We will say, $X_1 = X_2 = X$. Then, we have
+$$ 0 = X e^{A(-\frac{1}{A})} + X e^{A(\frac{1}{A})} - \frac{B}{A^2} $$
+$$ 0 = X (e^{-1} + e^{1}) - \frac{B}{A^2} $$
+$$ X = \frac{B}{A^2(\frac{1}{e} + e)} $$
+The we plug this $X$ into the final solution, which gives
+$$ y = \frac{B}{A^2(\frac{1}{e} + e)} (e^{Ax} + e^{-Ax}) - \frac{B}{A^2} $$
+\end{enumerate}
+Note that $e^{Ax} + e^{-Ax}$ is similar in form to $\cosh(Ax)$ which we could have also used to solve this problem.
+

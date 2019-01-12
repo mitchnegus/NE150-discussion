@@ -1,0 +1,74 @@
+\section*{Problem 1 Solution}
+
+\begin{enumerate}[a)]
+
+\item 
+
+A macroscopic cross section for a homogeneous mixture of materials can be found by summing the cross sections of those components, weighted by their volume fractions: 
+\begin{equation}
+\label{gentotmacroXS}
+\Sigma = \sum_{i} \frac{V_i}{V_t}\Sigma_i
+\end{equation}
+where $\Sigma_i$ is the macroscopic cross section of the $i^{\text{th}}$ material, $V_i$ is the volume of the $i^{\text{th}}$ material, and $V_t$ is the total volume. For this problem, we are told that the fraction $\frac{V_{\text{UO2}}}{V_t} = 0.15$ and $\frac{V_{\text{H2O}}}{V_t} = 0.85$. Using these in equation (\ref{gentotmacroXS}) the total macroscopic cross section of our reactor can be expressed just in terms of the macroscopic cross sections of UO$_2$ and H$_2$O.
+\begin{equation}
+\label{totmacroXS}
+\Sigma = 0.15\Sigma_{\text{UO2}} + 0.85\Sigma_{\text{H2O}}
+\end{equation}
+Calculating these two macroscopic cross sections requires knowledge of each of the individual microscopic cross sections of the compounds, since the macroscopic cross section is defined as
+\begin{equation}
+\label{macroXSi}
+\Sigma_i = n_i\sigma_i ,
+\end{equation}
+where $n_i$ and $\sigma_i$ are respectively the number density and total microscopic cross sections of the compounds. While neither of these quantities are given explicitly, we can calculate each from the information provided. 
+\-\\
+
+We can find a compound's number density by dividing the weight density by the mass of one molecule of the compound. 
+$$ n_i = \frac{\rho_i}{m_i} $$
+The densities for UO$_2$ and H$_2$O are provided, and we can find the mass of a molecule by dividing the molar mass of the material by Avogadro's number, $N_A = 6.022\times10^{23}\text{ molecules/mol}$.
+$$ m_i = \frac{M_i}{N_A}, $$
+and so
+$$ n_i = \frac{\rho_i N_A}{M_i} .$$
+For our two compounds, UO$_2$ and H$_2$O these number densities are
+$$ n_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} N_A}{M_{\text{UO}_2}} \qquad\text{and}\qquad n_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} N_A}{M_{\text{H}_2\text{O}}} .$$
+Before moving on to finding the microscopic cross sections, we can note that the molar mass of the compounds can be broken into the sum of the molar masses of their constituents according to their fraction in the compound.
+$$ n_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad n_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} N_A}{2M_{\text{H}} + M_{\text{O}}} .$$
+\-\\
+
+Next, we look at microscopic cross sections. The microscopic cross section of a compound is given by the sum of the microscopic cross sections of it's elemental components. The complete microscopic cross section for water can be found using this fact.
+$$ \sigma_{\text{H2O}} = 2\sigma_{\text{H}} + \sigma_{\text{O}} $$
+The microscopic cross section for UO$_2$ can be found similarly, however the calculation is slightly more complicated due to its enrichment in $^{235}$U. First, we find the average microscopic cross section for uranium by weighting the cross sections of $^{235}$U and $^{238}$U by their abundance.
+$$ \sigma_{\text{U}} = f_{\text{U}5} \sigma_{\text{U}5} + f_{\text{U}8} \sigma_{\text{U}8} $$
+where $f_{i}$ is the atomic fraction of material $i$ in the compound (for uranium in this case, this fraction is just the enrichment in atom \%). Then, we can complete the process exactly as we did for H$_2$O,
+\begin{align*}
+\sigma_{\text{UO}_2}	&= \sigma_{\text{U}} + 2\sigma_{\text{O}} \\
+						&= f_{\text{U}5} \sigma_{\text{U}5} + f_{\text{U}8} \sigma_{\text{U}8}  + 2\sigma_{\text{O}}. 
+\end{align*}
+\-\\
+
+Combining these number densities and macroscopic cross sections, we can expand and rewrite the macroscopic cross sections described by equation (\ref{macroXSi}) as
+%$$ \Sigma_{\text{UO}_2} = \frac{\rho_{\text{UO}_2} \left( f_{\text{U}5} \sigma_{\text{U}5} + f_{\text{U}8} \sigma_{\text{U}8}  + 2\sigma_{\text{O}}\right) N_A}{f_{\text{U}5}M_{\text{U235}} + f_{\text{U}8}M_{\text{U238}} + 2M_{\text{O}}} \qquad\text{and}\qquad \Sigma_{\text{H}_2\text{O}} = \frac{\rho_{\text{H}_2\text{O}} \left(2\sigma_{\text{H}} + \sigma_{\text{O}}\right) N_A}{2M_{\text{H}} + M_\text{O}} $$
+Now we can substitute the given values. 
+$$ \Sigma_{\text{UO}_2} = \frac{\left(10.4\text{ g/cm}^3\right) \left(0.05(607.5\text{ b}) + 0.95(11.8\text{ b})  + 2(3.5\text{ b})\right)\left(6.022\times10^{23}\text{ mol}^{-1}\right)}{0.05(235.044\text{ g/mol}) + 0.95(238.050\text{ g/mol}) + 2(15.995\text{ g/mol})} $$
+$$ \Sigma_{\text{UO}_2} = 112.7\text{ m}^{-1} $$
+
+$$ \Sigma_{\text{H}_2\text{O}} = \frac{\left(1.0\text{ g/cm}^3\right) \left(2(20.8\text{ b}) + 3.5\text{ b}\right) \left(6.022\times10^{23}\text{ mol}^{-1}\right)}{2(1.008\text{ g/mol}) + 15.995\text{ g/mol}} $$
+$$ \Sigma_{\text{H}_2\text{O}} = 150.8\text{ m}^{-1} $$
+
+and plug these into equation (\ref{totmacroXS}) for the total cross section of the core.
+$$ \Sigma = 0.15(112.7\text{ m}^{-1}) + 0.85(150.8\text{ m}^{-1})
+ $$
+$$\boxed{ \Sigma = 145.085\text{ m}^{-1} }$$
+
+\item 
+
+Neutron attentuation follows a decaying exponential according to the equation
+$$ N = N(0) \, e^{-\Sigma x} $$
+where $N$ is the number of neutrons (you may be more familiar with this equation in terms of intensity; we have just eliminated the area and rate components from both sides).
+
+We let $N(0)$ be our initial number of incident particles, $10^{15}$, $\Sigma$ be the macroscopic cross section calculated in part (a), and $x$ be the distance traveled by the neutrons, 4 m.  
+$$ N = 10^{15} e^{(-145.085\text{ m}^{-1})(4\text{ m})} $$
+This works out to be about $9.153\times10^{-238}$, or \underline{zero particles}.
+$$ N = 0 $$
+Note that this number only indicates the quantity of particles which make it through the core uncollided. Since many of these interactions are scattering collisions, and not absorptive events, it is quite possible that some neutrons will eventually make it through the reactor. A more complicated derivation would be required in that case.
+\end{enumerate}
+

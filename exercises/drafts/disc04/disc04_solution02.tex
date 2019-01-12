@@ -1,0 +1,35 @@
+\section*{Problem 2 Solution}
+
+\begin{enumerate}[a)]
+
+\item 
+
+The transmitted uncollided intensity of a neutron beam through a material with macroscopic cross section $\Sigma$ is given by
+$$ I = I(0) \, e^{-\Sigma x} .$$
+Solving for $\Sigma$, we find 
+$$ \Sigma = \frac{1}{x}\ln\left(\frac{I(0)}{I}\right) $$
+Using the values provided (and considering the intensity as per the target, rather than per cm$^2$), we have
+$$ \Sigma = \frac{1}{10\text{ cm}}\ln\left(\frac{2\times10^{12}\text{ neutrons/(cm}^2{\cdot}\text{s)}\left( 5\text{ cm}^2 \right)}{3.0\times10^9\text{ neutrons/s}}\right) $$
+$$ \Sigma = \frac{1}{10\text{ cm}}\ln\left(3.33\times10^{3}\right) $$
+$$\boxed{ \Sigma = 0.811\text{ cm}^{-1} }$$
+
+\item 
+
+The mean free path of a particle is defined as $\lambda \equiv \frac{1}{\Sigma}$. 
+$$\boxed{ \lambda = 1.233\text{ cm} }$$
+
+\item 
+
+We are told that the beam pulse is 10 $\mu$s, so when considered in conjunction with the known intensity of the neutron beam, we can find the total number of particles produced by the beam per area. We define the neutron fluence, $\Phi$, as the number of neutrons per cm$^2$, calculated as
+$$ \Phi = It = (2\times10^{12}\text{ neutrons/(cm}^2\cdot\text{s)})(10^{-5}\text{ s}) = 2\times10^7\text{ neutrons/cm}^2 $$
+The number of interactions, $R$, is 
+$$ R = \Phi \Sigma V $$
+where $\Phi$ is the incident neutron fluence in $\left[\frac{\text{neutrons}}{\text{cm}^2}\right]$, $\Sigma$ is the macroscopic cross section of the shielding material in $\left[\frac{1}{\text{cm}}\right]$, and $V$ is the volume of the shield in $\left[{\text{cm}^3}\right]$. 
+
+We have already found $\Phi$, we calculated $\Sigma$ in part (a), and we can determine $V$ by multiplying the area of the beam spot by the thickness of the target.
+$$ V = 5\text{ cm}^2 \times 10\text{ cm} = 50\text{ cm}^3 $$
+The total number of collisions is then
+$$ R = (2\times10^7\text{ cm}^{-2})(0.811\text{ cm}^{-1})(50\text{ cm}^3) $$
+$$\boxed{ R = 8.11\times10^8\text{ collisions} }$$
+\end{enumerate}
+

@@ -1,0 +1,56 @@
+\section*{Problem 1 Solution}
+
+\begin{enumerate}[a)]
+
+\item Reactivity is defined as $\rho \equiv \frac{k - 1}{k}$. From the information provided in the problem, we can determine $k$ using the 6 factor formula. 
+$$ k = \varepsilon p f \eta P_{\textit{FNL}} P_{\textit{TNL}} $$
+We are told that 13\% of neutrons are absorbed in resonances, so $p = 0.87$. We are told 10\% of neutrons leak from the reactor, so $P_{\textit{NL}} = 0.9$ and we will assume $P_{\textit{NL}} = P_{\textit{FNL}} P_{\textit{TNL}}$. We are also given the fraction of fissions that are fast fissions,
+$$ \frac{\Sigma_f^F}{\Sigma_f^T + \Sigma_f^F} = 0.02 ,$$
+from which we can calculate the fraction of fissions that are thermal:
+$$ \frac{\Sigma_f^T}{\Sigma_f^T + \Sigma_f^F} = 0.98 .$$
+Noting that the definition of the fast fission factor, $\varepsilon$, is just the inverse of the thermal fission fraction, we can find a value for $\varepsilon$:
+\begin{align*}
+\varepsilon	&\equiv \frac{\Sigma_f^T + \Sigma_f^F}{\Sigma_f^T} \\
+			&= \left(\frac{\Sigma_f^T}{\Sigma_f^T + \Sigma_f^F}\right)^{-1} \\
+			&= \left(0.98\right)^{-1} \\
+			&= 1.02 
+\end{align*}
+Finally, using the cross sections provided we determine $f$ and $\eta$. In general,
+$$ \eta = \frac{\nu\Sigma_f}{\Sigma_a^{\text{fuel}}} ,$$
+and for a homogeneous reactor, 
+$$ f = \frac{\Sigma_a^{\text{fuel}}}{\Sigma_a} .$$
+When multiplied together,
+\begin{align*}
+f \eta	&= \frac{\nu\Sigma_f}{\Sigma_a} \\
+		&= \frac{2.4\left(0.6\text{ cm}^{-1}\right)}{1\text{ cm}^{-1}} \\
+		&= 1.44
+\end{align*}
+Altogether,
+\begin{align*}
+k	&= \varepsilon p f \eta P_{\textit{FNL}} P_{\textit{TNL}} \\
+	&= \left(1.02\right)\left(0.87\right)\left(1.44\right)\left(0.9\right) \\
+	&= 1.15
+\end{align*}
+and
+$$ \rho = \frac{1.15-1}{1.15} $$
+$$\boxed{ \rho = 0.13 }$$
+
+\item Having calculated a value for the reactor's excess reactivity, we can use the provided plot to find the start of the xenon-induced deadtime and its duration. The plot gives 4 curves describing the negative reactivity created by xenon in a reactor over the first few days after shutdown. Each curve corresponds to an operating flux level in the reactor. While we are not given the flux in our reactor, we can approximate it from the information given. 
+
+We know that the reactor is producing 10,000 W/cm$^3$. This is equal to the energy produced per second, which is also equal to the product of the fission reaction rate and the energy produced per fission,
+$$ P \approx E_f \Sigma_f \phi .$$
+We solve this relationship for the flux (using the conversion from MeV to Joules),
+\begin{align*}
+\phi	&\approx \frac{P}{E_f \Sigma_f} \\
+		&\approx \frac{\left(10,000\text{ W/cm}^3\right)}{\left(3.204\times10^{-11}\text{ J}\right)\left(0.6\text{ cm}^{-1}\right)} \\
+		&\approx 5.2\times10^{14}\text{ cm}^{-2}\cdot\text{s}^{-1}
+\end{align*}
+At this flux level, we can use the top line as a reasonable approximation for our reactor's behavior. Our excess reactivity of 0.13 is shown as a dashed line on the plot, and we have added large points where our flux curve intersects our excess reactivity. When there is more negative reactivity than excess reactivity, there is no possible way to restart the reactor (even if all control rods, poisons, and absorbers are removed, the negative reactivity will surpass the excess reactivity and keep the reactor subcritical). 
+
+\includegraphics[width=12cm]{xenon-deadtime-marked}
+
+The point the negative reactivity becomes greater than 0.13 and the deadtime begins is about 1 hour after shutdown. The deadtime then lasts for slightly more than 40 hours, and the reactor can be made critical again at the 42-43 hour mark.
+
+
+\end{enumerate}
+
