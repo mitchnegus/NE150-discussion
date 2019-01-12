@@ -13,7 +13,8 @@
 \usepackage{multicol} % Allows text division into multiple columns
 \usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
 \usepackage{booktabs,multirow,multirow} % Gives extra table functionality
-\usepackage{enumerate}
+\usepackage{enumerate} % Allows you to use customizable bullets
+\usepackage{fancyhdr} % Allows customizable headers and footers
 \usepackage{tikz} % Allows the creation of diagrams
 	\usetikzlibrary{shapes.geometric, arrows}
 	\tikzstyle{isotope} = [rectangle, 
@@ -45,3 +46,12 @@
 \newcommand{\lap}{\nabla^2}
 \newcommand{\p}{\partial}
 
+% Set the header on the first page and copyright on all pages
+\fancypagestyle{FirstPage}{
+\chead{\textbf{Nuclear Engineering 150 -- Discussion Section}}
+\rfoot{\copyright~2019 Mitchell Negus}
+}
+\fancypagestyle{EveryPage}{
+\rfoot{\copyright~2019 Mitchell Negus}
+}
+\pagestyle{EveryPage}
