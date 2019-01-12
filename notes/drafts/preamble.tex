@@ -1,0 +1,57 @@
+% PACKAGES %
+\usepackage[english]{} % Sets the language
+\usepackage[margin=2cm]{geometry} % Sets the margin size
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{breqn} % Allows equation breaking over multiple lines
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage{multicol} % Allows text division into multiple columns
+\usepackage{units} % Allows fractions to be expressed diagonally instead of vertically
+\usepackage{booktabs,multirow,multirow} % Gives extra table functionality
+\usepackage{enumerate} % Allows you to use customizable bullets
+\usepackage{fancyhdr} % Allows customizable headers and footers
+\usepackage{tikz} % Allows the creation of diagrams
+	\usetikzlibrary{shapes.geometric, arrows}
+	\tikzstyle{isotope} = [rectangle, 
+					  minimum width=2cm, 
+					  minimum height=1.25cm,
+					  text centered, 
+					  draw=black, 
+					 ]
+	\tikzstyle{decay} = [rectangle, 
+					      rounded corners,
+					      minimum width=2cm, 
+					      minimum height=1.5cm,
+					      text centered, 
+					      draw=white, 
+					     ]
+	\tikzstyle{placeholder} = [rectangle,
+					      minimum width=2cm,
+					      minimum height=1cm,
+					      draw=white,
+					      ]
+	\tikzstyle{arrow} = [thick,->,>=stealth]
+	\tikzstyle{farrow} = [ultra thick,->,>=stealth]
+	
+% Set path to figure image files
+\graphicspath{ {fig/} }
+
+% Set some custom shortcuts
+\newcommand{\tab}{\-\hspace{1.5cm}}
+\newcommand{\lap}{\nabla^2}
+\newcommand{\p}{\partial}
+
+% Set the header on the first page and copyright on all pages
+\fancypagestyle{FirstPage}{
+\chead{\textbf{Nuclear Engineering 150 -- Discussion Section}}
+\rfoot{\small \copyright~2019 Mitchell Negus}
+}
+\fancypagestyle{EveryPage}{
+\rfoot{\small \copyright~2019 Mitchell Negus}
+}
+\pagestyle{EveryPage}
