@@ -1,5 +1,7 @@
 # Instructor only files
 instructor
+# Outside resources without permission for distribution
+outside_resources
  
 # Custom files
 .ipynb_checkpoints
