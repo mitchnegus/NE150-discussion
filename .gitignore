@@ -8,6 +8,9 @@ outside_resources
 *.xls*
 *.pptx
 
+# Vim swap files
+*.swp
+
 # Ruby files for local website preview
 .ruby-version
 Gemfile
@@ -20,6 +23,8 @@ _site/
 *.synctex.gz
 *.aux
 *.out
+# LaTeX draft PDFs
+**/drafts/**/*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
