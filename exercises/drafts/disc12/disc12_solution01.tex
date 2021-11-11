@@ -4,7 +4,7 @@
 
 \item
 
- In a symmetric spherical system, the one-speed, steady-state diffusion equation is
+In a symmetric spherical system, the one-speed, steady-state diffusion equation is
 $$ -D \lap \phi(r) + \Sigma_a (r) \phi(r) = \nu \Sigma_f(r) \phi(r) + S(r) .$$
 For any arbitrary function, $f(r,\theta,\varphi)$, the full Laplacian in spherical coordinates is
 $$ \lap f(r,\theta,\varphi) = \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p f}{\p r}\right) +  \frac{1}{r^2 \sin\theta} \frac{\p}{\p \theta}\left(\sin\theta \frac{\p f}{\p \theta}\right) + \frac{1}{r^2 \sin^2 \theta} \frac{\p^2 f}{\p \varphi^2} .$$
@@ -12,69 +12,74 @@ If the function $f(r,\theta,\varphi)$ is radially symmetric then $f(r,\theta,\va
 $$ \lap f(r) = \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p f}{\p r}\right) .$$
 We substitute this back into our one-speed, steady-state diffusion equation, using $\phi(r)$ instead of $f(r)$.
 $$ -D \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_a (r) \phi(r) = \nu \Sigma_f(r) \phi(r) + S(r) .$$
-Finally, we recognize that our problem has two regions. There is no external source in either, so $S(r) = 0$. Since the regions are homogeneous, the diffusion coefficients and cross sections are constant in each: $D_C$, $\Sigma_{a,C}$, $\nu$, and $\Sigma_f$ in the core; $D_R$ and $\Sigma_{a,R}$ in the reflector. We will define the outer radius of the core as $a$, and the outer radius of the reflector as $\frac{3a}{2}$. Then, our diffusion equations for both regions are:
-$$ -D_C \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a,C} \phi(r) = \nu \Sigma_f \phi(r), \quad 0 < r < a \quad\text{(core)} $$
-$$ -D_R \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a,R}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)}.$$
-For our final solution, we will make two more substitutions, $B_C^2 = \frac{\nu\Sigma_f - \Sigma_{a,C}}{D_C}$ and $L_R^2 = \frac{D_R}{\Sigma_{a,R}}$, to get
-$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) - B_C^2 \phi(r) = 0, \quad 0 < r < a \quad\text{(core)} $$
-$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) - \frac{1}{L_R^2}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)} .$$
-There are also four boundary conditions that accompany these equations. A vacuum boundary condition (where we will use the extrapolated distance $d$ to indicate where the flux goes to zero), a finiteness condition, and two interface conditions (both continuous current and flux at the boundary). 
+Finally, we recognize that our problem has two regions.
+There is no external source in either, so $S(r) = 0$.
+    Since the regions are homogeneous, the diffusion coefficients and cross sections are constant in each: $D_{\text{core}}$, $\Sigma_{a,\text{core}}$, $\nu$, and $\Sigma_f$ in the core; $D_{\text{ref}}$ and $\Sigma_{a,\text{ref}}$ in the reflector.
+We will define the outer radius of the core as $a$, and the outer radius of the reflector as $\frac{3a}{2}$.
+Then, our diffusion equations for both regions are:
+$$ -D_{\text{core}} \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a, \text{core}} \phi(r) = \nu \Sigma_f \phi(r), \quad 0 < r < a \quad\text{(core)} $$
+$$ -D_{\text{ref}} \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \Sigma_{a, \text{ref}}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)}.$$
+For our final solution, we will make two more substitutions, $B_{\text{core}}^2 = \frac{\nu\Sigma_f - \Sigma_{a, \text{core}}}{D_{\text{core}}}$ and $L_R^2 = \frac{D_{\text{ref}}}{\Sigma_{a, \text{ref}}}$, to get
+$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + B_{\text{core}}^2 \phi(r) = 0, \quad 0 < r < a \quad\text{(core)} $$
+$$ \frac{1}{r^2}\frac{\p}{\p r}\left(r^2 \frac{\p \phi(r)}{\p r}\right) + \frac{1}{L_R^2}\phi(r) = 0, \quad a < r < \frac{3a}{2} \quad\text{(reflector)} .$$
+There are also four boundary conditions that accompany these equations. A vacuum boundary condition (where we will use the extrapolated distance $d$ to indicate where the flux goes to zero), a finiteness condition, and two interface conditions (both continuous current and flux at the boundary).
 \begin{align*}
 &(1)& \phi(r) &< \infty  						& &\text{(flux finiteness)} \\
 &(2)& \phi_R\left(\frac{3a}{2} + d\right) &= 0 	& &\text{(vacuum)} \\
 &(3)& \phi_C(a) &= \phi_R(a)					& &\text{(continuous flux)} \\
 &(4)& J_C(a) &= J_R(a)							& &\text{(continuous current)}
-\end{align*} 
+\end{align*}
 
 \item
 
 Since the diffusion equation takes a different form in each region, the solutions describing the flux shapes in those regions are also different. In the core, the flux has the functional form
-$$ \phi_C(r) = \frac{A_C}{r} \sin\left(B_C r\right) + \frac{B_C}{r} \cos\left(B_C r\right) , \quad 0 < r < a,$$
+$$ \phi_C(r) = \frac{X_{\text{core}}}{r} \sin\left(B_{\text{core}} r\right) + \frac{Y_{\text{core}}}{r} \cos\left(B_{\text{core}} r\right) , \quad 0 < r < a,$$
 and in the reflector,
-$$ \phi_R(r) = \frac{A_R}{r}\sinh\left(\frac{r+\omega}{L_R}\right) + \frac{B_R}{r} \cosh\left(\frac{r+\omega}{L_R}\right), \quad\quad\quad a < r < \frac{3a}{2} .$$
+$$ \phi_R(r) = \frac{X_{\text{ref}}}{r}\sinh\left(\frac{r+\omega}{L_R}\right) + \frac{Y_{\text{ref}}}{r} \cosh\left(\frac{r+\omega}{L_R}\right), \quad\quad\quad a < r < \frac{3a}{2} .$$
 Here we have included the shift in position of the hyperbolic sines and cosines, which is an equally valid solution to the diffusion equation in the reflector region. The usefulness of this parameter will become apparent shortly.
 
-Imposing our first boundary condition (finite flux everywhere), we notice that the second term in the flux solution for the core goes to infinity as $r$ goes to zero ($\frac{1}{r} \rightarrow \infty$ and $\cos(\kappa r) \rightarrow 1$). For the finiteness condition to be satisfied, we must set $B_C = 0$. Considering the second boundary condition (vacuum outside of the reflector), we have the equation
-$$ \phi_R\left(\frac{3a}{2}+d\right) = 0 = \frac{A_R}{\frac{3a}{2}+d}\sinh\left(\frac{\frac{3a}{2}+d+\omega}{L_R}\right) + \frac{B_R}{\frac{3a}{2}+d} \cosh\left(\frac{\frac{3a}{2}+d+\omega}{L_R}\right) .$$
-Noting that the hyperbolic cosine never gives a value of zero, we can conclude that $B_R = 0$.  Furthermore, the value of the hyperbolic sine only gives a value of zero when it's argument is equal to zero. To satisfy this, $\omega = -\left(\frac{3a}{2}+d\right)/L_R$.
+Imposing our first boundary condition (finite flux everywhere), we notice that the second term in the flux solution for the core goes to infinity as $r$ goes to zero ($\frac{1}{r} \rightarrow \infty$ and $\cos(\kappa r) \rightarrow 1$). For the finiteness condition to be satisfied, we must set $Y_{\text{core}} = 0$. Considering the second boundary condition (vacuum outside of the reflector), we have the equation
+$$ \phi_R\left(\frac{3a}{2}+d\right) = 0 = \frac{X_{\text{ref}}}{\frac{3a}{2}+d}\sinh\left(\frac{\frac{3a}{2}+d+\omega}{L_R}\right) + \frac{Y_{\text{ref}}}{\frac{3a}{2}+d} \cosh\left(\frac{\frac{3a}{2}+d+\omega}{L_R}\right) .$$
+Noting that the hyperbolic cosine never gives a value of zero, we can conclude that $Y_{\text{ref}} = 0$.
+Furthermore, the value of the hyperbolic sine only gives a value of zero when it's argument is equal to zero. To satisfy this, $\omega = -\left(\frac{3a}{2}+d\right)/L_R$.
 
 From these two boundary conditions, our flux shapes simplify to
-$$ \phi_C(r) = \frac{A_C}{r} \sin\left(B_C r\right) , \quad 0 < r < a,$$
-$$ \phi_R(r) = \frac{A_R}{r}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right), \quad a < r < \frac{3a}{2} .$$
+$$ \phi_C(r) = \frac{X_{\text{core}}}{r} \sin\left(B_{\text{core}} r\right) , \quad 0 < r < a,$$
+$$ \phi_R(r) = \frac{X_{\text{ref}}}{r}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right), \quad a < r < \frac{3a}{2} .$$
 We now use these simpler equations together with our second two boundary conditions. Starting with the flux continuity equation:
 $$ \phi_C(a) = \phi_R(a) $$
-$$ \frac{A_C}{a} \sin\left(B_C a\right) = \frac{A_R}{a}\sinh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right) $$
-$$ A_C = A_R \frac{\sinh\left(-\frac{a+2d}{2L_R}\right)}{\sin\left(B_C a\right)} .$$
+$$ \frac{X_{\text{core}}}{a} \sin\left(B_{\text{core}} a\right) = \frac{X_{\text{ref}}}{a}\sinh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right) $$
+$$ X_{\text{core}} = X_{\text{ref}} \frac{\sinh\left(-\frac{a+2d}{2L_R}\right)}{\sin\left(B_{\text{core}} a\right)} .$$
 
-Next we move to the current continuity equation, first writing the condition in terms of flux using Fick's law: 
+Next we move to the current continuity equation, first writing the condition in terms of flux using Fick's law:
 $$ J_C(a) = J_R(a) $$
-$$ -D_C\frac{d}{dr}\phi_C(a) = -D_R\frac{d}{dr}\phi_R(a) .$$
-Substituting in our flux equations, 
-$$ -D_C\frac{d}{dr}\left(\frac{A_C}{r} \sin\left(B_C r\right)\right)\bigg|_{r=a} = -D_R\frac{d}{dr}\left(\frac{A_R}{r}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right)\bigg|_{r=a} $$
-$$ -D_C \left[\frac{A_C B_C}{r}\cos\left(B_C r\right) - \frac{A_C}{r^2}\sin\left(B_C r\right)\right]_{r=a} = -D_R \left[\frac{A_R}{r L_R}\cosh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right) - \frac{A_R}{r^2}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right]_{r=a} $$
-$$ -A_C D_C \left[\frac{B_C}{a}\cos\left(B_C a\right) - \frac{1}{a^2}\sin\left(B_C a\right)\right] = -A_R D_R \left[\frac{1}{a L_R}\cosh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right) - \frac{1}{a^2}\sinh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right]$$
-$$ A_C = A_R \frac{D_R \left[\frac{a}{L_R}\cosh\left(-\frac{a+2d}{2L_R}\right) - \sinh\left(-\frac{a+2d}{2L_R}\right)\right]}{D_C \left[a B_C \cos\left(B_C a\right) - \sin\left(B_C a\right)\right]}.$$
-At this point, we may realize that these two continuity boundary conditions have given us two equations where $A_C$ is just proportional to $A_R$. In both cases the factor multiplying $A_R$ is a constant, where $a$, $L_R$, and $B_C$ are known quantities. Intuitively, this means that if our reflected reactor is critical then we may have many different flux magnitudes, but always the same general shape. (In other words, a reactor may be critical with many different neutron populations---this is how reactors can be critical over a range of different power levels---but the general function describing where those neutrons are is always similar.) The answer to the question can the be left as
+$$ -D_{\text{core}}\frac{d}{dr}\phi_C(a) = -D_{\text{ref}}\frac{d}{dr}\phi_R(a) .$$
+Substituting in our flux equations,
+$$ -D_{\text{core}}\frac{d}{dr}\left(\frac{X_{\text{core}}}{r} \sin\left(B_{\text{core}} r\right)\right)\bigg|_{r=a} = -D_{\text{ref}}\frac{d}{dr}\left(\frac{X_{\text{ref}}}{r}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right)\bigg|_{r=a} $$
+$$ -D_{\text{core}} \left[\frac{X_{\text{core}} B_{\text{core}}}{r}\cos\left(B_{\text{core}} r\right) - \frac{X_{\text{core}}}{r^2}\sin\left(B_{\text{core}} r\right)\right]_{r=a} = -D_{\text{ref}} \left[\frac{X_{\text{ref}}}{r L_R}\cosh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right) - \frac{X_{\text{ref}}}{r^2}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right]_{r=a} $$
+$$ -X_{\text{core}} D_{\text{core}} \left[\frac{B_{\text{core}}}{a}\cos\left(B_{\text{core}} a\right) - \frac{1}{a^2}\sin\left(B_{\text{core}} a\right)\right] = -X_{\text{ref}} D_{\text{ref}} \left[\frac{1}{a L_R}\cosh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right) - \frac{1}{a^2}\sinh\left(\frac{a-\left(\frac{3a}{2}+d\right)}{L_R}\right)\right]$$
+$$ X_{\text{core}} = X_{\text{ref}} \frac{D_{\text{ref}} \left[\frac{a}{L_R}\cosh\left(-\frac{a+2d}{2L_R}\right) - \sinh\left(-\frac{a+2d}{2L_R}\right)\right]}{D_{\text{core}} \left[a B_{\text{core}} \cos\left(B_{\text{core}} a\right) - \sin\left(B_{\text{core}} a\right)\right]}.$$
+At this point, we may realize that these two continuity boundary conditions have given us two equations where $X_{\text{core}}$ is just proportional to $X_{\text{ref}}$. In both cases the factor multiplying $X_{\text{ref}}$ is a constant, where $a$, $L_R$, and $B_{\text{core}}$ are known quantities. Intuitively, this means that if our reflected reactor is critical then we may have many different flux magnitudes, but always the same general shape. (In other words, a reactor may be critical with many different neutron populations---this is how reactors can be critical over a range of different power levels---but the general function describing where those neutrons are is always similar.) The answer to the question can the be left as
 $$\boxed{\begin{aligned}
-\quad \phi_C(r) &= \frac{A}{r} \sin\left(B_C r\right) ,& \quad 0 <& r < a \quad \\
-\quad \phi_R(r) &= \frac{A \sin\left(B_C a\right)}{r \sinh\left(-\frac{a+2d}{2L_R}\right)}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right),& \quad a <& r < \frac{3a}{2} \quad 
+\quad \phi_C(r) &= \frac{X}{r} \sin\left(B_{\text{core}} r\right) ,& \quad 0 <& r < a \quad \\
+\quad \phi_R(r) &= \frac{X \sin\left(B_{\text{core}} a\right)}{r \sinh\left(-\frac{a+2d}{2L_R}\right)}\sinh\left(\frac{r-\left(\frac{3a}{2}+d\right)}{L_R}\right),& \quad a <& r < \frac{3a}{2} \quad
 \end{aligned}}$$
-where we have dropped the subscript from the constant, $A$. \\
+where we have dropped the subscript from the constant, $X$. \\
 
-\item 
+\item
 
 The reflector savings is given by the difference between the critical dimensions of a reflected reactor and a bare reactor of the same shape.
 $$ \mathcal{S} = a_{\text{ref}} - a_{\text{bare}} $$
-From the previous section, for both equations we found to be true, the two factors multiplying $A_R$ must be equal. While we cannot determine a unique flux magnitude, we can relate the given quantities to find $a$:
-$$ \frac{\sinh\left(\frac{a}{L_R}\right)}{\sin\left(B_C a\right)} = \frac{D_R \left[\frac{a}{L_R}\cosh\left(-\frac{a+2d}{2L_R}\right) - \sinh\left(-\frac{a+2d}{2L_R}\right)\right]}{D_C \left[a B_C \cos\left(B_C a\right) - \sin\left(B_C a\right)\right]}.$$
+From the previous section, for both equations we found to be true, the two factors multiplying $X_{\text{ref}}$ must be equal. While we cannot determine a unique flux magnitude, we can relate the given quantities to find $a$:
+$$ \frac{\sinh\left(\frac{a}{L_R}\right)}{\sin\left(B_{\text{core}} a\right)} = \frac{D_{\text{ref}} \left[\frac{a}{L_R}\cosh\left(-\frac{a+2d}{2L_R}\right) - \sinh\left(-\frac{a+2d}{2L_R}\right)\right]}{D_{\text{core}} \left[a B_{\text{core}} \cos\left(B_{\text{core}} a\right) - \sin\left(B_{\text{core}} a\right)\right]}.$$
 This equation is transcendental and it is impossible to calculate a solution analytically, so instead we must solve it numerically. Though we won't actually perform the numerical calculation here,
 $$ a_{\text{ref}} = a .$$
 
-For a bare sphere, $a_{\text{bare}}$ can be found using the geometric buckling (equal to the material buckling which is the same for both cores): 
-$$ B_{g,\text{bare}}^2 = B_C^2 = \left(\frac{\pi}{\tilde{a}_{\text{bare}}}\right)^2 .$$
-We note $\tilde{a}_{\text{bare}} = a_{\text{bare}} + d_{\text{bare}}$, and 
-$$ a_{\text{bare}} = \frac{\pi}{B_C} - d_{\text{bare}} .$$
+For a bare sphere, $a_{\text{bare}}$ can be found using the geometric buckling (equal to the material buckling which is the same for both cores):
+$$ B_{g,\text{bare}}^2 = B_{\text{core}}^2 = \left(\frac{\pi}{\tilde{a}_{\text{bare}}}\right)^2 .$$
+We note $\tilde{a}_{\text{bare}} = a_{\text{bare}} + d_{\text{bare}}$, and
+$$ a_{\text{bare}} = \frac{\pi}{B_{\text{core}}} - d_{\text{bare}} .$$
 We plug these in to find the reactor savings.
-$$\boxed{ \mathcal{S} = a - \frac{\pi}{B_C} + d_{\text{bare}} }$$
+$$\boxed{ \mathcal{S} = a - \frac{\pi}{B_{\text{core}}} + d_{\text{bare}} }$$
 \end{enumerate}
 
